@@ -1,0 +1,30 @@
+# Dados — NÃO versionar (brutos, intermediários e tratados; excedem limites do GitHub)
+data/
+*.7z
+*.xlsx
+# .txt grandes de dados; docs .txt continuam permitidos
+/data/**/*.txt
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Playwright
+playwright-report/
+.playwright/
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log

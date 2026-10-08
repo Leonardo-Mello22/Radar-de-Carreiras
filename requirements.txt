@@ -1,0 +1,13 @@
+# Radar de Carreira em TI — dependências (Python 3.11+)
+# Ambiente: python -m venv .venv  (usar python3.12 nesta máquina)
+pandas>=2.2
+pyarrow>=16.0
+duckdb>=1.0
+py7zr>=0.21
+requests>=2.31
+matplotlib>=3.8
+streamlit>=1.37
+jupyter>=1.0
+playwright>=1.45
+openpyxl>=3.1   # necessário para ler o layout .xlsx oficial
+Pillow>=10.0    # gera imagens de evidência a partir de texto de terminal
