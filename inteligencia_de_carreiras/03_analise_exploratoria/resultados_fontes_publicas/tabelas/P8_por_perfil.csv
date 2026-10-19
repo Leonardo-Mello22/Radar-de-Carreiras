@@ -1,0 +1,19 @@
+﻿variavel,categoria,n_alvo_valido,n_busca_ativa,proporcao,n_alvo_ausente
+senioridade_declarada,Junior,855,339,0.39649122807017545,0
+senioridade_declarada,Pleno,1345,527,0.39182156133828994,0
+senioridade_declarada,Senior,1523,483,0.31713722915298753,0
+modelo_trabalho,Hibrido,1796,608,0.33853006681514475,0
+modelo_trabalho,Presencial,783,349,0.44572158365261816,0
+modelo_trabalho,Remoto,2155,673,0.3122969837587007,0
+vinculo_grupo,CLT,3749,1203,0.32088556948519603,0
+vinculo_grupo,Estagio,185,84,0.4540540540540541,0
+vinculo_grupo,Freelancer,35,22,0.6285714285714286,0
+vinculo_grupo,PJ ou empreendedor,486,214,0.4403292181069959,0
+vinculo_grupo,Servidor publico,121,52,0.4297520661157025,0
+vinculo_grupo,Trabalho internacional,132,44,0.3333333333333333,0
+escolaridade_grupo,Doutorado,187,52,0.27807486631016043,24
+escolaridade_grupo,Mestrado,584,192,0.3287671232876712,37
+escolaridade_grupo,Pos-graduacao,1815,568,0.31294765840220384,78
+escolaridade_grupo,Sem graduacao formal,73,25,0.3424657534246575,8
+escolaridade_grupo,Superior completo,1585,577,0.3640378548895899,94
+escolaridade_grupo,Superior em andamento,487,215,0.4414784394250513,97

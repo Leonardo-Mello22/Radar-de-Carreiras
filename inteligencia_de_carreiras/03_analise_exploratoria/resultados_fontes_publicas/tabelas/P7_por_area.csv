@@ -1,0 +1,78 @@
+﻿grupo,tecnologia,n_elegiveis_no_recorte,n_respondidos,n_usa,ausentes,proporcao
+Academico ou pesquisador,SQL,21,13,5,8,
+Academico ou pesquisador,Python,21,13,11,8,
+Academico ou pesquisador,R,21,13,7,8,
+Academico ou pesquisador,Power BI,21,14,7,7,
+Academico ou pesquisador,AWS,21,13,2,8,
+Academico ou pesquisador,GCP,21,13,5,8,
+Academico ou pesquisador,Azure,21,13,3,8,
+Analise de negocios,SQL,181,175,137,6,0.7828571428571428
+Analise de negocios,Python,181,175,101,6,0.5771428571428572
+Analise de negocios,R,181,175,18,6,0.10285714285714286
+Analise de negocios,Power BI,181,176,107,5,0.6079545454545454
+Analise de negocios,AWS,181,175,57,6,0.32571428571428573
+Analise de negocios,GCP,181,175,57,6,0.32571428571428573
+Analise de negocios,Azure,181,175,44,6,0.25142857142857145
+Ciencia de dados e IA,SQL,774,768,662,6,0.8619791666666666
+Ciencia de dados e IA,Python,774,768,752,6,0.9791666666666666
+Ciencia de dados e IA,R,774,768,131,6,0.17057291666666666
+Ciencia de dados e IA,Power BI,774,773,297,1,0.38421733505821476
+Ciencia de dados e IA,AWS,774,768,393,6,0.51171875
+Ciencia de dados e IA,GCP,774,768,235,6,0.3059895833333333
+Ciencia de dados e IA,Azure,774,768,267,6,0.34765625
+Dados e BI,SQL,1327,1319,1179,8,0.8938589840788476
+Dados e BI,Python,1327,1319,970,8,0.7354056103108415
+Dados e BI,R,1327,1319,118,8,0.08946171341925702
+Dados e BI,Power BI,1327,1322,913,5,0.6906202723146747
+Dados e BI,AWS,1327,1319,512,8,0.38817285822592873
+Dados e BI,GCP,1327,1319,315,8,0.23881728582259287
+Dados e BI,Azure,1327,1319,370,8,0.2805155420773313
+Desenvolvimento de software,SQL,120,81,71,39,0.8765432098765432
+Desenvolvimento de software,Python,120,81,62,39,0.7654320987654321
+Desenvolvimento de software,R,120,81,3,39,0.037037037037037035
+Desenvolvimento de software,Power BI,120,81,38,39,0.4691358024691358
+Desenvolvimento de software,AWS,120,81,34,39,0.41975308641975306
+Desenvolvimento de software,GCP,120,81,16,39,0.19753086419753085
+Desenvolvimento de software,Azure,120,81,24,39,0.2962962962962963
+Engenharia e arquitetura de dados,SQL,855,848,835,7,0.9846698113207547
+Engenharia e arquitetura de dados,Python,855,848,803,7,0.9469339622641509
+Engenharia e arquitetura de dados,R,855,848,29,7,0.03419811320754717
+Engenharia e arquitetura de dados,Power BI,855,853,407,2,0.4771395076201641
+Engenharia e arquitetura de dados,AWS,855,848,464,7,0.5471698113207547
+Engenharia e arquitetura de dados,GCP,855,848,313,7,0.36910377358490565
+Engenharia e arquitetura de dados,Azure,855,848,268,7,0.3160377358490566
+Estatistica,SQL,17,17,9,0,
+Estatistica,Python,17,17,11,0,
+Estatistica,R,17,17,13,0,
+Estatistica,Power BI,17,17,11,0,
+Estatistica,AWS,17,17,2,0,
+Estatistica,GCP,17,17,4,0,
+Estatistica,Azure,17,17,7,0,
+Gestao,SQL,1011,0,0,1011,
+Gestao,Python,1011,0,0,1011,
+Gestao,R,1011,0,0,1011,
+Gestao,Power BI,1011,0,0,1011,
+Gestao,AWS,1011,0,0,1011,
+Gestao,GCP,1011,0,0,1011,
+Gestao,Azure,1011,0,0,1011,
+Outra area ou nao informado,SQL,615,161,76,454,0.4720496894409938
+Outra area ou nao informado,Python,615,161,80,454,0.4968944099378882
+Outra area ou nao informado,R,615,161,13,454,0.08074534161490683
+Outra area ou nao informado,Power BI,615,173,99,442,0.5722543352601156
+Outra area ou nao informado,AWS,615,161,33,454,0.20496894409937888
+Outra area ou nao informado,GCP,615,161,48,454,0.2981366459627329
+Outra area ou nao informado,Azure,615,161,48,454,0.2981366459627329
+Produto de dados,SQL,79,76,66,3,0.868421052631579
+Produto de dados,Python,79,76,51,3,0.6710526315789473
+Produto de dados,R,79,76,7,3,0.09210526315789473
+Produto de dados,Power BI,79,76,48,3,0.631578947368421
+Produto de dados,AWS,79,76,40,3,0.5263157894736842
+Produto de dados,GCP,79,76,31,3,0.40789473684210525
+Produto de dados,Azure,79,76,21,3,0.27631578947368424
+Suporte e operacoes,SQL,76,44,30,32,0.6818181818181818
+Suporte e operacoes,Python,76,44,22,32,0.5
+Suporte e operacoes,R,76,44,3,32,0.06818181818181818
+Suporte e operacoes,Power BI,76,46,31,30,0.6739130434782609
+Suporte e operacoes,AWS,76,44,11,32,0.25
+Suporte e operacoes,GCP,76,44,2,32,0.045454545454545456
+Suporte e operacoes,Azure,76,44,21,32,0.4772727272727273

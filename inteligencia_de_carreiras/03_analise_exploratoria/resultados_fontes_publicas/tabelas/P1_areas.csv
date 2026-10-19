@@ -1,0 +1,31 @@
+﻿area_ti,n,p10,p50,p90,suficiente,regiao
+Arquitetura de solucoes,440,5093.871364171961,14000.0,23138.861850679317,True,Brasil
+Automacao industrial,1256,1873.0209775948192,4075.097091337569,8547.602161267892,True,Brasil
+Dados e bancos de dados,676,1929.1536235105868,7882.368614089704,15084.00381400216,True,Brasil
+Desenvolvimento de software,27092,2000.0,5760.46,14345.360535781077,True,Brasil
+Gestao de TI,2161,2500.0,10665.11,25944.48656008372,True,Brasil
+Hardware e sistemas,894,3644.601214661144,12246.199896461221,27504.833756570013,True,Brasil
+Qualidade e testes,807,2287.148242513211,4879.86,10000.0,True,Brasil
+Redes e infraestrutura,4843,1906.939874171239,4022.401017067243,12225.291274012707,True,Brasil
+Seguranca da informacao,922,2846.301239689494,7340.268635771796,17186.854913166215,True,Brasil
+Suporte e operacoes,21771,1526.5011859770188,2209.3240758113916,4439.869219725923,True,Brasil
+Arquitetura de solucoes,28,,,,False,Nordeste
+Automacao industrial,80,1525.651067379317,2381.300286050162,5651.307650530246,True,Nordeste
+Dados e bancos de dados,38,726.3860565309217,3047.4701897085906,12673.082247091494,True,Nordeste
+Desenvolvimento de software,2001,1526.5011859770188,3217.9208136537945,10187.742728343923,True,Nordeste
+Gestao de TI,112,2546.9356820859807,8075.0970913375695,14773.901835592635,True,Nordeste
+Hardware e sistemas,37,3824.4337941523036,10000.0,15281.614092515883,True,Nordeste
+Qualidade e testes,43,2425.6,4380.729373187886,10152.565889182297,True,Nordeste
+Redes e infraestrutura,500,1528.0,2754.84,6536.40165273427,True,Nordeste
+Seguranca da informacao,63,2220.192950516177,5440.297375583446,16275.559209585526,True,Nordeste
+Suporte e operacoes,2670,1518.0,1834.696845550953,3193.7860311367212,True,Nordeste
+Arquitetura de solucoes,5,,,,False,Pernambuco
+Automacao industrial,9,,,,False,Pernambuco
+Dados e bancos de dados,2,,,,False,Pernambuco
+Desenvolvimento de software,636,2041.2742728343924,5000.0,13204.181679344136,True,Pernambuco
+Gestao de TI,33,3228.46002850786,9426.818575578449,14490.896150581832,True,Pernambuco
+Hardware e sistemas,14,,,,False,Pernambuco
+Qualidade e testes,15,,,,False,Pernambuco
+Redes e infraestrutura,126,1546.4993461626075,3192.34157898551,7434.271923603671,True,Pernambuco
+Seguranca da informacao,26,,,,False,Pernambuco
+Suporte e operacoes,415,1522.6004743908077,2086.0775034663284,3727.0,True,Pernambuco

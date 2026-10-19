@@ -1,0 +1,7 @@
+﻿variavel,papel,tratamento
+salario_real,alvo,R$/mes; IPCA mar/2025; somente salario_valido
+idade,entrada numerica,idade_valida=False vira ausente; mediana do treino e indicador
+horas_contratuais,entrada numerica,horas_validas=False vira ausente; mediana do treino e indicador
+cbo_codigo / uf_sigla / grau_instrucao,entradas categoricas,one-hot sem ordem; categorias aprendidas so no treino
+salarios derivados / faixas / escalas do alvo,excluidas,evitar vazamento direto do alvo
+IDs / arquivo / mes / sexo / raca-cor / outras fontes,excluidas,fora do conjunto inicial de entradas; IDs/mes servem apenas para auditoria/particao

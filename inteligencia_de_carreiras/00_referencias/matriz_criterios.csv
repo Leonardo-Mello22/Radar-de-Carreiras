@@ -1,0 +1,11 @@
+﻿id,entregavel,pasta,evidencia_esperada,situacao
+CC01,Plano de análise,01_plano_de_analise,"Perguntas, fontes, métricas, objetivos visuais e justificativas dos gráficos",Completo documentalmente; revisado com pesquisa G12
+CC02,Plano de preparação,02_preparacao_dados,"Fontes, formatos e justificativas de limpeza, normalização e transformação",Concluido com pipeline validado e alertas documentados
+CC03,Análise exploratória,03_analise_exploratoria,"Notebook com distribuições, relações, agrupamentos e interpretação",Executada com notebook e interpretacoes; pesquisa propria restrita
+CC04,Regressão,04_regressao,"Notebook com dispersão, tendência e resíduos",Executada com teste temporal e referencia de mediana; limites documentados
+CC05,Classificação,05_classificacao,"Matriz de confusão, métricas, ROC e precision-recall interpretadas",Executada com validacao no treino e teste separado; desempenho limitado interpretado
+CC06,Dashboard inicial,06_dashboard_e_publicacao,"Visualizações integradas, filtros e narrativa visual",V1 local implementada com testes e evidencias; hospedagem externa nao realizada
+CC07,Proposta de integração web,06_dashboard_e_publicacao,"Estrutura das páginas, organização visual e ferramenta de publicação",Proposta documentada em Streamlit; implantacao externa pendente
+CC08,Dashboard consolidado,07_consolidacao_e_validacao,"Dados, visualizações e textos finalizados; melhorias por feedback",V1.1 consolidada tecnicamente; feedback estruturado do grupo pendente
+CC09,Versão quase final,07_consolidacao_e_validacao,Avaliação funcional e ajustes finais,Validada tecnicamente no ambiente local; revisao do grupo e remota pendentes
+CC10,Documentação final,08_documentacao_final,"Histórico, capturas/links e síntese dos insights",Concluida em PDF e Markdown com evidencias e limitacoes; revisao do grupo e hospedagem pendentes

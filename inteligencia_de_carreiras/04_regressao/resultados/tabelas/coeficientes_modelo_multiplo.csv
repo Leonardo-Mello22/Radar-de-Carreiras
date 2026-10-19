@@ -1,0 +1,70 @@
+﻿termo,coeficiente_modelo,escala
+numericas__idade,1091.2435308916731,categoria nominal ou indicador/numerica padronizada
+numericas__horas_contratuais,85.96480447229311,categoria nominal ou indicador/numerica padronizada
+numericas__missingindicator_horas_contratuais,-16.00287096875421,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_123605,25976.71714874513,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_142505,4.494019403269028,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_142510,6851.608685751723,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_142515,4056.711728895457,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_142520,1494.3585755069164,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_142525,4857.799805459902,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_142530,-1694.1961537996451,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_142535,-3307.2063873510974,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212205,4985.906277728889,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212210,2168.570035554457,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212215,3891.7432337637993,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212305,-1574.5322618115397,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212310,-3100.8277608314024,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212315,-2334.8038332828805,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212320,-1604.2860713357709,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212405,-1968.0759184547712,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212410,-3973.143569823475,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212415,-3729.930567199385,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212420,-5069.445447505816,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212425,3408.746452292947,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_212430,-3611.8418420925886,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_317105,-3919.2400350558023,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_317110,-3561.395016952288,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_317115,-4430.345520958854,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_317120,-3486.261069426256,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_317205,-5004.7191352766595,categoria nominal ou indicador/numerica padronizada
+categoricas__cbo_codigo_317210,-5326.4053719589165,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_AC,-618.3995411552569,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_AL,-599.2832665462381,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_AM,-166.0588747941583,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_AP,-300.71822542409717,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_BA,-347.29686396418117,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_CE,65.6345030057907,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_DF,530.3741921540574,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_ES,285.053126739856,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_GO,163.27680332462364,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_MA,-935.1542575368251,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_MG,262.94872111333717,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_MS,-158.92531312556918,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_MT,-25.36785292049923,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_PA,-559.0860931074993,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_PB,-610.9526610653621,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_PE,-339.70653324823974,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_PI,-1089.9944261616995,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_PR,409.1445186233985,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_RJ,327.03701868884554,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_RN,2320.3489761148967,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_RO,-365.51975960306976,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_RR,-655.4914474526138,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_RS,774.3966526965502,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_SC,797.266487591986,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_SE,-654.1598646499975,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_SP,1731.8278414590216,categoria nominal ou indicador/numerica padronizada
+categoricas__uf_sigla_TO,-241.19386074815807,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_5ª Completo Fundamental,-1825.932134449971,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_6ª a 9ª Fundamental,-1516.025419972129,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Analfabeto,-1067.091779179867,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Até 5ª Incompleto,-1080.274347658962,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Doutorado,4585.859625044922,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Fundamental Completo,-1311.833605169862,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Mestrado,4596.974153313783,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Médio Completo,-1799.5716883590537,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Médio Incompleto,-1711.7237462379549,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Pós-Graduação completa,2141.950756638024,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Superior Completo,294.00308357274463,categoria nominal ou indicador/numerica padronizada
+categoricas__grau_instrucao_Superior Incompleto,-1306.334897607883,categoria nominal ou indicador/numerica padronizada

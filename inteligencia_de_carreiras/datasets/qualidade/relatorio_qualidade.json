@@ -1,0 +1,87 @@
+{
+  "state_of_data": {
+    "respostas_originais": 5217,
+    "respondentes": 5215,
+    "colunas_originais": 403,
+    "colunas_carreiras": 51,
+    "respondentes_pe": 120,
+    "respondentes_nordeste": 516,
+    "senioridade_nao_informada": 1399,
+    "duplicatas_exatas_removidas": 2,
+    "gestores_declarados": 1045,
+    "area_gestao": 1045,
+    "nulos_por_coluna": {
+      "uf_sigla": 142,
+      "regiao_nome": 3,
+      "area_formacao": 94,
+      "setor": 354,
+      "tamanho_empresa": 354,
+      "atua_como_gestor": 354,
+      "cargo_gestao": 4170,
+      "cargo_atual": 1399,
+      "senioridade_declarada": 1399,
+      "faixa_salarial_declarada": 354,
+      "experiencia_dados_faixa": 354,
+      "experiencia_ti_anterior_faixa": 354,
+      "satisfeito_trabalho": 354,
+      "participou_entrevistas_6m": 354,
+      "planos_mudar_emprego_6m": 354,
+      "empresa_layoff_2024": 354,
+      "modelo_trabalho_declarado": 354,
+      "modelo_trabalho_ideal": 354,
+      "linguagem_mais_usada": 1792,
+      "objetivo_carreira": 4674,
+      "oportunidade_buscada": 4929,
+      "tempo_busca_oportunidade": 4925,
+      "inicio_carreira_dados_ate_2_anos": 354,
+      "faixa_salario_limite_inferior": 354,
+      "faixa_salario_limite_superior": 458,
+      "faixa_limite_superior_exclusivo": 354,
+      "faixa_limite_inferior_exclusivo": 354,
+      "usa_sql": 1628,
+      "usa_python": 1628,
+      "usa_r": 1628,
+      "usa_power_bi": 1598,
+      "usa_aws": 1628,
+      "usa_gcp": 1628,
+      "usa_azure": 1628
+    }
+  },
+  "caged": {
+    "controles_mensais": [
+      {
+        "competencia": "202501",
+        "linhas_brutas": 4405919,
+        "movimentacoes_ti": 39557,
+        "admissoes_ti": 20171,
+        "desligamentos_ti": 19386
+      },
+      {
+        "competencia": "202502",
+        "linhas_brutas": 4726389,
+        "movimentacoes_ti": 40130,
+        "admissoes_ti": 20963,
+        "desligamentos_ti": 19167
+      },
+      {
+        "competencia": "202503",
+        "linhas_brutas": 4397748,
+        "movimentacoes_ti": 38877,
+        "admissoes_ti": 19913,
+        "desligamentos_ti": 18964
+      }
+    ],
+    "registros_ti": 118564,
+    "colunas": 62,
+    "registros_pe": 2305,
+    "registros_nordeste": 10704,
+    "salarios_sinalizados": 690,
+    "municipios_sem_traducao": 0,
+    "cbo_sem_traducao": 0,
+    "duplicatas_sem_registro_id": 1386,
+    "nulos_por_coluna": {
+      "trabalho_intermitente": 2,
+      "trabalho_parcial": 6614
+    }
+  }
+}

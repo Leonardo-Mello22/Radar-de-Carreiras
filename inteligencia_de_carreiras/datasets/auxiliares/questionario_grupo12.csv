@@ -1,0 +1,13 @@
+﻿pergunta_id,campo,pergunta_original,definicao
+Q01,curso_graduacao,1. Qual é o seu curso de graduação? ,Categoria de curso declarada.
+Q02,periodo_graduacao_original,2. Qual seu período ,Período declarado; desperiodizado não vira zero.
+Q03,momento_carreira,3. Qual opção descreve melhor seu momento?  ,"Momento de carreira autodeclarado, não senioridade inferida."
+Q04,situacao_trabalho_declarada,4. Qual seu regime de trabalho atual?  ,Resposta mistura regimes de trabalho e situação de busca; manter a categoria original.
+Q05,facilidade_informacao_escala_1_5,5. Quão fácil é encontrar informações confiáveis sobre o mercado de TI?,Nota ordinal. O XLSX não informa as âncoras da escala; não inferir sua direção.
+Q06,dificuldade_principal,6. Qual é sua maior dificuldade?  ,Principal dificuldade declarada.
+Q07,usaria_ferramenta_original,7. Você usaria uma ferramenta que utilizasse de dados para divulgar vagas e mostrar as tendência do mercado de TI ?,Resposta original; itens fora de Sim/Não são sinalizados.
+Q08,prioridades_painel_original,8. Escolha até 3 informações que você gostaria de ver primeiro em um painel de carreira.  ,Até três opções; vírgulas internas nas alternativas não são separadores.
+Q09,expectativa_salarial_original,"9. Qual expectativa salarial mensal exata (em R$) você considera realista hoje para o seu perfil? (Digite apenas números inteiros, sem pontos ou vírgulas). ","Expectativa em reais mensais, não salário recebido."
+Q10,busca_mudanca_original,"10. Você está ativamente buscando trocar de emprego, de área ou de regime de contratação (CLT/PJ) neste exato momento?  ","Busca atual de troca de emprego, área OU regime; não equivale ao alvo do State of Data."
+Q11,cogitou_mudar_desistir_original,11. A falta de informações claras sobre salários e carreira em TI já fez você cogitar desistir ou mudar de área nos últimos 12 meses?  ,"Relato de ter cogitado mudar/desistir, não desistência efetivamente observada."
+Q12,experiencia_ti_original,"12. Quantos meses exatos de experiência profissional ou de estágio em TI você possui? (Se não tiver experiência, digite 0. Digite apenas números).  ",Experiência declarada em meses ou texto; conversões mantêm os limites de intervalos.

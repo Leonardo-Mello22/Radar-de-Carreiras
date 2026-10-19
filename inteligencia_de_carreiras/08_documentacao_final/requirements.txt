@@ -1,0 +1,3 @@
+-r ../06_dashboard_e_publicacao/requirements.txt
+reportlab==4.4.9
+pypdf==6.10.0

@@ -1,0 +1,32 @@
+﻿campo,tipo,definicao,ausentes
+respondente_id,str,"ID de linha estável, não comprova identidade de uma pessoa.",0
+linha_origem,int64,"Linha do XLSX original, contando o cabeçalho como linha 1.",0
+fonte,str,"Identifica o questionário próprio, separado de outras populações.",0
+coleta_mes,str,Mês da coleta; horário exato mantido somente no original privado.,0
+curso_graduacao,string,Categoria de curso declarada.,0
+periodo_graduacao_original,string,Período declarado; desperiodizado não vira zero.,0
+momento_carreira,string,"Momento de carreira autodeclarado, não senioridade inferida.",0
+situacao_trabalho_declarada,string,Resposta mistura regimes de trabalho e situação de busca; manter a categoria original.,0
+facilidade_informacao_escala_1_5,Int64,Nota ordinal. O XLSX não informa as âncoras da escala; não inferir sua direção.,0
+dificuldade_principal,string,Principal dificuldade declarada.,0
+usaria_ferramenta_original,string,Resposta original; itens fora de Sim/Não são sinalizados.,0
+prioridades_painel_original,string,Até três opções; vírgulas internas nas alternativas não são separadores.,0
+expectativa_salarial_original,string,"Expectativa em reais mensais, não salário recebido.",0
+busca_mudanca_original,string,"Busca atual de troca de emprego, área OU regime; não equivale ao alvo do State of Data.",0
+cogitou_mudar_desistir_original,string,"Relato de ter cogitado mudar/desistir, não desistência efetivamente observada.",0
+experiencia_ti_original,string,Experiência declarada em meses ou texto; conversões mantêm os limites de intervalos.,0
+periodo_graduacao_numero,Int64,"Número inicial de período, sem imputar desperiodização.",2
+usaria_ferramenta,boolean,Booleano apenas para Sim/Não; resposta fora do domínio vira ausente.,3
+usaria_ferramenta_resposta_valida,bool,Indicador de resposta pertencente ao domínio Sim/Não.,0
+busca_mudanca,boolean,"Busca de mudança de emprego, área ou regime declarada.",0
+busca_mudanca_resposta_valida,bool,Indicador de resposta pertencente ao domínio Sim/Não.,0
+cogitou_mudar_desistir,boolean,"Cogitou, não necessariamente realizou, mudança/desistência.",0
+cogitou_mudar_desistir_resposta_valida,bool,Indicador de resposta pertencente ao domínio Sim/Não.,0
+expectativa_salarial_mensal,Int64,"Número inteiro declarado, preservado inclusive quando sinalizado.",0
+expectativa_salarial_revisar,boolean,"Ausente, não inteiro ou fora de 300 a 200000; revisão, não correção automática.",0
+experiencia_ti_meses_min,Int64,Limite inferior de meses declarados; zero é uma resposta válida.,0
+experiencia_ti_meses_max,Int64,Limite superior de meses declarados.,0
+experiencia_ti_meses_exatos,Int64,Preenchido apenas quando limites coincidem; intervalos não viram média.,1
+experiencia_ti_tratamento,string,"Método de leitura: numérico, texto convertido, intervalo ou revisão.",0
+prioridades_tratamento,string,Validação com as alternativas completas; não dividir em vírgulas internas.,0
+prioridades_quantidade,Int64,"Número de opções reconhecidas, no máximo três.",0

@@ -1,0 +1,71 @@
+{
+  "status": "VALIDADO_LOCALMENTE",
+  "executado_em": "2026-10-19T12:30:03.261198+00:00",
+  "python": "3.12.14",
+  "dependencias": {
+    "streamlit": "1.66.0",
+    "altair": "6.3.0",
+    "pandas": "3.0.1",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.0",
+    "playwright": "1.64.0"
+  },
+  "suites": [
+    {
+      "pasta": "datasets/scripts/tests",
+      "testes": 17,
+      "sucesso": true,
+      "falhas": 0,
+      "erros": 0,
+      "segundos": 0.48
+    },
+    {
+      "pasta": "03_analise_exploratoria/tests",
+      "testes": 11,
+      "sucesso": true,
+      "falhas": 0,
+      "erros": 0,
+      "segundos": 3.96
+    },
+    {
+      "pasta": "04_regressao/tests",
+      "testes": 17,
+      "sucesso": true,
+      "falhas": 0,
+      "erros": 0,
+      "segundos": 0.67
+    },
+    {
+      "pasta": "05_classificacao/tests",
+      "testes": 24,
+      "sucesso": true,
+      "falhas": 0,
+      "erros": 0,
+      "segundos": 0.85
+    },
+    {
+      "pasta": "06_dashboard_e_publicacao/tests",
+      "testes": 23,
+      "sucesso": true,
+      "falhas": 0,
+      "erros": 0,
+      "segundos": 7.24
+    }
+  ],
+  "total_testes": 92,
+  "checks_navegador": 9,
+  "codigo_sha256": {
+    "dashboard.py": "13df4fa2421eb1aebfeb066b50bb24d6410c61133d5c83db1ef9ebd265e2dab3",
+    "dados.py": "8ac4a0a2df32e6a9686b9811276b702784a3d01eb6eab0356a2432bbadad1631",
+    "preparar_pacote.py": "a877d16b63aca0de261cffe6c08d99b28b3239f612289fa0039ee2716592afa0",
+    "verificar_navegador.py": "3332b426ae6eca99e262eb75e58410880a7c1fc4d534f1656f70e5d4751e24b5",
+    "validar_entrega.py": "f1f3b19a7bcbdb32e89cc4ab9541881a39528de26ea81d157134f33543b1ba85"
+  },
+  "manifesto_sha256": "56336a11f021e7de2f04655b12e8c8d88c96f8afab501c2d5bee6d563f84af84",
+  "pacote_bytes": 490288,
+  "publicacao_externa": {
+    "realizada": false,
+    "estado": "Proposta pronta; falta autorizacao de envio ao GitHub e configuracao da conta Streamlit."
+  },
+  "limites": "QA local da base do dashboard; consolidacao ampliada registrada na etapa 07. Feedback estruturado de usuarios e validacao remota continuam pendentes."
+}

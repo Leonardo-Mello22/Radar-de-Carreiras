@@ -1,0 +1,114 @@
+﻿dataset,coluna,tipo,descricao,nulos,exemplos
+caged_ti,registro_id,str,Arquivo e numero da linha de origem. Nao identifica pessoa ou vinculo.,0,CAGEDMOV202501:116 | CAGEDMOV202501:159 | CAGEDMOV202501:486 | CAGEDMOV202501:537
+caged_ti,competencia,string,competencia,0,202501 | 202502 | 202503
+caged_ti,ano,Int64,ano,0,2025
+caged_ti,mes,Int64,mes,0,1 | 2 | 3
+caged_ti,trimestre,Int64,trimestre,0,1
+caged_ti,data_competencia,datetime64[us],data competencia,0,2025-01-01 00:00:00 | 2025-02-01 00:00:00 | 2025-03-01 00:00:00
+caged_ti,uf_codigo,string,uf codigo,0,41 | 35 | 31 | 26
+caged_ti,uf_sigla,string,uf sigla,0,PR | SP | MG | PE
+caged_ti,uf_nome,string,uf nome,0,Paraná | São Paulo | Minas gerais | Pernambuco
+caged_ti,regiao_nome,string,regiao nome,0,Sul | Sudeste | Nordeste | Centro-Oeste
+caged_ti,municipio_codigo,string,municipio codigo,0,410690 | 355030 | 311340 | 310620
+caged_ti,municipio_ibge7,string,municipio ibge7,0,4106902 | 3550308 | 3113404 | 3106200
+caged_ti,municipio_nome,string,municipio nome,0,Curitiba | São Paulo | Caratinga | Belo Horizonte
+caged_ti,recorte_regional,string,recorte regional,0,Demais UFs | Pernambuco | Nordeste exceto PE
+caged_ti,cbo_codigo,string,cbo codigo,0,317110 | 212215 | 212405 | 317210
+caged_ti,cbo_familia,string,cbo familia,0,3171 | 2122 | 2124 | 3172
+caged_ti,cbo_nome,string,cbo nome,0,Programador de Sistemas de Informacao | Engenheiros de Sistemas Operacionais em Computacao | Analista de Desenvolvimento de Sistemas | Tecnico de Apoio ao Usuario de Informatica (Helpdesk)
+caged_ti,area_ti,string,"Agrupamento analitico por CBO exata, documentado em cbo_ti_categorias.csv.",0,Desenvolvimento de software | Hardware e sistemas | Suporte e operacoes | Arquitetura de solucoes
+caged_ti,funcao_gestao,bool,funcao gestao,0,False | True
+caged_ti,saldo,Int64,saldo,0,1 | -1
+caged_ti,movimento,string,movimento,0,admissão | desligamento
+caged_ti,tipo_movimentacao_cod,string,tipo movimentacao cod,0,97 | 40 | 31 | 43
+caged_ti,tipo_movimentacao,string,tipo movimentacao,0,Admissão de Tipo Ignorado | Desligamento a pedido | Desligamento por demissão sem justa causa | Término contrato trabalho prazo determinado
+caged_ti,categoria_trabalhador_cod,string,categoria trabalhador cod,0,101 | 111 | 105 | 103
+caged_ti,categoria_trabalhador,string,categoria trabalhador,0,"Empregado - Geral, inclusive o empregado público da administração direta ou indireta contratado pela CLT | Empregado - Contrato de trabalho intermitente | Empregado - Contrato a termo firmado nos termos da Lei 9.601/1998 | Empregado - Aprendiz"
+caged_ti,grau_instrucao_cod,string,grau instrucao cod,0,8 | 80 | 9 | 7
+caged_ti,grau_instrucao,string,grau instrucao,0,Superior Incompleto | Pós-Graduação completa | Superior Completo | Médio Completo
+caged_ti,sexo_cod,string,sexo cod,0,1 | 3
+caged_ti,sexo,string,sexo,0,Homem | Mulher
+caged_ti,raca_cor_cod,string,raca cor cod,0,1 | 3 | 4 | 2
+caged_ti,raca_cor,string,raca cor,0,Branca | Parda | Amarela | Preta
+caged_ti,tamanho_estabelecimento_cod,string,tamanho estabelecimento cod,0,7 | 9 | 6 | 10
+caged_ti,tamanho_estabelecimento,string,tamanho estabelecimento,0,De 100 a 249 | De 500 a 999 | De 50 a 99 | 1000 ou Mais
+caged_ti,setor_cnae_cod,string,setor cnae cod,0,N | M | J | G
+caged_ti,setor_cnae,string,setor cnae,0,"Atividades Administrativas e Serviços Complementares | Atividades Profissionais, Científicas e Técnicas | Informação e Comunicação | Comércio, Reparação de Veículos Automotores e Motocicletas"
+caged_ti,unidade_salario_fixo_cod,string,unidade salario fixo cod,0,5 | 2 | 1 | 99
+caged_ti,unidade_salario_fixo,string,"Unidade de pagamento da parte fixa. Nao altera salario_nominal, que ja e mensal.",0,Mês | Dia | Hora | Não Identificado
+caged_ti,unidade_salario_cod,string,unidade salario cod,0,5 | 2 | 1 | 99
+caged_ti,cnae_subclasse_codigo,string,cnae subclasse codigo,0,7733100 | 7020400 | 7119701 | 6209100
+caged_ti,escolaridade_grupo,str,escolaridade grupo,0,Superior incompleto | Pos-graduacao | Superior completo | Medio completo
+caged_ti,idade,Int64,idade,0,22 | 39 | 57 | 23
+caged_ti,idade_valida,boolean,idade valida,0,True
+caged_ti,faixa_etaria,string,faixa etaria,0,18-24 | 35-44 | 55-64 | 25-34
+caged_ti,horas_contratuais,Float64,horas contratuais,0,40.0 | 44.0 | 36.0 | 42.5
+caged_ti,horas_validas,boolean,horas validas,0,True | False
+caged_ti,jornada_grupo,string,jornada grupo,0,31-40h | 41-44h | Ate 20h | 21-30h
+caged_ti,primeiro_emprego_formal,bool[pyarrow],Tipo de movimentacao 10: admissao por primeiro emprego. Nao equivale a Junior.,0,False
+caged_ti,indicador_aprendiz,boolean,indicador aprendiz,0,False | True
+caged_ti,trabalho_intermitente,boolean,trabalho intermitente,2,False | True
+caged_ti,trabalho_parcial,boolean,trabalho parcial,6614,False | True
+caged_ti,salario_nominal,Float64,"Salario mensal declarado (BRL), conforme layout oficial.",0,4218.34 | 41114.26 | 5500.0 | 3511.2
+caged_ti,salario_fixo_declarado,Float64,salario fixo declarado,0,4218.34 | 41114.26 | 5500.0 | 117.04
+caged_ti,salario_real,Float64,Salario mensal em BRL a precos de marco/2025: nominal * IPCA_ref / IPCA_mes.,0,4297.53626606823 | 41886.150334624144 | 5603.258500589158 | 3577.1202267761178
+caged_ti,salario_valido,boolean,"Salario nominal entre 300 e 200000, limites inclusivos; regra do projeto.",0,True | False
+caged_ti,salario_status,str,salario status,0,Plausivel | Fora do intervalo 300-200000
+caged_ti,faixa_salario_real,string,"Intervalos [0,2000), [2000,4000), [4000,6000), [6000,10000), [10000,15000), [15000,+infinito).",0,4000-6000 | Acima de 15000 | 2000-4000 | Nao calculado
+caged_ti,mes_referencia_ipca,str,mes referencia ipca,0,202503
+caged_ti,competencia_declaracao,string,competencia declaracao,0,202501 | 202502 | 202503
+caged_ti,declaracao_fora_prazo,boolean,declaracao fora prazo,0,False
+caged_ti,origem_informacao_cod,string,origem informacao cod,0,1 | 3
+caged_ti,fonte,str,fonte,0,Novo CAGED (PDET/Ministerio do Trabalho) - microdados de movimentacoes
+caged_ti,arquivo_origem,str,arquivo origem,0,CAGEDMOV202501.7z | CAGEDMOV202502.7z | CAGEDMOV202503.7z
+state_of_data_carreiras,respondente_id,str,respondente id,0,SOD2024:2 | SOD2024:3 | SOD2024:4 | SOD2024:5
+state_of_data_carreiras,idade,Int64,idade,0,18 | 19 | 20 | 21
+state_of_data_carreiras,genero,string,genero,0,Masculino | Feminino | Outro | Prefiro não informar
+state_of_data_carreiras,raca_cor,string,raca cor,0,Branca | Parda | Preta | Outra
+state_of_data_carreiras,vive_no_brasil,boolean,vive no brasil,0,True | False
+state_of_data_carreiras,pais_residencia,string,pais residencia,0,Brasil | Estados Unidos | Portugal | Argentina
+state_of_data_carreiras,uf_sigla,string,uf sigla,142,RS | SC | SP | DF
+state_of_data_carreiras,regiao_nome,string,regiao nome,3,Sul | Sudeste | Centro-Oeste | Nordeste
+state_of_data_carreiras,nivel_ensino,string,nivel ensino,0,Estudante de Graduação | Graduação/Bacharelado | Não tenho graduação formal | Prefiro não informar
+state_of_data_carreiras,area_formacao,string,area formacao,94,Computação / Engenharia de Software / Sistemas de Informação/ TI | Economia/ Administração / Contabilidade / Finanças/ Negócios | Estatística/ Matemática / Matemática Computacional/ Ciências Atuariais | Outra opção
+state_of_data_carreiras,situacao_trabalho,string,situacao trabalho,0,Estagiário | Empregado (CLT) | Somente Estudante (graduação) | Empreendedor ou Empregado (CNPJ)
+state_of_data_carreiras,setor,string,setor,354,Marketing | Finanças ou Bancos | Indústria | Tecnologia/Fábrica de Software
+state_of_data_carreiras,tamanho_empresa,string,tamanho empresa,354,de 101 a 500 | Acima de 3.000 | de 501 a 1.000 | de 1.001 a 3.000
+state_of_data_carreiras,atua_como_gestor,boolean,"Booleano declarado pelo participante, com ausentes preservados; nao e inferido pelo salario.",354,False | True
+state_of_data_carreiras,cargo_gestao,string,cargo gestao,4170,"Gerente/Head | Supervisor/Coordenador | Sócio ou C-level (CEO, CDO, CIO, CTO etc) | Team Leader/Tech Leader"
+state_of_data_carreiras,cargo_atual,string,cargo atual,1399,Analista de Dados/Data Analyst | Analista de BI/BI Analyst | Outra Opção | Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas
+state_of_data_carreiras,senioridade_declarada,string,"Junior, Pleno ou Senior declarado pelo respondente. Nulo nao equivale a Junior.",1399,Junior | Pleno | Senior
+state_of_data_carreiras,faixa_salarial_declarada,string,faixa salarial declarada,354,de R$ 1.001/mês a R$ 2.000/mês | Menos de R$ 1.000/mês | de R$ 6.001/mês a R$ 8.000/mês | de R$ 3.001/mês a R$ 4.000/mês
+state_of_data_carreiras,experiencia_dados_faixa,string,experiencia dados faixa,354,de 1 a 2 anos | Menos de 1 ano | Não tenho experiência na área de dados | de 5 a 6 anos
+state_of_data_carreiras,experiencia_ti_anterior_faixa,string,Experiencia em TI antes de trabalhar com dados; nao representa experiencia total atual em TI.,354,de 1 a 2 anos | Menos de 1 ano | Não tive experiência na área de TI/Engenharia de Software antes de começar a trabalhar na área de dados | de 3 a 4 anos
+state_of_data_carreiras,satisfeito_trabalho,string,satisfeito trabalho,354,True | False
+state_of_data_carreiras,participou_entrevistas_6m,string,participou entrevistas 6m,354,"Sim, fui aprovado e mudei de emprego | Não participei de entrevistas de emprego/processos seletivos nos últimos 6 meses | Sim, fui aprovado mas decidi não mudar de emprego | Sim, fiz entrevistas mas não fui aprovado (ou ainda aguardo resposta)"
+state_of_data_carreiras,planos_mudar_emprego_6m,string,planos mudar emprego 6m,354,"Não estou buscando, mas me considero aberto a outras oportunidades | Não estou buscando e não pretendo mudar de emprego nos próximos 6 meses | Estou em busca de oportunidades dentro ou fora do Brasil | Estou em busca de oportunidades, mas apenas fora do Brasil"
+state_of_data_carreiras,empresa_layoff_2024,string,empresa layoff 2024,354,"Sim, ocorreram layoffs/demissões em massa na empresa em que trabalho mas não fui afetado | Não ocorreram layoffs/demissões em massa na empresa em que trabalho | Sim, ocorreram layoffs/demissões em massa na empresa em que trabalhava e eu fui afetado"
+state_of_data_carreiras,modelo_trabalho_declarado,string,modelo trabalho declarado,354,Modelo 100% remoto | Modelo 100% presencial | Modelo híbrido flexível (o funcionário tem liberdade para escolher quando estar no escritório presencialmente) | Modelo híbrido com dias fixos de trabalho presencial
+state_of_data_carreiras,modelo_trabalho_ideal,string,modelo trabalho ideal,354,Modelo híbrido flexível (o funcionário tem liberdade para escolher quando estar no escritório presencialmente) | Modelo 100% presencial | Modelo híbrido com dias fixos de trabalho presencial | Modelo 100% remoto
+state_of_data_carreiras,linguagem_mais_usada,string,linguagem mais usada,1792,Python | SQL | JavaScript | C/C++/C#
+state_of_data_carreiras,objetivo_carreira,string,objetivo carreira,4674,Primeiro emprego: Estou tentando encontrar a primeira oportunidade na área de dados | Migração de carreira: Trabalho em outra área e busco recolocação na área de dados | Preparação profissional: Estou buscando conhecimentos técnicos para no futuro assumir algum cargo na área de dados | Apenas conhecimentos: Busco conhecimentos em dados para utilizar na minha área de atuação (não trabalho na área de dados)
+state_of_data_carreiras,oportunidade_buscada,string,oportunidade buscada,4929,Engenheiro de Machine Learning/ML Engineer | Cientista de Dados/Data Scientist | Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect | Analista de Dados/Data Analyst
+state_of_data_carreiras,tempo_busca_oportunidade,string,tempo busca oportunidade,4925,7 meses - 1 ano | 0 - 6 meses | 1 ano - 2 anos | acima de 2 anos
+state_of_data_carreiras,recorte_regional,string,recorte regional,0,Demais UFs | Nordeste exceto PE | Pernambuco | Exterior
+state_of_data_carreiras,faixa_etaria,string,faixa etaria,0,18-24 | 25-34 | 35-44 | 45-54
+state_of_data_carreiras,idade_valida,boolean,idade valida,0,True
+state_of_data_carreiras,escolaridade_grupo,string,escolaridade grupo,0,Superior em andamento | Superior completo | Sem graduacao formal | Nao informado
+state_of_data_carreiras,area_profissional,string,Agrupamento analitico de cargo; Gestao para gestor declarado sem cargo tecnico respondido.,0,Dados e BI | Outra area ou nao informado | Desenvolvimento de software | Engenharia e arquitetura de dados
+state_of_data_carreiras,vinculo_grupo,string,vinculo grupo,0,Estagio | CLT | Estudante | PJ ou empreendedor
+state_of_data_carreiras,modelo_trabalho,string,modelo trabalho,0,Remoto | Presencial | Hibrido | Nao informado
+state_of_data_carreiras,inicio_carreira_dados_ate_2_anos,boolean,"Sem experiencia, menos de 1 ano ou 1-2 anos na area de dados. Nao e carreira total.",354,True | False
+state_of_data_carreiras,faixa_salario_limite_inferior,float64,faixa salario limite inferior,354,1001.0 | 0.0 | 6001.0 | 3001.0
+state_of_data_carreiras,faixa_salario_limite_superior,float64,Limite superior da faixa autodeclarada. Nulo para faixa aberta acima de 40001.,458,2000.0 | 1000.0 | 8000.0 | 4000.0
+state_of_data_carreiras,faixa_limite_superior_exclusivo,boolean,faixa limite superior exclusivo,354,False | True
+state_of_data_carreiras,faixa_limite_inferior_exclusivo,boolean,faixa limite inferior exclusivo,354,False | True
+state_of_data_carreiras,remuneracao_medida,str,remuneracao medida,0,Faixa autodeclarada mensal em BRL - nao e salario exato
+state_of_data_carreiras,usa_sql,boolean,usa sql,1628,True | False
+state_of_data_carreiras,usa_python,boolean,usa python,1628,True | False
+state_of_data_carreiras,usa_r,boolean,usa r,1628,False | True
+state_of_data_carreiras,usa_power_bi,boolean,usa power bi,1598,True | False
+state_of_data_carreiras,usa_aws,boolean,usa aws,1628,False | True
+state_of_data_carreiras,usa_gcp,boolean,usa gcp,1628,False | True
+state_of_data_carreiras,usa_azure,boolean,usa azure,1628,False | True
+state_of_data_carreiras,fonte,str,fonte,0,State of Data Brazil 2024-2025 (Data Hackers)

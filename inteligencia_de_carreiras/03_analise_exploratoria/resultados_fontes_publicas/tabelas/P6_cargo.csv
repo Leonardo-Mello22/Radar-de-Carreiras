@@ -1,0 +1,79 @@
+﻿grupo,faixa_declarada,proporcao,denominador
+Analista de Dados/Data Analyst,Menos de R$ 1.000/mês,0.0032085561497326204,935
+Cientista de Dados/Data Scientist,Menos de R$ 1.000/mês,0.0014792899408284023,676
+Engenheiro de Dados/Data Engineer/Data Architect,Menos de R$ 1.000/mês,0.008532423208191127,586
+Analista de BI/BI Analyst,Menos de R$ 1.000/mês,0.017857142857142856,392
+Outra Opção,Menos de R$ 1.000/mês,0.036885245901639344,244
+Analytics Engineer,Menos de R$ 1.000/mês,0.0,223
+Analista de Dados/Data Analyst,de R$ 1.001/mês a R$ 2.000/mês,0.038502673796791446,935
+Cientista de Dados/Data Scientist,de R$ 1.001/mês a R$ 2.000/mês,0.022189349112426034,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 1.001/mês a R$ 2.000/mês,0.011945392491467578,586
+Analista de BI/BI Analyst,de R$ 1.001/mês a R$ 2.000/mês,0.061224489795918366,392
+Outra Opção,de R$ 1.001/mês a R$ 2.000/mês,0.1680327868852459,244
+Analytics Engineer,de R$ 1.001/mês a R$ 2.000/mês,0.013452914798206279,223
+Analista de Dados/Data Analyst,de R$ 2.001/mês a R$ 3.000/mês,0.06524064171122995,935
+Cientista de Dados/Data Scientist,de R$ 2.001/mês a R$ 3.000/mês,0.023668639053254437,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 2.001/mês a R$ 3.000/mês,0.027303754266211604,586
+Analista de BI/BI Analyst,de R$ 2.001/mês a R$ 3.000/mês,0.07908163265306123,392
+Outra Opção,de R$ 2.001/mês a R$ 3.000/mês,0.20081967213114754,244
+Analytics Engineer,de R$ 2.001/mês a R$ 3.000/mês,0.04484304932735426,223
+Analista de Dados/Data Analyst,de R$ 3.001/mês a R$ 4.000/mês,0.08877005347593583,935
+Cientista de Dados/Data Scientist,de R$ 3.001/mês a R$ 4.000/mês,0.029585798816568046,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 3.001/mês a R$ 4.000/mês,0.03583617747440273,586
+Analista de BI/BI Analyst,de R$ 3.001/mês a R$ 4.000/mês,0.125,392
+Outra Opção,de R$ 3.001/mês a R$ 4.000/mês,0.11475409836065574,244
+Analytics Engineer,de R$ 3.001/mês a R$ 4.000/mês,0.026905829596412557,223
+Analista de Dados/Data Analyst,de R$ 4.001/mês a R$ 6.000/mês,0.21283422459893048,935
+Cientista de Dados/Data Scientist,de R$ 4.001/mês a R$ 6.000/mês,0.08431952662721894,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 4.001/mês a R$ 6.000/mês,0.10068259385665529,586
+Analista de BI/BI Analyst,de R$ 4.001/mês a R$ 6.000/mês,0.2602040816326531,392
+Outra Opção,de R$ 4.001/mês a R$ 6.000/mês,0.11065573770491803,244
+Analytics Engineer,de R$ 4.001/mês a R$ 6.000/mês,0.11210762331838565,223
+Analista de Dados/Data Analyst,de R$ 6.001/mês a R$ 8.000/mês,0.21390374331550802,935
+Cientista de Dados/Data Scientist,de R$ 6.001/mês a R$ 8.000/mês,0.13313609467455623,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 6.001/mês a R$ 8.000/mês,0.12116040955631399,586
+Analista de BI/BI Analyst,de R$ 6.001/mês a R$ 8.000/mês,0.17346938775510204,392
+Outra Opção,de R$ 6.001/mês a R$ 8.000/mês,0.0942622950819672,244
+Analytics Engineer,de R$ 6.001/mês a R$ 8.000/mês,0.20179372197309417,223
+Analista de Dados/Data Analyst,de R$ 8.001/mês a R$ 12.000/mês,0.23850267379679144,935
+Cientista de Dados/Data Scientist,de R$ 8.001/mês a R$ 12.000/mês,0.2943786982248521,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 8.001/mês a R$ 12.000/mês,0.3122866894197952,586
+Analista de BI/BI Analyst,de R$ 8.001/mês a R$ 12.000/mês,0.2066326530612245,392
+Outra Opção,de R$ 8.001/mês a R$ 12.000/mês,0.13524590163934427,244
+Analytics Engineer,de R$ 8.001/mês a R$ 12.000/mês,0.2556053811659193,223
+Analista de Dados/Data Analyst,de R$ 12.001/mês a R$ 16.000/mês,0.09518716577540107,935
+Cientista de Dados/Data Scientist,de R$ 12.001/mês a R$ 16.000/mês,0.22633136094674555,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 12.001/mês a R$ 16.000/mês,0.18771331058020477,586
+Analista de BI/BI Analyst,de R$ 12.001/mês a R$ 16.000/mês,0.05357142857142857,392
+Outra Opção,de R$ 12.001/mês a R$ 16.000/mês,0.05737704918032787,244
+Analytics Engineer,de R$ 12.001/mês a R$ 16.000/mês,0.18834080717488788,223
+Analista de Dados/Data Analyst,de R$ 16.001/mês a R$ 20.000/mês,0.026737967914438502,935
+Cientista de Dados/Data Scientist,de R$ 16.001/mês a R$ 20.000/mês,0.10207100591715976,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 16.001/mês a R$ 20.000/mês,0.08873720136518772,586
+Analista de BI/BI Analyst,de R$ 16.001/mês a R$ 20.000/mês,0.017857142857142856,392
+Outra Opção,de R$ 16.001/mês a R$ 20.000/mês,0.045081967213114756,244
+Analytics Engineer,de R$ 16.001/mês a R$ 20.000/mês,0.11659192825112108,223
+Analista de Dados/Data Analyst,de R$ 20.001/mês a R$ 25.000/mês,0.0042780748663101605,935
+Cientista de Dados/Data Scientist,de R$ 20.001/mês a R$ 25.000/mês,0.04585798816568047,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 20.001/mês a R$ 25.000/mês,0.034129692832764506,586
+Analista de BI/BI Analyst,de R$ 20.001/mês a R$ 25.000/mês,0.00510204081632653,392
+Outra Opção,de R$ 20.001/mês a R$ 25.000/mês,0.004098360655737705,244
+Analytics Engineer,de R$ 20.001/mês a R$ 25.000/mês,0.013452914798206279,223
+Analista de Dados/Data Analyst,de R$ 25.001/mês a R$ 30.000/mês,0.0042780748663101605,935
+Cientista de Dados/Data Scientist,de R$ 25.001/mês a R$ 30.000/mês,0.019230769230769232,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 25.001/mês a R$ 30.000/mês,0.02218430034129693,586
+Analista de BI/BI Analyst,de R$ 25.001/mês a R$ 30.000/mês,0.0,392
+Outra Opção,de R$ 25.001/mês a R$ 30.000/mês,0.004098360655737705,244
+Analytics Engineer,de R$ 25.001/mês a R$ 30.000/mês,0.008968609865470852,223
+Analista de Dados/Data Analyst,de R$ 30.001/mês a R$ 40.000/mês,0.0074866310160427805,935
+Cientista de Dados/Data Scientist,de R$ 30.001/mês a R$ 40.000/mês,0.010355029585798817,676
+Engenheiro de Dados/Data Engineer/Data Architect,de R$ 30.001/mês a R$ 40.000/mês,0.030716723549488054,586
+Analista de BI/BI Analyst,de R$ 30.001/mês a R$ 40.000/mês,0.0,392
+Outra Opção,de R$ 30.001/mês a R$ 40.000/mês,0.01639344262295082,244
+Analytics Engineer,de R$ 30.001/mês a R$ 40.000/mês,0.017937219730941704,223
+Analista de Dados/Data Analyst,Acima de R$ 40.001/mês,0.0010695187165775401,935
+Cientista de Dados/Data Scientist,Acima de R$ 40.001/mês,0.0073964497041420114,676
+Engenheiro de Dados/Data Engineer/Data Architect,Acima de R$ 40.001/mês,0.01877133105802048,586
+Analista de BI/BI Analyst,Acima de R$ 40.001/mês,0.0,392
+Outra Opção,Acima de R$ 40.001/mês,0.012295081967213115,244
+Analytics Engineer,Acima de R$ 40.001/mês,0.0,223

@@ -1,0 +1,53 @@
+{
+  "arquivos": [
+    {
+      "arquivo": "brutos/pesquisa_grupo12/trajetoria_profissional_respostas.xlsx",
+      "tipo": "questionario_proprio",
+      "sha256": "64034c621b2bb160409272a83c194de7ef5e7ebecc0f302b2421ffa43b19b2cb",
+      "bytes": 10963,
+      "origem": "XLSX fornecido pelo Grupo 12; não obtido de fonte pública."
+    },
+    {
+      "arquivo": "brutos/pesquisa_grupo12/matriz_pesquisa_g12.xlsx",
+      "tipo": "desk_research",
+      "sha256": "47872729fcf754fdc7011a8db761bcd72052d05f153d0918762f7f8f4143f9e3",
+      "bytes": 61184,
+      "origem": "XLSX fornecido pelo Grupo 12; não obtido de fonte pública."
+    }
+  ],
+  "questionario": {
+    "registros": 35,
+    "perguntas": 12,
+    "colunas_tratadas": 31,
+    "respostas_longas": 420,
+    "prioridades_selecionadas": 101,
+    "coleta_inicio": "2026-08-31",
+    "coleta_fim": "2026-09-04",
+    "q07_respostas_fora_dominio": 3,
+    "expectativas_sinalizadas": 1,
+    "experiencia_intervalos": 1,
+    "experiencia_textos_nao_convertidos": 0,
+    "prioridades_nao_reconhecidas": 0,
+    "duplicatas_completas_originais": 0,
+    "deduplicacao": "Nenhuma linha removida; não há identificador de pessoa.",
+    "privacidade": "Originais e respostas individuais locais, ignorados pelo Git; consentimento para divulgação não verificado.",
+    "amostragem": "Método de recrutamento não documentado no XLSX; não assumir amostra probabilística ou representatividade.",
+    "escala_q05": "Âncoras não disponíveis no XLSX; direção da escala precisa ser confirmada.",
+    "alertas": [
+      "Q07 tem respostas fora do domínio; não deslocar entre perguntas.",
+      "Expectativa sinalizada não é multiplicada por mil nem substituída.",
+      "Intervalo de experiência não vira um número exato.",
+      "Q10 não é intercambiável com planos_mudar_emprego_6m do State of Data."
+    ]
+  },
+  "matriz": {
+    "registros": 21,
+    "links_preservados": 10,
+    "status_csd_declarados": {
+      "CERTEZA": 13,
+      "DÚVIDA": 6,
+      "SUPOSIÇÃO": 2
+    },
+    "verificacao": "Status CSD e confiança preservados como declaração do grupo, não como validação automática."
+  }
+}

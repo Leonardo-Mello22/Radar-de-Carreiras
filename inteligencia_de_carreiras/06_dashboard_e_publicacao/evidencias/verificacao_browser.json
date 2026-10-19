@@ -1,0 +1,36 @@
+{
+  "status": "APROVADO",
+  "executado_em": "2026-10-19T12:29:37.245474+00:00",
+  "url": "http://127.0.0.1:8502",
+  "checks": [
+    "default_pernambuco",
+    "filtro_regiao_atualiza_numeros",
+    "download_agregado",
+    "perfis_fonte_separada",
+    "assets_regressao_carregados",
+    "classificacao_e_limites_visiveis",
+    "fontes_e_privacidade",
+    "mobile_sem_overflow_horizontal",
+    "graficos_nao_vazios"
+  ],
+  "erros_javascript": [],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "codigo_sha256": {
+    "dashboard.py": "13df4fa2421eb1aebfeb066b50bb24d6410c61133d5c83db1ef9ebd265e2dab3",
+    "dados.py": "8ac4a0a2df32e6a9686b9811276b702784a3d01eb6eab0356a2432bbadad1631"
+  },
+  "script_sha256": "3332b426ae6eca99e262eb75e58410880a7c1fc4d534f1656f70e5d4751e24b5",
+  "screenshots": [
+    "01_emprego_desktop.png",
+    "02_perfis_desktop.png",
+    "03_classificacao_desktop.png",
+    "04_emprego_mobile.png"
+  ]
+}

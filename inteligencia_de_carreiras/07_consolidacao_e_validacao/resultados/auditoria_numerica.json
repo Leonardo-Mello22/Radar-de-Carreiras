@@ -1,0 +1,32 @@
+{
+  "status": "APROVADO",
+  "executado_em": "2026-10-19T12:29:28.979430+00:00",
+  "recortes_caged": 4408,
+  "recortes_state_of_data": 675,
+  "comparacoes": {
+    "estrutura_caged": 2,
+    "caged_contagens_e_quantis": 52896,
+    "estrutura_perfis": 7,
+    "perfis_contagens_e_alvo": 3375,
+    "distribuicoes_categorias": 480,
+    "distribuicoes_bases": 2483,
+    "distribuicoes_proporcoes": 2483,
+    "tecnologias_itens": 160,
+    "tecnologias_bases_e_proporcoes": 3360,
+    "supressao_perfis": 515
+  },
+  "total_comparacoes": 65761,
+  "n_divergencias": 0,
+  "divergencias": [],
+  "tolerancia_numerica": {
+    "absoluta": 1e-07,
+    "relativa": 1e-12
+  },
+  "fontes_sha256": {
+    "caged_ti": "6713244c19260b78173af949426805d5e448a86494c1920cf2f0d26e97a3e769",
+    "state_of_data_brasil": "be7c02ca2ffc193ebffba9f188530351ba4c1ec92bdb530b4fe96acb5c916c22"
+  },
+  "manifesto_sha256": "56336a11f021e7de2f04655b12e8c8d88c96f8afab501c2d5bee6d563f84af84",
+  "script_sha256": "1948c1600b7faf78d2ee6c71e352454ca6b92594edac223b77aa321f0cc71dee",
+  "escopo": "Conferencia integral dos quatro cubos publicos contra fontes tratadas; nao e auditoria dos microdados originais do MTE nem garantia de representatividade."
+}

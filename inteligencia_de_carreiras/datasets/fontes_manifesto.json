@@ -1,0 +1,50 @@
+{
+  "baixado_em_utc": "2026-10-14T14:27:38.367423+00:00",
+  "caged_meses": [
+    "202501",
+    "202502",
+    "202503"
+  ],
+  "caged_fonte": "ftp://ftp.mtps.gov.br/pdet/microdados/NOVO CAGED/2025/",
+  "state_of_data_fonte_original": "https://www.kaggle.com/datasets/datahackers/state-of-data-brazil-20242025",
+  "state_of_data_espelho_download": "https://raw.githubusercontent.com/letsdata/challenge-data-hackers-2025/main/aula01/script/data/raw/Final%20Dataset%20-%20State%20of%20Data%202024%20-%20Kaggle%20-%20df_survey_2024.zip",
+  "ipca_fonte": "https://apisidra.ibge.gov.br/values/t/1737/n1/all/v/2266/p/202501-202503",
+  "municipios_fonte": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios",
+  "arquivos_brutos": [
+    {
+      "arquivo": "CAGEDMOV202501.7z",
+      "bytes": 55719173,
+      "sha256": "1a1a8923df13ac4ffd93301d3ee8653719db43de3767a5bd23b11a17c4789094"
+    },
+    {
+      "arquivo": "CAGEDMOV202502.7z",
+      "bytes": 60011810,
+      "sha256": "d49562ef9b0cea8e660e3baf25abe809885db20ed05c957d09bb87b34dac26b7"
+    },
+    {
+      "arquivo": "CAGEDMOV202503.7z",
+      "bytes": 55662990,
+      "sha256": "f9cc175b883ce3e512c0fdf2bf8dcd9b6c51a32878fc46887e6de8c769690a5f"
+    },
+    {
+      "arquivo": "ipca_2025_01_03.json",
+      "bytes": 1259,
+      "sha256": "b792283b68011dce3fec15d12a662fef18f5516e3c353c2ecef48f5869c8f105"
+    },
+    {
+      "arquivo": "layout_novo_caged.xlsx",
+      "bytes": 293931,
+      "sha256": "0490f7ef84fd05db2d89cf22f56d8cf7262ceb14c9d7db1cca2bae422e6423ce"
+    },
+    {
+      "arquivo": "municipios_ibge.json",
+      "bytes": 2470036,
+      "sha256": "86ecdccdf97d72e7e5e46f0854cfcea8bacc28154cc1bc4ed0e6110e3a6c9c02"
+    },
+    {
+      "arquivo": "state_of_data_2024_2025.zip",
+      "bytes": 1638809,
+      "sha256": "022d58c3ab867880f33a8b6a337d986b0db63151555c865fbae8de170e24a490"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "versao": "1.1",
+  "gerado_em": "2026-10-19T12:40:43.687038+00:00",
+  "referencia_local": "19/10/2026",
+  "capitulos": [
+    "Visão Executiva",
+    "Dados e Preparação",
+    "Decisões e Histórico",
+    "Síntese dos Insights",
+    "Modelagem e Avaliação",
+    "Evidência: Emprego Formal",
+    "Evidência: Modelos",
+    "Validação e Telas Menores",
+    "Limites e Melhorias",
+    "Reprodução e Entrega"
+  ],
+  "links": [
+    "../00_referencias/criterios_avd_cc.pdf",
+    "../00_referencias/matriz_criterios.csv",
+    "../01_plano_de_analise/plano_de_analise.md",
+    "../02_preparacao_dados/plano_de_preparacao.md",
+    "../03_analise_exploratoria/analise_exploratoria.ipynb",
+    "../03_analise_exploratoria/sintese_achados.md",
+    "../04_regressao/resultados/regressao_salarial.html",
+    "../05_classificacao/resultados/classificacao_busca_ativa.html",
+    "../05_classificacao/resultados/tabelas/C1_metricas_teste.csv",
+    "../06_dashboard_e_publicacao/dados_publicos/manifesto.json",
+    "../06_dashboard_e_publicacao/dashboard.py",
+    "../06_dashboard_e_publicacao/proposta_integracao_web.md",
+    "../07_consolidacao_e_validacao/evidencias/01_recorte_consolidado_desktop.png",
+    "../07_consolidacao_e_validacao/evidencias/02_modelo_referencia_desktop.png",
+    "../07_consolidacao_e_validacao/evidencias/03_emprego_mobile.png",
+    "../07_consolidacao_e_validacao/evidencias/04_perfis_mobile.png",
+    "../07_consolidacao_e_validacao/feedback_e_ajustes.csv",
+    "../07_consolidacao_e_validacao/registro_execucao.json",
+    "../07_consolidacao_e_validacao/resultados/auditoria_numerica.json",
+    "../07_consolidacao_e_validacao/roteiro_revisao.md",
+    "../datasets/LEIA-ME.md",
+    "../datasets/catalogo.md",
+    "../datasets/registro_fontes.csv",
+    "guia_entrega.md",
+    "https://github.com/Leonardo-Mello22/Radar-de-Carreiras",
+    "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/microdados-rais-e-caged",
+    "https://www.kaggle.com/datasets/datahackers/state-of-data-brazil-20242025"
+  ],
+  "fontes_sha256": {
+    "07_consolidacao_e_validacao\\registro_execucao.json": "1f203569709ad9a52c905698f06071d8903693e7de102ac8656a2512cf3d0390",
+    "06_dashboard_e_publicacao\\dados_publicos\\manifesto.json": "56336a11f021e7de2f04655b12e8c8d88c96f8afab501c2d5bee6d563f84af84",
+    "03_analise_exploratoria\\sintese_achados.md": "341cf02fd02eb7eeeb0dce691a0985bfa8c12bcece2365c9437061da0ef40b99",
+    "04_regressao\\sintese_achados.md": "c96d2046ec297358717d2e5d457ff44fa7a136fa84de6cc6d655229aa82dc3cf",
+    "05_classificacao\\sintese_achados.md": "70a13745a9c364cf7c8cb69d841570b6d1b3564be03d166c9eeaf53237a0b5a5",
+    "datasets\\catalogo.md": "2b77d1d648d994932ccb40e23259eb8c66c6c5dd66e1acaedd43264474e3380d",
+    "datasets\\registro_fontes.csv": "1c9a6b31abaa27fe662d9ea14ea59dc9c605026a57f7fe90d6e04fa21f078ee0",
+    "00_referencias\\matriz_criterios.csv": "5ad6d58089083ca131a34b97d5463c8ed99dd4316d3c15eda8d81a255517f501",
+    "00_referencias\\criterios_avd_cc.pdf": "e9127f177f28dac3851fafcf61e0684c99c4a766eb5fa642302aca003ce6421d",
+    "06_dashboard_e_publicacao\\dados_publicos\\R1_teste_marco.csv": "c63b52cb62a0d6d23c3cb739fd6588124606a7b761c3d086cde65699504e7843",
+    "06_dashboard_e_publicacao\\dados_publicos\\C1_metricas_teste.csv": "16a64fcce965d05d71a3724e54f05d8faf96c246e56592d8adbae5a10f2d1904",
+    "06_dashboard_e_publicacao\\dados_publicos\\emprego.parquet": "4a08e55f411d9392b03d167e2edffc9e92a55c49614b2a46de90075c0c591fb4",
+    "06_dashboard_e_publicacao\\dados_publicos\\perfis.parquet": "cf7449dad3b3196ad132e5496a9b29aa341271a1bcfd3eb635e2152bea32648f",
+    "07_consolidacao_e_validacao\\evidencias\\01_recorte_consolidado_desktop.png": "7257db8850c13b7a6fa07624e4260fa8196632dd9e6c37dd1323e07f12b64397",
+    "07_consolidacao_e_validacao\\evidencias\\02_modelo_referencia_desktop.png": "7d3a1b01bac92c26a28c495368a0bda05285358b683dec010af8ddc541720630",
+    "07_consolidacao_e_validacao\\evidencias\\03_emprego_mobile.png": "92e3819d268c0baa178111430aa3540599fb221a19235e4b2054e845de1d4d6c",
+    "07_consolidacao_e_validacao\\evidencias\\04_perfis_mobile.png": "d4ae0304ff99530c5542232215ba24473201f999beeb437f0ad5a7df859b9c24"
+  },
+  "codigo_sha256": {
+    "gerar_documentacao.py": "fad0b3cbddb00c45da3d286f6ff03578221b68641a79ecde5f89b73969983ec7",
+    "validar_documentacao.py": "36eea8dcfa902e8edb4078fdccc10678b3d62e31a0bc9eeb99e8a5235dfab356",
+    "requirements.txt": "071f3bcbebb0e4d8ab701c6f56cd019c9a176a6a55e9182e1a4dac0535da27f8"
+  },
+  "produtos_sha256": {
+    "documentacao_final.md": "779a92a732aed1b6fdb87afae748c1ddc939b95d0329c4f6542838049b354b7e",
+    "documentacao_final.pdf": "89bc4b36f14915d2e64d946efacea660325248ea850765b0cbaccb7d3e2f89a7",
+    "README.md": "032444aee0ac9916e22ee3ebfd02fcc663142b895e73565dacc33ac26c70cf97",
+    "guia_entrega.md": "9ffd0b822233298a15e5643b78dffbe14269898b8bf02f76ebf59acf57aa2700"
+  },
+  "validacao_aplicacao_referenciada": {
+    "total_testes": 111,
+    "checks_browser": 22,
+    "data": "2026-10-19T12:30:14.834491+00:00"
+  },
+  "testes_aplicacao_reexecutados_nesta_etapa": false,
+  "pendencias_atuais": [
+    "Revisao estruturada do grupo",
+    "Commit/push quando solicitado",
+    "Hospedagem e teste remoto",
+    "Revisao de autorizacao antes de divulgar G12"
+  ],
+  "publicacao_externa": false,
+  "commit_push_realizado": false
+}

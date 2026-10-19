@@ -1,0 +1,284 @@
+{
+  "status": "CONCLUIDO_COM_ALERTAS_DOCUMENTADOS",
+  "modo": "validate",
+  "inicio_utc": "2026-10-14T18:45:31.102118+00:00",
+  "fim_utc": "2026-10-14T18:46:16.420044+00:00",
+  "python": "3.12.14",
+  "plataforma": "Windows",
+  "dependencias": {
+    "pandas": "3.0.1",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.0",
+    "py7zr": "1.1.4",
+    "openpyxl": "3.1.5"
+  },
+  "fontes_verificadas": [
+    {
+      "arquivo": "brutos/CAGEDMOV202501.7z",
+      "sha256": "1a1a8923df13ac4ffd93301d3ee8653719db43de3767a5bd23b11a17c4789094"
+    },
+    {
+      "arquivo": "brutos/CAGEDMOV202502.7z",
+      "sha256": "d49562ef9b0cea8e660e3baf25abe809885db20ed05c957d09bb87b34dac26b7"
+    },
+    {
+      "arquivo": "brutos/CAGEDMOV202503.7z",
+      "sha256": "f9cc175b883ce3e512c0fdf2bf8dcd9b6c51a32878fc46887e6de8c769690a5f"
+    },
+    {
+      "arquivo": "brutos/ipca_2025_01_03.json",
+      "sha256": "b792283b68011dce3fec15d12a662fef18f5516e3c353c2ecef48f5869c8f105"
+    },
+    {
+      "arquivo": "brutos/layout_novo_caged.xlsx",
+      "sha256": "0490f7ef84fd05db2d89cf22f56d8cf7262ceb14c9d7db1cca2bae422e6423ce"
+    },
+    {
+      "arquivo": "brutos/municipios_ibge.json",
+      "sha256": "86ecdccdf97d72e7e5e46f0854cfcea8bacc28154cc1bc4ed0e6110e3a6c9c02"
+    },
+    {
+      "arquivo": "brutos/state_of_data_2024_2025.zip",
+      "sha256": "022d58c3ab867880f33a8b6a337d986b0db63151555c865fbae8de170e24a490"
+    },
+    {
+      "arquivo": "brutos/pesquisa_grupo12/trajetoria_profissional_respostas.xlsx",
+      "sha256": "64034c621b2bb160409272a83c194de7ef5e7ebecc0f302b2421ffa43b19b2cb"
+    },
+    {
+      "arquivo": "brutos/pesquisa_grupo12/matriz_pesquisa_g12.xlsx",
+      "sha256": "47872729fcf754fdc7011a8db761bcd72052d05f153d0918762f7f8f4143f9e3"
+    }
+  ],
+  "etapas": [
+    {
+      "etapa": "Validar fontes e exports",
+      "segundos": 43.133,
+      "status": "APROVADO"
+    },
+    {
+      "etapa": "Testes",
+      "segundos": 1.894,
+      "status": "APROVADO"
+    }
+  ],
+  "codigo_sha256": {
+    "download_sources.py": "7bffb6d4d6a137557005c269dd2faa1a7cb40e02468dfcc78761bec7007af3e4",
+    "prepare_datasets.py": "11d0b942d8f095ac3a621d8ffd18924e91136fc235af1aea42799e51095ee088",
+    "prepare_grupo12.py": "5267334e86e2c197dbab3f641035efe1b5b3c141effdce15175b14b64c2c1539",
+    "run_preparation.py": "e34581deb8a7797848402698ab3729cf8b28164466217bee6fb86312dfe36fa4",
+    "validate_package.py": "0c48252a37d2ab8472040b96e0dafe265716ca4abddbc79923bddb4ce104eb67"
+  },
+  "produtos": [
+    {
+      "arquivo": "tratados/caged_ti.csv",
+      "sha256": "888b55a3cb0ee8c50b54ffe79be8ad50e07cb385b47497955adee9bbc9a03aeb"
+    },
+    {
+      "arquivo": "tratados/caged_ti.parquet",
+      "sha256": "6713244c19260b78173af949426805d5e448a86494c1920cf2f0d26e97a3e769"
+    },
+    {
+      "arquivo": "tratados/caged_ti_nordeste.csv",
+      "sha256": "258d9f93ca2e38efa250ca5c7a6a21609054f9a5889e7059f8011ce7ab6ad53b"
+    },
+    {
+      "arquivo": "tratados/caged_ti_nordeste.parquet",
+      "sha256": "f4a4caa0afe0a126f2500b66eec0da69938927f267b069776728ab8d2c9e0033"
+    },
+    {
+      "arquivo": "tratados/caged_ti_pernambuco.csv",
+      "sha256": "0b44240c6245d62fad32c688bee62285fc8f822a15579bd62281136d85bb00e4"
+    },
+    {
+      "arquivo": "tratados/caged_ti_pernambuco.parquet",
+      "sha256": "f33d7541aaf98deb714f3844c8950157fcde8f6f78f66802befd1caf638fb76e"
+    },
+    {
+      "arquivo": "tratados/matriz_pesquisa_grupo12.csv",
+      "sha256": "78f4691c3cfcf3f4fbab6eff564950679c430bf10e4644bc799f7127d6903948"
+    },
+    {
+      "arquivo": "tratados/matriz_pesquisa_grupo12.parquet",
+      "sha256": "bd3e3ba9eea41ef2324d325cbac4d48b69f495959474635c8a863d8b0b8f28ae"
+    },
+    {
+      "arquivo": "tratados/pesquisa_grupo12_prioridades.csv",
+      "sha256": "4dcc370bc9a9ae9f6e7d1a91e1f1544dc46d8d0fafe297481126507d1e5c762c"
+    },
+    {
+      "arquivo": "tratados/pesquisa_grupo12_prioridades.parquet",
+      "sha256": "5622f9afad53cd39db27a2d4ab3ac2c0d1fed43448f6077c8d759e453dc543a2"
+    },
+    {
+      "arquivo": "tratados/pesquisa_grupo12_respostas.csv",
+      "sha256": "0c4df3b611dd90a30e24334c0609a64ebd8ca102e8470e2bec3461cdf1a7db91"
+    },
+    {
+      "arquivo": "tratados/pesquisa_grupo12_respostas.parquet",
+      "sha256": "16a918fd340ed0c78bb0bb0250f45ebd885f76da4aca0155dd550684a01e6ada"
+    },
+    {
+      "arquivo": "tratados/pesquisa_grupo12_respostas_longas.csv",
+      "sha256": "0d5488f004fc503f7e1c9d7b3e8c29325fde8b90243a7132fc8244719da87b3e"
+    },
+    {
+      "arquivo": "tratados/pesquisa_grupo12_respostas_longas.parquet",
+      "sha256": "f28a8a29fdf63ab0bda6e5c67ca13494d1162811882240568740b4b6612d7159"
+    },
+    {
+      "arquivo": "tratados/state_of_data_brasil.csv",
+      "sha256": "a0caca947c2f78be581af4e730d5f6cef8d0a2d6e4ec84cb0d1fc38fd3517e93"
+    },
+    {
+      "arquivo": "tratados/state_of_data_brasil.parquet",
+      "sha256": "be7c02ca2ffc193ebffba9f188530351ba4c1ec92bdb530b4fe96acb5c916c22"
+    },
+    {
+      "arquivo": "tratados/state_of_data_carreiras.csv",
+      "sha256": "abb71038e582b41528f259e4f2730370233f6f50b886cb1ea7ebce5331cbab98"
+    },
+    {
+      "arquivo": "tratados/state_of_data_carreiras.parquet",
+      "sha256": "59fb8567a2b59d9d5373d769ca5a04d938d95d22f8a29df11fbe24f7ce76f25c"
+    },
+    {
+      "arquivo": "tratados/state_of_data_completo_normalizado.csv",
+      "sha256": "98eb58f3ab762aa6b56b5a00aa3b35318c0d8ff2706f618b8b72461bce38112f"
+    },
+    {
+      "arquivo": "tratados/state_of_data_completo_normalizado.parquet",
+      "sha256": "5c9ce1634f54d803bd343aae3c1b40cdfa055f8cb54290b43a5ec1752281c479"
+    },
+    {
+      "arquivo": "tratados/state_of_data_nordeste.csv",
+      "sha256": "74df93dc9d163e7c961aac57783459632cea9c0524ef2da6a611f58edfa4eec6"
+    },
+    {
+      "arquivo": "tratados/state_of_data_nordeste.parquet",
+      "sha256": "e0c70e7f7577c4587b78f84c890738f93429269716295579281d665987eae6c8"
+    },
+    {
+      "arquivo": "tratados/state_of_data_pernambuco.csv",
+      "sha256": "3d95c27b433dca52e415b3a293a35ac25d71dec6283a296bbb133a5ab6e94e03"
+    },
+    {
+      "arquivo": "tratados/state_of_data_pernambuco.parquet",
+      "sha256": "2996268a55bd47d21795f055395abbdc5e09861ef40504f70c9e836defdd751c"
+    },
+    {
+      "arquivo": "tratados/state_of_data_tecnologias.csv",
+      "sha256": "413dfb8f9f372b9c21ac9329938c2bb386c2692fccb1c0faab6b6416d3cac559"
+    },
+    {
+      "arquivo": "tratados/state_of_data_tecnologias.parquet",
+      "sha256": "752ccbbae6fd4e06a223185092d703e1b84a54134b700308264ca27768edf9d3"
+    },
+    {
+      "arquivo": "auxiliares/cbo_ti_categorias.csv",
+      "sha256": "ecbcbf68b8285ed5de1bb889e4dc2f5b1168b8afb7a1c806d8ff0c30fe94d846"
+    },
+    {
+      "arquivo": "auxiliares/cbo_ti_categorias.parquet",
+      "sha256": "6b13cba03d3f4e9f3ab25c53fe1c47adb35f9dc54a0842128766f12da92c64b4"
+    },
+    {
+      "arquivo": "auxiliares/dicionario_dados.csv",
+      "sha256": "a6fcd322986aa3041583d6c6a25c3553a00df69cb148b0cfdd976fabf7e0db9f"
+    },
+    {
+      "arquivo": "auxiliares/dicionario_dados.parquet",
+      "sha256": "4e61805c8d91c3a549dd203b002bda38d1f3d0c343679b89778f1d527fda3dca"
+    },
+    {
+      "arquivo": "auxiliares/dicionario_pesquisa_grupo12.csv",
+      "sha256": "b4739df4e0ddb966bc1dfdc22841ef50c33598a1f50f4d07312bd531ce9805dc"
+    },
+    {
+      "arquivo": "auxiliares/dicionario_pesquisa_grupo12.parquet",
+      "sha256": "825c34a134656a365d9e1f30d43e1f1777eb4f5e35975ec62dad8d5aaa4520a2"
+    },
+    {
+      "arquivo": "auxiliares/dominios_caged.json",
+      "sha256": "c47df985d8c899083247d1853819aae5713ace21f1fae3396061bd45ee73d1a1"
+    },
+    {
+      "arquivo": "auxiliares/ipca_deflatores.csv",
+      "sha256": "d9912f421ffdbbc64ec44801d40761f14c8b15828822faab49497a397d64ed13"
+    },
+    {
+      "arquivo": "auxiliares/ipca_deflatores.parquet",
+      "sha256": "9b63142d591c6ed3246a59c98b065b077c604bbaa04bf3a7e3576144ba7db782"
+    },
+    {
+      "arquivo": "auxiliares/mapa_colunas_state_of_data.csv",
+      "sha256": "c7fe176da53ea3742b7687dab350311715aa660ada3467b5f348e23fcd8f26bf"
+    },
+    {
+      "arquivo": "auxiliares/mapa_colunas_state_of_data.parquet",
+      "sha256": "e48afb8fc52b6cbc792c136c7027e4893e46ec4911710520309d852c3c2b4c7e"
+    },
+    {
+      "arquivo": "auxiliares/municipios_ibge.csv",
+      "sha256": "6b38f629f5f5020730d7d753516133049ae82a43b9e1fa56781c69b5b9049451"
+    },
+    {
+      "arquivo": "auxiliares/municipios_ibge.parquet",
+      "sha256": "7d975dd6bdf7dce65569244b00b0240701c6167a651177eade271b99e372d486"
+    },
+    {
+      "arquivo": "auxiliares/questionario_grupo12.csv",
+      "sha256": "d61bc7d4e3148d07a3725b95ed31a56ab9b4446b2e15141c0c9e639851da5832"
+    },
+    {
+      "arquivo": "auxiliares/questionario_grupo12.parquet",
+      "sha256": "a80206337621627d2133b2399580a58dbf34039ac30c1bf380f16c88e26f3820"
+    },
+    {
+      "arquivo": "agregados/caged_indicadores_uf_area_mes.csv",
+      "sha256": "578490dca8d629ecc2ccbec5db240cff056b197a5076a4844a7a8dcbdfe56aaf"
+    },
+    {
+      "arquivo": "agregados/caged_indicadores_uf_area_mes.parquet",
+      "sha256": "deb669b5be08df63c47c711eaca9e58eae00f0b816dc03822f7eb825478dd498"
+    },
+    {
+      "arquivo": "modelagem/caged_features_numericas.csv",
+      "sha256": "3c64311a1329f5b295fe5483d00911aae03c9fc33ea608b906fa580bbb0055ec"
+    },
+    {
+      "arquivo": "modelagem/caged_features_numericas.parquet",
+      "sha256": "70e903197268dfb8c3c3493e16ebc4a3d91043270e8803823be131abc97e97bb"
+    },
+    {
+      "arquivo": "modelagem/parametros_normalizacao.json",
+      "sha256": "a87ceb238dd45d988cd21d6ec0de429051f61710d57c531310b19f6e0c4b51f5"
+    },
+    {
+      "arquivo": "qualidade/controle_caged_mensal.csv",
+      "sha256": "0a374c9d430b7572f45c937fbdb9e5987cfa00475ba674f5674b3bdbae2a0476"
+    },
+    {
+      "arquivo": "qualidade/controle_caged_mensal.parquet",
+      "sha256": "adc8ea1f94370ee96b908de0769999f2a842a4aec4b250b9c25ec1307b160a96"
+    },
+    {
+      "arquivo": "qualidade/relatorio_pesquisa_grupo12.json",
+      "sha256": "b8787fcde91e0903227e9d3b74ca60b096503c302ce02799025efeb9f1e2f3c5"
+    },
+    {
+      "arquivo": "qualidade/relatorio_qualidade.json",
+      "sha256": "ef8db5a5467aa20768d2f6efa556c92196ce1a4f1a579ddc1782ec8630646b46"
+    },
+    {
+      "arquivo": "qualidade/validacao_exports.json",
+      "sha256": "8469b791c917fb6c6378d4936266546f822fb65fccb0382b1823780cb928be39"
+    },
+    {
+      "arquivo": "qualidade/validacao_pesquisa_grupo12.json",
+      "sha256": "d9b14d261ee8970f5773450605e7931da44d5816039f643c76a5ca849248a0d2"
+    }
+  ],
+  "cache": "Temporario externo por padrao; chave por codigo e hashes das fontes.",
+  "limite": "Validacao tecnica nao elimina alertas semanticos, comprova representatividade ou autoriza publicacao da pesquisa."
+}

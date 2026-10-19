@@ -1,0 +1,5 @@
+-r ../02_preparacao_dados/requirements_reproducao.txt
+-r ../03_analise_exploratoria/requirements.txt
+-r ../04_regressao/requirements.txt
+-r ../05_classificacao/requirements.txt
+-r ../06_dashboard_e_publicacao/requirements_testes.txt

@@ -1,0 +1,14 @@
+fonte_id,fonte,tipo,situacao,unidade,uso,limite
+caged,Novo CAGED MTE,microdados_publicos,importado,movimentacao_formal,Fluxos e salarios de TI jan-mar2025,Somente MOV sem ajustes FOR EXC
+state_of_data,State of Data Data Hackers,pesquisa_publica,importado,resposta,Perfis de carreira em dados,Amostra voluntaria especifica de dados
+ipca,IPCA IBGE SIDRA,dimensao_publica,importado,indice_competencia,Correcao monetaria,Referencia marco2025
+municipios,Municipios IBGE,dimensao_publica,importado,municipio,Descricao geografica,Nao identifica pessoas
+pesquisa_grupo12,Questionario proprio Grupo12,pesquisa_propria,importado_local_restrito,resposta,Necessidades prioridades e intencoes,35 respostas sem representatividade comprovada
+matriz_grupo12,Matriz de Pesquisa Grupo12,desk_research,importado,referencia_hipotese,Rastreabilidade de pesquisa,Confianca e CSD sao declaracoes do grupo
+rais,RAIS MTE,microdados_publicos,apenas_referenciado,vinculo_formal,Possivel ampliacao futura,Nenhum arquivo RAIS importado
+pnad,PNAD Continua IBGE,pesquisa_domiciliar,apenas_referenciado,pessoa_domicilio,Contexto de informalidade,Nenhum arquivo PNAD importado
+inep,Censo Superior INEP,microdados_educacionais,apenas_referenciado,unidade_educacional,Contexto de formacao,Nenhum arquivo do Censo importado
+base_dos_dados,Base dos Dados,plataforma,apenas_referenciado,depende_da_tabela,Alternativa de acesso,Nao e nova amostra por si so
+brasscom,Brasscom,relatorios_setoriais,apenas_referenciado,indicador_publicado,Contexto de mercado,Nao tratado como microdados
+exame,Exame Bussola,fonte_secundaria,apenas_referenciado,afirmacao_publicada,Contexto e rastreamento de fontes,Verificar levantamento primario e populacao
+similares,Glassdoor Salario Levels StackOverflow,benchmarking,apenas_referenciado,solucao_referenciada,Analise de similares,Nao importados nem verificados nesta integracao

@@ -1,0 +1,55 @@
+{
+  "status": "EXECUTADO_SEM_ERROS",
+  "inicio_utc": "2026-10-14T19:44:36.601274+00:00",
+  "fim_utc": "2026-10-14T19:45:09.543510+00:00",
+  "python": "3.12.14",
+  "dependencias": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "pyarrow": "26.0.0",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "nbconvert": "7.17.2",
+    "ipykernel": "7.4.0",
+    "jupyter-core": "5.9.1",
+    "jupyter-client": "8.10.0",
+    "pyzmq": "27.2.0",
+    "ipython": "9.17.1",
+    "traitlets": "5.16.1"
+  },
+  "perguntas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "M1",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9",
+    "P10",
+    "P11",
+    "P12"
+  ],
+  "celulas_executadas": 15,
+  "imagens_embutidas": 20,
+  "graficos_fontes_publicas": 13,
+  "graficos_pesquisa_restritos": 7,
+  "fontes_sha256": {
+    "caged_ti": "6713244c19260b78173af949426805d5e448a86494c1920cf2f0d26e97a3e769",
+    "state_of_data_brasil": "be7c02ca2ffc193ebffba9f188530351ba4c1ec92bdb530b4fe96acb5c916c22",
+    "pesquisa_grupo12_respostas": "16a918fd340ed0c78bb0bb0250f45ebd885f76da4aca0155dd550684a01e6ada",
+    "pesquisa_grupo12_prioridades": "5622f9afad53cd39db27a2d4ab3ac2c0d1fed43448f6077c8d759e453dc543a2"
+  },
+  "codigo_sha256": {
+    "analise.py": "e2f0b4234e9b5f7da417fdc5dee763aff1697e2370d14044db6c8cc0851f4fc7",
+    "executar_analise.py": "517397a1bade1375c1db20eb7f7a1957e8d982e9bd2d2f062067498b5a59e4de"
+  },
+  "notebook_fonte_sha256": "4e34886da10ff1068fbd948d062a310b12193caca4b554cf3cbd72593aecca0b",
+  "privacidade": "Copia executada/HTML e P9-P12 locais, ignorados pelo Git; consentimento de divulgacao nao confirmado.",
+  "limites": "Exploracao, sem causalidade, regressao ou classificacao supervisionada; fontes nao concatenadas."
+}

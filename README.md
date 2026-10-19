@@ -7,6 +7,44 @@ em informação útil para decisão de carreira em tecnologia — com foco inici
 > **Projeto 5 · CESAR School · 2026.2 · Grupo 12** — Trilha de Análise e Visualização de Dados.
 > Este repositório é o resultado do **Ciclo 1** (entregáveis 1, 2, 3 e 4).
 
+## Inteligência de carreiras
+
+A área [`inteligencia_de_carreiras/`](inteligencia_de_carreiras/README.md) organiza
+os datasets preparados, critérios de Análise e Visualização de Dados e as oito
+etapas de análise, modelagem, visualização e documentação.
+
+Comece pelo [plano de análise em PDF](inteligencia_de_carreiras/01_plano_de_analise/plano_de_analise.pdf)
+ou pela [versão editável](inteligencia_de_carreiras/01_plano_de_analise/plano_de_analise.md).
+O pacote local reúne CAGED de janeiro a março de 2025 e State of Data Brazil
+2024-2025. Os dados grandes são ignorados pelo Git; há scripts de reprodução e
+manifesto de fontes. A pesquisa própria G12 foi incorporada separadamente: 35
+respostas e 21 registros de desk research, com controles de qualidade e privacidade.
+A fase 01 foi revisada com 12 perguntas de análise e uma conferência dos critérios.
+A [fase 02](inteligencia_de_carreiras/02_preparacao_dados/README.md) inclui plano
+de preparação, matriz por coluna, pipeline reproduzível e evidências de validação.
+A [fase 03](inteligencia_de_carreiras/03_analise_exploratoria/README.md) contém
+notebook executado, gráficos e interpretações, com saídas próprias locais protegidas.
+A [fase 04](inteligencia_de_carreiras/04_regressao/README.md) compara regressões
+lineares com uma referência de mediana, com teste temporal, gráficos de tendência,
+resíduos e limitações documentadas.
+A [fase 05](inteligencia_de_carreiras/05_classificacao/README.md) avalia busca ativa
+declarada no State of Data, com treino/teste separados, matrizes de confusão, ROC,
+precision-recall e interpretação do baixo recall observado.
+A [fase 06](inteligencia_de_carreiras/06_dashboard_e_publicacao/README.md) traz um
+dashboard Streamlit v1 com agregados públicos, filtros e proposta de publicação.
+Entrada: `inteligencia_de_carreiras/06_dashboard_e_publicacao/dashboard.py`.
+A hospedagem externa ainda não foi executada.
+A [fase 07](inteligencia_de_carreiras/07_consolidacao_e_validacao/README.md) consolida
+a versão 1.1 com filtros persistentes, auditoria dos agregados e testes funcionais
+ampliados. A revisão estruturada pelos colegas permanece pendente; há roteiro e
+registro próprios, sem simular feedback.
+A [fase 08](inteligencia_de_carreiras/08_documentacao_final/README.md) fecha a
+documentação técnica em PDF e Markdown, com histórico, decisões, insights,
+capturas, limites e guia de entrega CC01-CC10. As oito etapas estão organizadas;
+revisão estruturada, commit/push e hospedagem externa continuam pendentes.
+O dashboard e os artefatos do Ciclo 1 abaixo continuam com
+seu recorte original até a etapa de integração.
+
 ## O que o produto responde
 
 > **Qual é a faixa salarial de entrada (p10/p50/p90) do cargo X, na cidade/UF Y, no emprego

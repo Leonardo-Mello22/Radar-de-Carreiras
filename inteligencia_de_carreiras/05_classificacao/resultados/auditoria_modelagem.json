@@ -1,0 +1,83 @@
+{
+  "fonte_sha256": "be7c02ca2ffc193ebffba9f188530351ba4c1ec92bdb530b4fe96acb5c916c22",
+  "alvo_original": "planos_mudar_emprego_6m",
+  "classe_positiva": 1,
+  "mapeamento_alvo": {
+    "Estou em busca de oportunidades dentro ou fora do Brasil": 1,
+    "Estou em busca de oportunidades, mas apenas fora do Brasil": 1,
+    "Não estou buscando, mas me considero aberto a outras oportunidades": 0,
+    "Não estou buscando e não pretendo mudar de emprego nos próximos 6 meses": 0
+  },
+  "entradas": [
+    "senioridade_declarada",
+    "nivel_ensino",
+    "vinculo_grupo",
+    "modelo_trabalho_declarado",
+    "experiencia_dados_faixa"
+  ],
+  "semente": 12,
+  "fracao_teste": 0.2,
+  "n_treino": 3787,
+  "n_teste": 947,
+  "limiar_fixo": 0.5,
+  "selecao": "Maior Average Precision media em 5 folds estratificados do treino; empate favorece simplicidade",
+  "modelo_escolhido_antes_do_teste": "logistica",
+  "categorias_aprendidas_treino": {
+    "senioridade_declarada": [
+      "Junior",
+      "Nao informado",
+      "Pleno",
+      "Senior"
+    ],
+    "nivel_ensino": [
+      "Doutorado ou Phd",
+      "Estudante de Graduação",
+      "Graduação/Bacharelado",
+      "Mestrado",
+      "Não tenho graduação formal",
+      "Prefiro não informar",
+      "Pós-graduação"
+    ],
+    "vinculo_grupo": [
+      "CLT",
+      "Desempregado",
+      "Estagio",
+      "Freelancer",
+      "Nao informado",
+      "PJ ou empreendedor",
+      "Servidor publico",
+      "Trabalho internacional"
+    ],
+    "modelo_trabalho_declarado": [
+      "Modelo 100% presencial",
+      "Modelo 100% remoto",
+      "Modelo híbrido com dias fixos de trabalho presencial",
+      "Modelo híbrido flexível (o funcionário tem liberdade para escolher quando estar no escritório presencialmente)"
+    ],
+    "experiencia_dados_faixa": [
+      "Mais de 10 anos",
+      "Menos de 1 ano",
+      "Não tenho experiência na área de dados",
+      "de 1 a 2 anos",
+      "de 3 a 4 anos",
+      "de 5 a 6 anos",
+      "de 7 a 10 anos"
+    ]
+  },
+  "hiperparametros_fixos": {
+    "logistica": {
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 2000
+    },
+    "arvore": {
+      "max_depth": 4,
+      "min_samples_leaf": 40
+    }
+  },
+  "hash_ids_treino": "dc1599c5b3b47ea36842bec893326145f681f33ebb7e7f5353d22dd6dd3e65e9",
+  "hash_ids_teste": "be463431c78bed74627ab8c7f45313cbb1e70fa03b22a2f6c7789e876aa6eb94",
+  "sem_pesos_ou_reamostragem": true,
+  "sem_ajuste_pelo_teste": true,
+  "privacidade": "IDs e probabilidades individuais apenas em resultados_locais, ignorados pelo Git"
+}

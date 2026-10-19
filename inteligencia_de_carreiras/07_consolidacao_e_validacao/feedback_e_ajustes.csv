@@ -1,0 +1,11 @@
+id,data,origem,tipo,observacao,acao,situacao,evidencia
+F01,2026-10-19,Solicitante,Impressao informal real,"Viu a previa e achou boa; ainda nao enviou ao grupo","Registrar sem tratar como validacao estruturada",Registrado,Conversa com o solicitante
+T01,2026-10-19,Revisao tecnica,Navegacao,Filtros podiam desaparecer ao trocar de visao,Persistir seletores na sessao e testar retorno,Implementado,tests/test_consolidacao.py
+T02,2026-10-19,Revisao tecnica,Clareza,Recorte de area e ocupacao ficava oculto com painel fechado,Exibir contexto fora do painel inclusive em recortes vazios,Implementado,tests/test_consolidacao.py
+T03,2026-10-19,Revisao tecnica,Base valida,Total de respostas nao garante base suficiente para busca ativa,Explicitar indisponibilidade do item quando n valido menor que 30,Implementado,tests/test_consolidacao.py
+T04,2026-10-19,Revisao tecnica,Integridade,Manifesto precisava exigir todos os arquivos obrigatorios e tamanhos,Rejeitar manifesto incompleto ou regra estatistica incompatível,Implementado,tests/test_consolidacao.py
+T05,2026-10-19,Revisao tecnica,Conferencia numerica,Verificacoes da v1 eram pontuais,Auditar integralmente os quatro cubos contra fontes tratadas,Conferido sem divergencias,resultados/auditoria_numerica.json
+T06,2026-10-19,QA automatizado,Download,Em troca rapida de filtros o teste podia acionar botao da renderizacao anterior,Vincular identidade do botao ao conteudo e aguardar o recorte correto sem rerun no clique,Implementado,verificar_navegador.py
+T07,2026-10-19,Inspecao visual tecnica,Grafico salarial,Ocupacao especifica com Todas as areas mostrava aviso falso de grupo insuficiente,Consultar grupos de ocupacao e testar coerencia com os indicadores,Implementado,tests/test_consolidacao.py
+T08,2026-10-19,Inspecao visual tecnica,Restauracao,Seletores persistentes podiam reenviar valores antigos apos restaurar e navegar,Definir padroes explicitamente e testar retorno apos restauracao,Implementado,verificar_navegador.py
+P01,,Grupo,Revisao futura,Avaliacao estruturada ainda nao realizada,Executar roteiro e registrar comentarios sem dados pessoais desnecessarios,Pendente,roteiro_revisao.md

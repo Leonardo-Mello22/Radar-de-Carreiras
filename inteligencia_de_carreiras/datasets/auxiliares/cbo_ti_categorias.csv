@@ -1,0 +1,28 @@
+﻿cbo_codigo,cbo_nome,area_ti,familia
+123605,Diretor de Servicos de Informatica,Gestao de TI,1236
+142505,Gerente de Rede,Redes e infraestrutura,1425
+142510,Gerente de Desenvolvimento de Sistemas,Desenvolvimento de software,1425
+142515,Gerente de Producao de Tecnologia da Informacao,Gestao de TI,1425
+142520,Gerente de Projetos de Tecnologia da Informacao,Gestao de TI,1425
+142525,Gerente de Seguranca de Tecnologia da Informacao,Seguranca da informacao,1425
+142530,Gerente de Suporte Tecnico de Tecnologia da Informacao,Suporte e operacoes,1425
+142535,Tecnólogo em Gestão da Tecnologia da Informação,Gestao de TI,1425
+212205,Engenheiro de Aplicativos em Computacao,Desenvolvimento de software,2122
+212210,Engenheiro de Equipamentos em Computacao,Hardware e sistemas,2122
+212215,Engenheiros de Sistemas Operacionais em Computacao,Hardware e sistemas,2122
+212305,Administrador de Banco de Dados,Dados e bancos de dados,2123
+212310,Administrador de Redes,Redes e infraestrutura,2123
+212315,Administrador de Sistemas Operacionais,Redes e infraestrutura,2123
+212320,Administrador em Segurança da Informação,Seguranca da informacao,2123
+212405,Analista de Desenvolvimento de Sistemas,Desenvolvimento de software,2124
+212410,Analista de Redes e de Comunicacao de Dados,Redes e infraestrutura,2124
+212415,Analista de Sistemas de Automacao,Automacao industrial,2124
+212420,Analista de Suporte Computacional,Suporte e operacoes,2124
+212425,Arquiteto De Soluções De Tecnologia Da Informação,Arquitetura de solucoes,2124
+212430,Analista De Testes De Tecnologia Da Informação,Qualidade e testes,2124
+317105,Programador de Internet,Desenvolvimento de software,3171
+317110,Programador de Sistemas de Informacao,Desenvolvimento de software,3171
+317115,Programador de Maquinas - Ferramenta com Comando Numerico,Automacao industrial,3171
+317120,Programador de Multimidia,Desenvolvimento de software,3171
+317205,Operador de Computador (Inclusive Microcomputador),Suporte e operacoes,3172
+317210,Tecnico de Apoio ao Usuario de Informatica (Helpdesk),Suporte e operacoes,3172

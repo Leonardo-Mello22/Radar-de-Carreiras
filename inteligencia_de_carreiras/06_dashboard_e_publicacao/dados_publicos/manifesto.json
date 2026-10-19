@@ -1,0 +1,453 @@
+{
+  "versao": 1,
+  "preparado_em": "2026-10-19T11:43:18.368527+00:00",
+  "minimo_estatistico": 30,
+  "fontes": {
+    "caged_ti": {
+      "sha256": "6713244c19260b78173af949426805d5e448a86494c1920cf2f0d26e97a3e769",
+      "n": 118564,
+      "periodo": "Jan-mar/2025"
+    },
+    "state_of_data_brasil": {
+      "sha256": "be7c02ca2ffc193ebffba9f188530351ba4c1ec92bdb530b4fe96acb5c916c22",
+      "n": 5076,
+      "periodo": "2024-2025"
+    }
+  },
+  "catalogo": [
+    {
+      "tipo": "total",
+      "categoria": "Todos",
+      "rotulo": "Todas as ocupacoes",
+      "area": "Todas"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Arquitetura de solucoes",
+      "rotulo": "Arquitetura de solucoes",
+      "area": "Arquitetura de solucoes"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Automacao industrial",
+      "rotulo": "Automacao industrial",
+      "area": "Automacao industrial"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Dados e bancos de dados",
+      "rotulo": "Dados e bancos de dados",
+      "area": "Dados e bancos de dados"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Desenvolvimento de software",
+      "rotulo": "Desenvolvimento de software",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Gestao de TI",
+      "rotulo": "Gestao de TI",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Hardware e sistemas",
+      "rotulo": "Hardware e sistemas",
+      "area": "Hardware e sistemas"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Qualidade e testes",
+      "rotulo": "Qualidade e testes",
+      "area": "Qualidade e testes"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Redes e infraestrutura",
+      "rotulo": "Redes e infraestrutura",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Seguranca da informacao",
+      "rotulo": "Seguranca da informacao",
+      "area": "Seguranca da informacao"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Suporte e operacoes",
+      "rotulo": "Suporte e operacoes",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "123605",
+      "rotulo": "Diretor de Servicos de Informatica",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142505",
+      "rotulo": "Gerente de Rede",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142510",
+      "rotulo": "Gerente de Desenvolvimento de Sistemas",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142515",
+      "rotulo": "Gerente de Producao de Tecnologia da Informacao",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142520",
+      "rotulo": "Gerente de Projetos de Tecnologia da Informacao",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142525",
+      "rotulo": "Gerente de Seguranca de Tecnologia da Informacao",
+      "area": "Seguranca da informacao"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142530",
+      "rotulo": "Gerente de Suporte Tecnico de Tecnologia da Informacao",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142535",
+      "rotulo": "Tecnólogo em Gestão da Tecnologia da Informação",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212205",
+      "rotulo": "Engenheiro de Aplicativos em Computacao",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212210",
+      "rotulo": "Engenheiro de Equipamentos em Computacao",
+      "area": "Hardware e sistemas"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212215",
+      "rotulo": "Engenheiros de Sistemas Operacionais em Computacao",
+      "area": "Hardware e sistemas"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212305",
+      "rotulo": "Administrador de Banco de Dados",
+      "area": "Dados e bancos de dados"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212310",
+      "rotulo": "Administrador de Redes",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212315",
+      "rotulo": "Administrador de Sistemas Operacionais",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212320",
+      "rotulo": "Administrador em Segurança da Informação",
+      "area": "Seguranca da informacao"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212405",
+      "rotulo": "Analista de Desenvolvimento de Sistemas",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212410",
+      "rotulo": "Analista de Redes e de Comunicacao de Dados",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212415",
+      "rotulo": "Analista de Sistemas de Automacao",
+      "area": "Automacao industrial"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212420",
+      "rotulo": "Analista de Suporte Computacional",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212425",
+      "rotulo": "Arquiteto De Soluções De Tecnologia Da Informação",
+      "area": "Arquitetura de solucoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212430",
+      "rotulo": "Analista De Testes De Tecnologia Da Informação",
+      "area": "Qualidade e testes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317105",
+      "rotulo": "Programador de Internet",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317110",
+      "rotulo": "Programador de Sistemas de Informacao",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317115",
+      "rotulo": "Programador de Maquinas - Ferramenta com Comando Numerico",
+      "area": "Automacao industrial"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317120",
+      "rotulo": "Programador de Multimidia",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317205",
+      "rotulo": "Operador de Computador (Inclusive Microcomputador)",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317210",
+      "rotulo": "Tecnico de Apoio ao Usuario de Informatica (Helpdesk)",
+      "area": "Suporte e operacoes"
+    }
+  ],
+  "ufs": [
+    {
+      "sigla": "AC",
+      "nome": "Acre",
+      "nordeste": false
+    },
+    {
+      "sigla": "AL",
+      "nome": "Alagoas",
+      "nordeste": true
+    },
+    {
+      "sigla": "AM",
+      "nome": "Amazonas",
+      "nordeste": false
+    },
+    {
+      "sigla": "AP",
+      "nome": "Amapá",
+      "nordeste": false
+    },
+    {
+      "sigla": "BA",
+      "nome": "Bahia",
+      "nordeste": true
+    },
+    {
+      "sigla": "CE",
+      "nome": "Ceará",
+      "nordeste": true
+    },
+    {
+      "sigla": "DF",
+      "nome": "Distrito Federal",
+      "nordeste": false
+    },
+    {
+      "sigla": "ES",
+      "nome": "Espírito Santo",
+      "nordeste": false
+    },
+    {
+      "sigla": "GO",
+      "nome": "Goiás",
+      "nordeste": false
+    },
+    {
+      "sigla": "MA",
+      "nome": "Maranhão",
+      "nordeste": true
+    },
+    {
+      "sigla": "MG",
+      "nome": "Minas gerais",
+      "nordeste": false
+    },
+    {
+      "sigla": "MS",
+      "nome": "Mato Grosso do Sul",
+      "nordeste": false
+    },
+    {
+      "sigla": "MT",
+      "nome": "Mato Grosso",
+      "nordeste": false
+    },
+    {
+      "sigla": "PA",
+      "nome": "Pará",
+      "nordeste": false
+    },
+    {
+      "sigla": "PB",
+      "nome": "Paraíba",
+      "nordeste": true
+    },
+    {
+      "sigla": "PE",
+      "nome": "Pernambuco",
+      "nordeste": true
+    },
+    {
+      "sigla": "PI",
+      "nome": "Piauí",
+      "nordeste": true
+    },
+    {
+      "sigla": "PR",
+      "nome": "Paraná",
+      "nordeste": false
+    },
+    {
+      "sigla": "RJ",
+      "nome": "Rio de Janeiro",
+      "nordeste": false
+    },
+    {
+      "sigla": "RN",
+      "nome": "Rio Grande do Norte",
+      "nordeste": true
+    },
+    {
+      "sigla": "RO",
+      "nome": "Rondônia",
+      "nordeste": false
+    },
+    {
+      "sigla": "RR",
+      "nome": "Roraima",
+      "nordeste": false
+    },
+    {
+      "sigla": "RS",
+      "nome": "Rio Grande do Sul",
+      "nordeste": false
+    },
+    {
+      "sigla": "SC",
+      "nome": "Santa Catarina",
+      "nordeste": false
+    },
+    {
+      "sigla": "SE",
+      "nome": "Sergipe",
+      "nordeste": true
+    },
+    {
+      "sigla": "SP",
+      "nome": "São Paulo",
+      "nordeste": false
+    },
+    {
+      "sigla": "TO",
+      "nome": "Tocantins",
+      "nordeste": false
+    }
+  ],
+  "modelos": {
+    "regressao": {
+      "modelo_selecionado": "multipla",
+      "n_treino": 41037,
+      "n_teste": 19825,
+      "limiar": null,
+      "fonte_sha256": "6713244c19260b78173af949426805d5e448a86494c1920cf2f0d26e97a3e769"
+    },
+    "classificacao": {
+      "modelo_selecionado": "logistica",
+      "n_treino": 3787,
+      "n_teste": 947,
+      "limiar": 0.5,
+      "fonte_sha256": "be7c02ca2ffc193ebffba9f188530351ba4c1ec92bdb530b4fe96acb5c916c22"
+    }
+  },
+  "execucoes_modelos_sha256": {
+    "04_regressao": "7e6966601001e3f604d84dc57ee266bd32315d6a98571b31dd7d97335cfd13b2",
+    "05_classificacao": "c65c3294a1d0c8b96f5da79c29bd1d6a34967a37fcca4fce4841b1211d7fbe0c"
+  },
+  "regra_quantis": "Calculados diretamente dos eventos elegiveis de cada filtro; nunca media de percentis.",
+  "privacidade": "Somente agregados de fontes publicas; sem G12, IDs ou previsoes individuais.",
+  "publicacao_externa": false,
+  "arquivos": {
+    "C1_metricas_teste.csv": {
+      "sha256": "16a64fcce965d05d71a3724e54f05d8faf96c246e56592d8adbae5a10f2d1904",
+      "bytes": 582
+    },
+    "C4_curvas_roc.csv": {
+      "sha256": "f91a149b1f1d307e9067df74d5783342acd84e27752e187e39391b62c2d264b7",
+      "bytes": 21838
+    },
+    "C5_curvas_precision_recall.csv": {
+      "sha256": "cc7273626a00de6484e2bcd35ff015d01df7503d287e342961a5c11c88405d3b",
+      "bytes": 26231
+    },
+    "distribuicoes.parquet": {
+      "sha256": "6757ca87e7d5d0ea032ff02fd111628eda8f14f693f712f1aa43dc598de26203",
+      "bytes": 30784
+    },
+    "emprego.parquet": {
+      "sha256": "4a08e55f411d9392b03d167e2edffc9e92a55c49614b2a46de90075c0c591fb4",
+      "bytes": 107042
+    },
+    "perfis.parquet": {
+      "sha256": "cf7449dad3b3196ad132e5496a9b29aa341271a1bcfd3eb635e2152bea32648f",
+      "bytes": 11122
+    },
+    "R1_ajuste_jan_fev.csv": {
+      "sha256": "5d267c6ed6826eacf92d92fa4bc47db9173d7a76148e92e22a690a96f3c5353b",
+      "bytes": 423
+    },
+    "R1_teste_marco.csv": {
+      "sha256": "c63b52cb62a0d6d23c3cb739fd6588124606a7b761c3d086cde65699504e7843",
+      "bytes": 482
+    },
+    "R3_observado_previsto.png": {
+      "sha256": "0e8161629f0588e29c89cd30ebf7a0cff6500253d60ea0b8f024e76a5b520a13",
+      "bytes": 183392
+    },
+    "R4_residuos.png": {
+      "sha256": "2fdce45998b2cae180237c0fa50cf10c51049807c89a58342681f9aa568fac9d",
+      "bytes": 94037
+    },
+    "tecnologias.parquet": {
+      "sha256": "3c6f8458444362e11d934f920038f5c797507d17d971c8c6b19a03a85438d7af",
+      "bytes": 14355
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "status": "APROVADO",
+  "executado_em": "2026-10-19T12:29:49.273195+00:00",
+  "url": "http://127.0.0.1:8502",
+  "checks": [
+    "recorte_uf_mes_ocupacao_confere_com_pacote",
+    "grafico_salarial_ocupacao_coerente_com_indicadores",
+    "csv_baixado_confere_com_recorte_visivel",
+    "filtros_caged_persistem_apos_navegar",
+    "filtros_perfis_persistem_sem_contaminar_caged",
+    "estado_sem_dados_sem_metricas_antigas",
+    "restauracao_perfis_recupera_base_brasil",
+    "restauracao_de_filtros_persiste_apos_navegar",
+    "modelo_baseline_persiste_e_expoe_recall_zero",
+    "seletor_modelo_acessivel_por_teclado",
+    "quatro_visoes_sem_overflow_ou_graficos_vazios_360px",
+    "quatro_visoes_sem_overflow_ou_graficos_vazios_768px",
+    "quatro_visoes_sem_overflow_ou_graficos_vazios_1440px"
+  ],
+  "erros_javascript": [],
+  "viewports": [
+    [
+      360,
+      800
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      1440,
+      1000
+    ]
+  ],
+  "codigo_sha256": {
+    "dashboard.py": "13df4fa2421eb1aebfeb066b50bb24d6410c61133d5c83db1ef9ebd265e2dab3",
+    "dados.py": "8ac4a0a2df32e6a9686b9811276b702784a3d01eb6eab0356a2432bbadad1631"
+  },
+  "manifesto_sha256": "56336a11f021e7de2f04655b12e8c8d88c96f8afab501c2d5bee6d563f84af84",
+  "script_sha256": "b5e058bdcf5129e42e651d6879a379a2289f170b33293864e75dedc583628470",
+  "screenshots_sha256": {
+    "01_recorte_consolidado_desktop.png": "7257db8850c13b7a6fa07624e4260fa8196632dd9e6c37dd1323e07f12b64397",
+    "02_modelo_referencia_desktop.png": "7d3a1b01bac92c26a28c495368a0bda05285358b683dec010af8ddc541720630",
+    "03_emprego_mobile.png": "92e3819d268c0baa178111430aa3540599fb221a19235e4b2054e845de1d4d6c",
+    "04_perfis_mobile.png": "d4ae0304ff99530c5542232215ba24473201f999beeb437f0ad5a7df859b9c24"
+  },
+  "limite": "QA automatizado em Chromium; nao substitui teste com participantes, auditoria WCAG ou outros navegadores."
+}

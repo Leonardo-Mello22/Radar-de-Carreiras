@@ -28,3 +28,24 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Pacote local da area de inteligencia de carreiras
+/inteligencia_de_carreiras/datasets/brutos/
+/inteligencia_de_carreiras/datasets/tratados/
+/inteligencia_de_carreiras/datasets/modelagem/
+/inteligencia_de_carreiras/datasets/.cache/
+
+# Respostas individuais de pesquisa e extratos potencialmente identificaveis
+/inteligencia_de_carreiras/datasets/agregados/pesquisa_grupo12/
+
+# Notebook executado e resultados da pesquisa propria: uso local restrito
+/inteligencia_de_carreiras/03_analise_exploratoria/resultados_locais/
+
+# Previsoes por evento, kernel e caches locais da regressao
+/inteligencia_de_carreiras/04_regressao/resultados_locais/
+
+# Escores e particoes individuais, kernel e caches da classificacao
+/inteligencia_de_carreiras/05_classificacao/resultados_locais/
+
+# Estado de execucao e logs locais do dashboard
+/inteligencia_de_carreiras/06_dashboard_e_publicacao/resultados_locais/

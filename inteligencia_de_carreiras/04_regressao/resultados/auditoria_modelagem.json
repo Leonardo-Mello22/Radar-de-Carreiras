@@ -1,0 +1,108 @@
+{
+  "entradas": [
+    "idade",
+    "horas_contratuais",
+    "cbo_codigo",
+    "uf_sigla",
+    "grau_instrucao"
+  ],
+  "alvo": "salario_real",
+  "treino": [
+    "202501",
+    "202502"
+  ],
+  "teste": [
+    "202503"
+  ],
+  "validacao_interna": {
+    "ajuste": "202501",
+    "avaliacao": "202502",
+    "criterio": "menor MAE; empate preserva modelo mais simples"
+  },
+  "modelo_escolhido_antes_do_teste": "multipla",
+  "alpha_ridge_fixo": 10.0,
+  "mediana_treino": 3519.6008899338376,
+  "p99_treino_limite_apenas_visual": 28525.679639362985,
+  "coeficiente_idade_simples_reais_ano": 259.1283352059414,
+  "intercepto_multiplo": 8431.351293487582,
+  "medianas_imputacao_treino": [
+    28.0,
+    43.0
+  ],
+  "categorias_treino": {
+    "cbo_codigo": [
+      "123605",
+      "142505",
+      "142510",
+      "142515",
+      "142520",
+      "142525",
+      "142530",
+      "142535",
+      "212205",
+      "212210",
+      "212215",
+      "212305",
+      "212310",
+      "212315",
+      "212320",
+      "212405",
+      "212410",
+      "212415",
+      "212420",
+      "212425",
+      "212430",
+      "317105",
+      "317110",
+      "317115",
+      "317120",
+      "317205",
+      "317210"
+    ],
+    "uf_sigla": [
+      "AC",
+      "AL",
+      "AM",
+      "AP",
+      "BA",
+      "CE",
+      "DF",
+      "ES",
+      "GO",
+      "MA",
+      "MG",
+      "MS",
+      "MT",
+      "PA",
+      "PB",
+      "PE",
+      "PI",
+      "PR",
+      "RJ",
+      "RN",
+      "RO",
+      "RR",
+      "RS",
+      "SC",
+      "SE",
+      "SP",
+      "TO"
+    ],
+    "grau_instrucao": [
+      "5ª Completo Fundamental",
+      "6ª a 9ª Fundamental",
+      "Analfabeto",
+      "Até 5ª Incompleto",
+      "Doutorado",
+      "Fundamental Completo",
+      "Mestrado",
+      "Médio Completo",
+      "Médio Incompleto",
+      "Pós-Graduação completa",
+      "Superior Completo",
+      "Superior Incompleto"
+    ]
+  },
+  "sha256_fonte": "6713244c19260b78173af949426805d5e448a86494c1920cf2f0d26e97a3e769",
+  "previsoes_negativas": "mantidas e contadas; nenhuma correcao ou truncamento pos-teste"
+}

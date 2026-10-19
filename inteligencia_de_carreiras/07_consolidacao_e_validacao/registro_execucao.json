@@ -1,0 +1,47 @@
+{
+  "status": "VALIDADO_TECNICAMENTE_AGUARDANDO_REVISAO_DO_GRUPO",
+  "inicio": "2026-10-19T12:28:48.532699+00:00",
+  "executado_em": "2026-10-19T12:30:14.834491+00:00",
+  "versao_dashboard": "1.1",
+  "testes_anteriores": 92,
+  "testes_consolidacao": 19,
+  "total_testes": 111,
+  "checks_browser_inicial": 9,
+  "checks_browser_ampliado": 13,
+  "auditoria": {
+    "recortes_caged": 4408,
+    "recortes_state_of_data": 675,
+    "total_comparacoes": 65761,
+    "n_divergencias": 0
+  },
+  "codigo_sha256": {
+    "06_dashboard_e_publicacao\\dashboard.py": "13df4fa2421eb1aebfeb066b50bb24d6410c61133d5c83db1ef9ebd265e2dab3",
+    "06_dashboard_e_publicacao\\dados.py": "8ac4a0a2df32e6a9686b9811276b702784a3d01eb6eab0356a2432bbadad1631",
+    "06_dashboard_e_publicacao\\dados_publicos\\manifesto.json": "56336a11f021e7de2f04655b12e8c8d88c96f8afab501c2d5bee6d563f84af84",
+    "07_consolidacao_e_validacao\\auditar_numeros.py": "1948c1600b7faf78d2ee6c71e352454ca6b92594edac223b77aa321f0cc71dee",
+    "07_consolidacao_e_validacao\\verificar_navegador.py": "b5e058bdcf5129e42e651d6879a379a2289f170b33293864e75dedc583628470",
+    "07_consolidacao_e_validacao\\validar_consolidacao.py": "839a6f98d6aa0f367d31b920eb2b7d0e95aec3b20586dc1f80a9e4a423c6f56d",
+    "07_consolidacao_e_validacao\\tests\\test_consolidacao.py": "e6a320e50fd7c72c23994773034159676bcf15ebe9a278349c5321cd306f2d91",
+    "07_consolidacao_e_validacao\\requirements_validacao.txt": "cdc2931711df98a2a92ee67a152861d594e674bb6a55641ebf62594606db0044"
+  },
+  "evidencias_sha256": {
+    "07_consolidacao_e_validacao\\resultados\\auditoria_numerica.json": "4f4a7e1ebb2d1b599d142c65abb9c4d852795b15d7d925c5082f9793f67051cf",
+    "07_consolidacao_e_validacao\\evidencias\\verificacao_browser.json": "19c27b31bb5844bdbf58fa4e7daa384e34c2c24952e26e19378655b8f41c0471",
+    "06_dashboard_e_publicacao\\registro_execucao.json": "f3651324acb6eae9ed92d6beac0293cbbf7cb309b7f8d6d377c16ea294639e86",
+    "07_consolidacao_e_validacao\\evidencias\\01_recorte_consolidado_desktop.png": "7257db8850c13b7a6fa07624e4260fa8196632dd9e6c37dd1323e07f12b64397",
+    "07_consolidacao_e_validacao\\evidencias\\02_modelo_referencia_desktop.png": "7d3a1b01bac92c26a28c495368a0bda05285358b683dec010af8ddc541720630",
+    "07_consolidacao_e_validacao\\evidencias\\03_emprego_mobile.png": "92e3819d268c0baa178111430aa3540599fb221a19235e4b2054e845de1d4d6c",
+    "07_consolidacao_e_validacao\\evidencias\\04_perfis_mobile.png": "d4ae0304ff99530c5542232215ba24473201f999beeb437f0ad5a7df859b9c24"
+  },
+  "validacao_com_usuarios": {
+    "realizada": false,
+    "estado": "Pendente. O solicitante viu a previa e achou boa; revisao estruturada pelos amigos/grupo ainda nao realizada."
+  },
+  "publicacao_externa": false,
+  "commit_push_realizado_nesta_etapa": false,
+  "pendencias": [
+    "Revisao estruturada do grupo e tratamento de feedback",
+    "Documentacao final da etapa 08",
+    "Commit/push e hospedagem externa, seguidos de teste remoto"
+  ]
+}

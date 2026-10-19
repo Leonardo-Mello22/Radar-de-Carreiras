@@ -1,0 +1,43 @@
+﻿coorte,variavel,categoria,n,denominador,proporcao
+Junior declarado,escolaridade_grupo,Superior completo,342,855,0.4
+Junior declarado,escolaridade_grupo,Superior em andamento,299,855,0.3497076023391813
+Junior declarado,escolaridade_grupo,Pos-graduacao,146,855,0.17076023391812867
+Junior declarado,escolaridade_grupo,Mestrado,36,855,0.042105263157894736
+Junior declarado,escolaridade_grupo,Sem graduacao formal,22,855,0.025730994152046785
+Junior declarado,escolaridade_grupo,Doutorado,10,855,0.011695906432748537
+Junior declarado,vinculo_grupo,CLT,559,851,0.6568742655699178
+Junior declarado,vinculo_grupo,Estagio,179,851,0.21034077555816685
+Junior declarado,vinculo_grupo,PJ ou empreendedor,55,851,0.06462984723854288
+Junior declarado,vinculo_grupo,Servidor publico,36,851,0.04230317273795535
+Junior declarado,vinculo_grupo,Freelancer,13,851,0.01527614571092832
+Junior declarado,vinculo_grupo,Trabalho internacional,8,851,0.009400705052878966
+Junior declarado,vinculo_grupo,Desempregado,1,851,0.0011750881316098707
+Junior declarado,modelo_trabalho,Remoto,292,855,0.34152046783625734
+Junior declarado,modelo_trabalho,Hibrido,290,855,0.3391812865497076
+Junior declarado,modelo_trabalho,Presencial,273,855,0.3192982456140351
+Estagio declarado,escolaridade_grupo,Superior em andamento,137,185,0.7405405405405405
+Estagio declarado,escolaridade_grupo,Superior completo,35,185,0.1891891891891892
+Estagio declarado,escolaridade_grupo,Pos-graduacao,4,185,0.021621621621621623
+Estagio declarado,escolaridade_grupo,Mestrado,4,185,0.021621621621621623
+Estagio declarado,escolaridade_grupo,Doutorado,3,185,0.016216216216216217
+Estagio declarado,escolaridade_grupo,Sem graduacao formal,2,185,0.010810810810810811
+Estagio declarado,vinculo_grupo,Estagio,185,185,1.0
+Estagio declarado,modelo_trabalho,Hibrido,75,185,0.40540540540540543
+Estagio declarado,modelo_trabalho,Remoto,60,185,0.32432432432432434
+Estagio declarado,modelo_trabalho,Presencial,50,185,0.2702702702702703
+Ate 2 anos em dados,escolaridade_grupo,Superior completo,557,1489,0.374076561450638
+Ate 2 anos em dados,escolaridade_grupo,Pos-graduacao,399,1489,0.2679650772330423
+Ate 2 anos em dados,escolaridade_grupo,Superior em andamento,359,1489,0.24110141034251176
+Ate 2 anos em dados,escolaridade_grupo,Mestrado,91,1489,0.061114842175957015
+Ate 2 anos em dados,escolaridade_grupo,Doutorado,44,1489,0.029550033579583614
+Ate 2 anos em dados,escolaridade_grupo,Sem graduacao formal,39,1489,0.026192075218267292
+Ate 2 anos em dados,vinculo_grupo,CLT,1060,1481,0.7157326130992573
+Ate 2 anos em dados,vinculo_grupo,Estagio,176,1481,0.1188386225523295
+Ate 2 anos em dados,vinculo_grupo,PJ ou empreendedor,144,1481,0.09723160027008777
+Ate 2 anos em dados,vinculo_grupo,Servidor publico,52,1481,0.035111411208642807
+Ate 2 anos em dados,vinculo_grupo,Freelancer,23,1481,0.015530047265361242
+Ate 2 anos em dados,vinculo_grupo,Trabalho internacional,23,1481,0.015530047265361242
+Ate 2 anos em dados,vinculo_grupo,Desempregado,3,1481,0.002025658338960162
+Ate 2 anos em dados,modelo_trabalho,Remoto,546,1490,0.36644295302013424
+Ate 2 anos em dados,modelo_trabalho,Hibrido,522,1490,0.3503355704697987
+Ate 2 anos em dados,modelo_trabalho,Presencial,422,1490,0.2832214765100671
