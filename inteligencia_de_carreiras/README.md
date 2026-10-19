@@ -10,6 +10,9 @@ separados por fonte e unidade de observação, com um catálogo único.
 
 Para revisar a solução completa, abra a [documentação final em PDF](08_documentacao_final/documentacao_final.pdf)
 ou o [guia de entrega CC01-CC10](08_documentacao_final/guia_entrega.md).
+O [índice geral da documentação](../docs/README.md) separa os materiais atuais
+dos registros originais do Ciclo 1. Para abrir o dashboard com um ambiente próprio,
+siga a [execução de AVD no README principal](../README.md#executar-o-dashboard-avd).
 
 1. Leia o [plano de análise](01_plano_de_analise/plano_de_analise.md) ou a
    [versão em PDF](01_plano_de_analise/plano_de_analise.pdf).
@@ -78,12 +81,13 @@ of Data, com referência majoritária, logística e árvore simples. Traz matriz
 confusão, ROC, precision-recall e interpretação do desempenho limitado. A escolha
 ocorre no treino; os escores individuais permanecem locais e fora do Git.
 
-O [dashboard v1](06_dashboard_e_publicacao/README.md) integra as fontes em visões
+O [dashboard AVD](06_dashboard_e_publicacao/README.md), consolidado como v1.1,
+integra as fontes em visões
 separadas, com filtros, downloads agregados e evidências dos modelos. Usa um pacote
 público compacto que não contém respostas individuais. A
 [proposta de publicação](06_dashboard_e_publicacao/proposta_integracao_web.md)
-define a hospedagem em Streamlit; o envio ao GitHub e a implantação externa não
-foram executados.
+define a hospedagem em Streamlit. A entrega inicial das oito etapas foi
+versionada no commit `c789019`; a implantação externa continua pendente.
 
 O pacote tem janeiro a março de 2025 do CAGED e a pesquisa State of Data 2024-2025.
 Não representa todo o ano nem o mercado atual de 2026. O CAGEDMOV não inclui aqui
@@ -91,7 +95,8 @@ os ajustes CAGEDFOR/CAGEDEXC. A pesquisa não representa toda a população de T
 
 ## Relação com o restante do repositório
 
-`app/`, `src/`, `docs/` e `notebooks/` na raiz preservam o ciclo existente.
+`app/`, `src/`, `notebooks/` e os documentos originais em `docs/` preservam o ciclo
+existente; `docs/README.md` apenas acrescenta um índice geral de navegação.
 O dashboard original continua lendo `data/processed` com seu recorte configurado.
 Esta organização não altera automaticamente suas fontes, gráficos ou resultados.
 A etapa 06 tem um novo entrypoint próprio e preserva esse aplicativo histórico.
@@ -101,8 +106,11 @@ integral e avaliação funcional ampliada. O roteiro de revisão está pronto; a
 não houve teste estruturado com colegas ou usuários.
 
 Sequência atual: oito etapas com artefatos técnicos/documentais organizados,
-dashboard v1.1 validado localmente e documentação final concluída. Faltam revisão
-estruturada pelo grupo, commit/push quando solicitado e hospedagem externa com
-validação remota. A prévia local não é um endereço público compartilhável.
-Os relatórios de etapas anteriores preservam o estado de seu momento de execução;
-a [documentação final](08_documentacao_final/README.md) registra o fechamento atual.
+dashboard v1.1 validado localmente e documentação final concluída. A entrega
+inicial está versionada em `c789019`. Faltam revisão estruturada pelo grupo,
+incorporação de feedback real e hospedagem externa com validação remota.
+A prévia local não é um endereço público compartilhável.
+Os relatórios e PDFs das etapas preservam o estado de seu momento de execução,
+inclusive pendências de commit/push anteriores ao versionamento. A
+[documentação final](08_documentacao_final/README.md) registra o fechamento técnico;
+este índice e o README principal mantêm o estado posterior da entrega.

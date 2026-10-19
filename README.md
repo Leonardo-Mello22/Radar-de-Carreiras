@@ -1,49 +1,117 @@
 # 🧭 Radar de Carreira em TI
 
-Painel público e gratuito que traduz **dados oficiais do mercado de trabalho** (Novo CAGED)
-em informação útil para decisão de carreira em tecnologia — com foco inicial em
-**Pernambuco e Nordeste**.
+Projeto de análise e visualização de dados para apoiar a compreensão do mercado
+de trabalho e das trajetórias em tecnologia, com foco inicial em **Pernambuco e
+Nordeste**. Combina dados oficiais de emprego formal, pesquisa sobre carreiras
+em dados e pesquisa própria do Grupo 12, mantendo cada fonte em seu contexto.
 
 > **Projeto 5 · CESAR School · 2026.2 · Grupo 12** — Trilha de Análise e Visualização de Dados.
-> Este repositório é o resultado do **Ciclo 1** (entregáveis 1, 2, 3 e 4).
+> O repositório preserva a aplicação do **Ciclo 1** e reúne, separadamente, as
+> **oito etapas de inteligência de carreiras**, com dashboard AVD consolidado v1.1.
 
-## Inteligência de carreiras
+## Mapa do Repositório
 
-A área [`inteligencia_de_carreiras/`](inteligencia_de_carreiras/README.md) organiza
-os datasets preparados, critérios de Análise e Visualização de Dados e as oito
-etapas de análise, modelagem, visualização e documentação.
+| Área | Ponto de entrada | Escopo |
+| --- | --- | --- |
+| Aplicação existente do Ciclo 1 | [app/dashboard.py](app/dashboard.py) | Implementação original, com pipeline em `src/` e dados em `data/processed`; preservada |
+| Inteligência de carreiras / AVD | [README da área](inteligencia_de_carreiras/README.md) | Dados, análise exploratória, modelos, dashboard e documentação das oito etapas |
+| Documentação geral | [Índice de documentação](docs/README.md) | Navegação pela documentação atual e pelos registros originais do Ciclo 1 |
 
-Comece pelo [plano de análise em PDF](inteligencia_de_carreiras/01_plano_de_analise/plano_de_analise.pdf)
-ou pela [versão editável](inteligencia_de_carreiras/01_plano_de_analise/plano_de_analise.md).
-O pacote local reúne CAGED de janeiro a março de 2025 e State of Data Brazil
-2024-2025. Os dados grandes são ignorados pelo Git; há scripts de reprodução e
-manifesto de fontes. A pesquisa própria G12 foi incorporada separadamente: 35
-respostas e 21 registros de desk research, com controles de qualidade e privacidade.
-A fase 01 foi revisada com 12 perguntas de análise e uma conferência dos critérios.
-A [fase 02](inteligencia_de_carreiras/02_preparacao_dados/README.md) inclui plano
-de preparação, matriz por coluna, pipeline reproduzível e evidências de validação.
-A [fase 03](inteligencia_de_carreiras/03_analise_exploratoria/README.md) contém
-notebook executado, gráficos e interpretações, com saídas próprias locais protegidas.
-A [fase 04](inteligencia_de_carreiras/04_regressao/README.md) compara regressões
-lineares com uma referência de mediana, com teste temporal, gráficos de tendência,
-resíduos e limitações documentadas.
-A [fase 05](inteligencia_de_carreiras/05_classificacao/README.md) avalia busca ativa
-declarada no State of Data, com treino/teste separados, matrizes de confusão, ROC,
-precision-recall e interpretação do baixo recall observado.
-A [fase 06](inteligencia_de_carreiras/06_dashboard_e_publicacao/README.md) traz um
-dashboard Streamlit v1 com agregados públicos, filtros e proposta de publicação.
-Entrada: `inteligencia_de_carreiras/06_dashboard_e_publicacao/dashboard.py`.
-A hospedagem externa ainda não foi executada.
-A [fase 07](inteligencia_de_carreiras/07_consolidacao_e_validacao/README.md) consolida
-a versão 1.1 com filtros persistentes, auditoria dos agregados e testes funcionais
-ampliados. A revisão estruturada pelos colegas permanece pendente; há roteiro e
-registro próprios, sem simular feedback.
-A [fase 08](inteligencia_de_carreiras/08_documentacao_final/README.md) fecha a
-documentação técnica em PDF e Markdown, com histórico, decisões, insights,
-capturas, limites e guia de entrega CC01-CC10. As oito etapas estão organizadas;
-revisão estruturada, commit/push e hospedagem externa continuam pendentes.
-O dashboard e os artefatos do Ciclo 1 abaixo continuam com
-seu recorte original até a etapa de integração.
+As aplicações têm entradas distintas. O dashboard AVD **não substitui nem altera**
+o aplicativo existente, seu pipeline ou suas fontes. Ele reutiliza a identidade
+visual existente, sem modificar sua implementação.
+
+## Entregas de AVD
+
+| Etapa | Conteúdo principal |
+| --- | --- |
+| [01. Plano de análise](inteligencia_de_carreiras/01_plano_de_analise/README.md) | 12 perguntas, métricas e justificativa das visualizações |
+| [02. Preparação dos dados](inteligencia_de_carreiras/02_preparacao_dados/README.md) | Filtros, categorias, valores ausentes, normalização e pipeline reproduzível |
+| [03. Análise exploratória](inteligencia_de_carreiras/03_analise_exploratoria/README.md) | Notebook executado, distribuições, relações, agrupamentos e interpretação |
+| [04. Regressão](inteligencia_de_carreiras/04_regressao/README.md) | Salários do CAGED, referência de mediana, teste temporal e resíduos |
+| [05. Classificação](inteligencia_de_carreiras/05_classificacao/README.md) | Busca ativa declarada no State of Data, treino/teste e avaliação dos classificadores |
+| [06. Dashboard e publicação](inteligencia_de_carreiras/06_dashboard_e_publicacao/README.md) | Dashboard inicial, filtros e proposta de integração/publicação web |
+| [07. Consolidação e validação](inteligencia_de_carreiras/07_consolidacao_e_validacao/README.md) | Dashboard v1.1, auditoria numérica e testes funcionais desktop/mobile |
+| [08. Documentação final](inteligencia_de_carreiras/08_documentacao_final/README.md) | Decisões, histórico, insights, capturas, limitações e guia de entrega |
+
+As oito etapas organizam os dez entregáveis de CC: a etapa 06 reúne dashboard
+inicial e proposta de integração; a 07 reúne consolidação e versão quase final.
+Consulte a [matriz de critérios](inteligencia_de_carreiras/00_referencias/matriz_criterios.csv),
+a [documentação final em PDF](inteligencia_de_carreiras/08_documentacao_final/documentacao_final.pdf)
+e o [guia de entrega](inteligencia_de_carreiras/08_documentacao_final/guia_entrega.md).
+
+## Dados da Área de Inteligência
+
+| Fonte | Recorte preparado | Unidade e cuidado principal |
+| --- | --- | --- |
+| Novo CAGED / MTE | Janeiro a março de 2025; 118.564 movimentações de TI no Brasil, sendo 2.305 em PE | Eventos de emprego formal, não pessoas; salários corrigidos pelo IPCA para março de 2025 |
+| State of Data Brazil | Edição 2024-2025; 5.215 respostas tratadas, sendo 5.076 de residentes no Brasil | Pesquisa voluntária sobre carreiras em dados; salários em faixas |
+| Questionário do Grupo 12 | 35 respostas a 12 perguntas, coletadas em 2026 | Pesquisa exploratória própria; respostas individuais e resultados restritos fora do Git |
+| Matriz de pesquisa G12 | 21 registros de pesquisa documental | Referências e hipóteses, não uma amostra de participantes |
+
+As bases são reais e ficam **separadas por fonte e unidade de observação**. Não
+há união de indivíduos entre CAGED e pesquisas. RAIS, PNAD, INEP, Brasscom e Exame
+aparecem como referências da matriz, não como datasets importados nesta entrega.
+
+O [guia de dados](inteligencia_de_carreiras/datasets/LEIA-ME.md), o
+[catálogo](inteligencia_de_carreiras/datasets/catalogo.md) e as
+[regras de integração e privacidade](inteligencia_de_carreiras/datasets/organizacao_e_integracao.md)
+detalham procedência e preparação. Os originais e dados tratados completos ficam
+locais e são ignorados pelo Git. O dashboard AVD usa somente o
+[pacote versionado de agregados públicos](inteligencia_de_carreiras/06_dashboard_e_publicacao/dados_publicos/manifesto.json),
+sem depender dos XLSX privados ou dos microdados completos para abrir.
+
+## Executar o Dashboard AVD
+
+Na raiz do repositório, com **Python 3.12**, crie um ambiente próprio para a área
+de dados. Isso mantém separadas as dependências da aplicação existente.
+
+```powershell
+python -m venv inteligencia_de_carreiras/.venv
+$python = ".\inteligencia_de_carreiras\.venv\Scripts\python.exe"
+& $python -m pip install -r inteligencia_de_carreiras/06_dashboard_e_publicacao/requirements.txt
+& $python -m streamlit run inteligencia_de_carreiras/06_dashboard_e_publicacao/dashboard.py --server.port 8502
+```
+
+Abra o endereço local mostrado no terminal, normalmente
+[http://localhost:8502](http://localhost:8502). Se a porta estiver ocupada, escolha
+outra em `--server.port`. Esse endereço não é uma publicação pública.
+
+O dashboard oferece as visões **Emprego formal**, **Perfis em dados**, **Modelos**
+e **Fontes**, com filtros e exportação de agregados. Não é necessário baixar os
+datasets completos ou treinar modelos para consultá-lo. Para reproduzir análises
+e regenerar o pacote, siga as instruções de cada etapa; a pesquisa própria exige
+acesso autorizado aos originais.
+
+## Estado e Limites
+
+- As oito etapas estão implementadas/documentadas; a entrega inicial foi versionada
+  no commit `c789019`. Versionar no Git não significa hospedar o dashboard.
+- A consolidação registrou **111 testes**, **22 verificações no navegador** e
+  **65.761 comparações numéricas sem divergências**, conforme o
+  [registro da etapa 07](inteligencia_de_carreiras/07_consolidacao_e_validacao/registro_execucao.json).
+- **Ainda pendentes:** revisão estruturada pelo grupo, incorporação de feedback
+  real e hospedagem externa seguida de teste remoto. A avaliação técnica não
+  substitui validação com usuários nem aprovação acadêmica.
+- O recorte CAGED não representa o ano inteiro nem o mercado atual de 2026 e usa
+  somente CAGEDMOV, sem os ajustes CAGEDFOR/CAGEDEXC. A pesquisa State of Data não
+  representa toda a população de TI.
+- Regressão e classificação são análises experimentais com erros e limitações
+  documentados; não devem ser usadas para decisões individuais de salário ou contratação.
+
+Os relatórios e PDFs de execução preservam o estado do momento em que foram
+gerados, inclusive menções a commit/push então pendentes. Para o estado posterior
+ao versionamento, consulte este README e o [índice geral](docs/README.md).
+
+## Registro Original do Ciclo 1
+
+O conteúdo abaixo foi preservado. Seus números, fontes, comandos e afirmações
+referem-se **somente à implementação original do Ciclo 1**, com CAGED de janeiro
+de 2025; não descrevem todas as fontes ou a situação atual da área AVD.
+
+<details>
+<summary>Consultar a documentação original da aplicação existente</summary>
+
 
 ## O que o produto responde
 
@@ -131,3 +199,5 @@ séries temporais ficam completas ao adicionar meses em `src/config.py::MESES`.
 ## Dados são reais
 Todos os números deste repositório foram calculados a partir de arquivos reais baixados do
 FTP do MTE. **Nenhum dado sintético foi usado.**
+
+</details>

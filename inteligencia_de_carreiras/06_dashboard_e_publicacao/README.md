@@ -16,14 +16,18 @@ o novo ponto de entrada desta área é `dashboard.py`.
 
 ## Executar
 
-Na raiz do repositório, com Python 3.12:
+Na raiz do repositório, com Python 3.12, use um ambiente exclusivo da área AVD
+para manter separadas as dependências da aplicação existente:
 
 ```powershell
-python -m pip install -r inteligencia_de_carreiras/06_dashboard_e_publicacao/requirements.txt
-python -m streamlit run inteligencia_de_carreiras/06_dashboard_e_publicacao/dashboard.py
+python -m venv inteligencia_de_carreiras/.venv
+$python = ".\inteligencia_de_carreiras\.venv\Scripts\python.exe"
+& $python -m pip install -r inteligencia_de_carreiras/06_dashboard_e_publicacao/requirements.txt
+& $python -m streamlit run inteligencia_de_carreiras/06_dashboard_e_publicacao/dashboard.py --server.port 8502
 ```
 
-A URL é mostrada pelo Streamlit. O app usa o pacote versionável de agregados,
+A URL local é mostrada pelo Streamlit; escolha outra porta se 8502 estiver ocupada.
+Ela não é uma publicação pública. O app usa o pacote versionável de agregados,
 não depende dos datasets grandes ou privados presentes em outra pasta. Não baixa
 arquivos, não treina modelos e não envia respostas a serviços externos.
 
@@ -62,17 +66,19 @@ contagens continuam disponíveis. Há estados específicos para recorte vazio e 
 
 ## Regerar e Testar
 
-Com os datasets preparados e as etapas 04/05 executadas, na raiz:
+Com os datasets preparados e as etapas 04/05 executadas, na raiz, use o mesmo
+interpretador `$python` definido na seção Executar:
 
 ```powershell
-python inteligencia_de_carreiras/06_dashboard_e_publicacao/preparar_pacote.py
-python -m pip install -r inteligencia_de_carreiras/06_dashboard_e_publicacao/requirements_testes.txt
-python -m unittest discover -s inteligencia_de_carreiras/06_dashboard_e_publicacao/tests -v
-python -m playwright install chromium
-python inteligencia_de_carreiras/06_dashboard_e_publicacao/verificar_navegador.py --url http://localhost:8501
+& $python inteligencia_de_carreiras/06_dashboard_e_publicacao/preparar_pacote.py
+& $python -m pip install -r inteligencia_de_carreiras/06_dashboard_e_publicacao/requirements_testes.txt
+& $python -m unittest discover -s inteligencia_de_carreiras/06_dashboard_e_publicacao/tests -v
+& $python -m playwright install chromium
+& $python inteligencia_de_carreiras/06_dashboard_e_publicacao/verificar_navegador.py --url http://localhost:8502
 ```
 
-O último comando exige o servidor já iniciado. Os testes de integração usam os
+O último comando exige o servidor já iniciado; ajuste a URL se usar outra porta.
+Os testes de integração usam os
 datasets locais apenas para conferir os agregados; o app publicado não os exige.
 `validar_entrega.py` reúne as suites das etapas anteriores e exige também as
 dependências das etapas 02-05; não é necessário para servir o dashboard.
@@ -84,9 +90,11 @@ reunidas como Outras respostas, sem criar participantes adicionais.
 ## Publicação
 
 **Dashboard local implementado; hospedagem externa ainda não executada.** A etapa
-inclui a proposta completa de publicação no Streamlit Community Cloud. Enviar
-arquivos ao GitHub e vincular a conta de hospedagem depende de autorização e acesso
-do grupo. Nenhum commit, push ou publicação externa foi realizado.
+inclui a proposta completa de publicação no Streamlit Community Cloud. A entrega
+inicial das oito etapas está versionada no commit `c789019`; isso não publica
+automaticamente o dashboard. Vincular a conta de hospedagem e realizar o teste
+remoto continuam pendentes e dependem de acesso do grupo. Os registros de execução
+preservam a situação anterior ao versionamento, sem reescrever as evidências.
 
 Somente `dados_publicos/` é usado para servir dados. Pesquisa G12, originais,
 respostas individuais e escores por participante não entram nesta versão. A etapa 07

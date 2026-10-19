@@ -1,8 +1,13 @@
 # Datasets preparados para o Radar de Carreiras
 
 Pacote de dados da area `inteligencia_de_carreiras`, integrado ao repositorio.
-O dashboard existente continua usando suas fontes anteriores; a integracao destes
-datasets ao aplicativo sera feita nas etapas de dashboard e validacao.
+O aplicativo original em `app/dashboard.py` continua usando suas fontes anteriores.
+O [dashboard AVD](../06_dashboard_e_publicacao/README.md), implementado na etapa 06
+e consolidado como v1.1 na etapa 07, usa um pacote proprio de agregados publicos
+em `06_dashboard_e_publicacao/dados_publicos/`, separado dos microdados deste pacote.
+Para apenas abrir esse dashboard, siga a
+[execucao no README principal](../../README.md#executar-o-dashboard-avd): nao e
+necessario baixar os originais, acessar os XLSX privados ou executar este pipeline.
 
 Consulte o [catalogo de dados](catalogo.md) para escolher a tabela adequada.
 Os datasets de cada fonte permanecem separados. A pesquisa propria e a matriz G12
