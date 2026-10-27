@@ -1,0 +1,36 @@
+{
+  "n": 35,
+  "fonte": "Pesquisa própria do Grupo 12 — Trajetória Profissional em TI · CESAR School · out/2026",
+  "kpis": {
+    "usariam_n": 29,
+    "cogitaram_n": 14,
+    "buscando_n": 15,
+    "sal_mediana": 2500,
+    "sal_p25": 1550,
+    "sal_p75": 3850,
+    "exp_mediana": 2
+  },
+  "blocos": [
+    {"id": "curso", "titulo": "Curso de graduação", "base": 35,
+     "itens": [{"rotulo": "Ciência da Computação", "n": 29}, {"rotulo": "Design", "n": 6}]},
+    {"id": "periodo", "titulo": "Período", "base": 35, "ordinal": true,
+     "itens": [{"rotulo": "1º", "n": 4}, {"rotulo": "4º", "n": 1}, {"rotulo": "5º", "n": 6}, {"rotulo": "6º", "n": 6}, {"rotulo": "7º", "n": 13}, {"rotulo": "8º", "n": 3}, {"rotulo": "Desperiodizado", "n": 2}]},
+    {"id": "momento", "titulo": "Momento de carreira", "base": 35,
+     "itens": [{"rotulo": "Estagiário", "n": 12}, {"rotulo": "Estudante sem estágio", "n": 9}, {"rotulo": "Buscando 1ª vaga", "n": 8}, {"rotulo": "Júnior", "n": 4}, {"rotulo": "Pleno ou acima", "n": 1}, {"rotulo": "Saiu da área", "n": 1}]},
+    {"id": "regime", "titulo": "Regime de trabalho atual", "base": 35,
+     "itens": [{"rotulo": "Fora da área, buscando", "n": 16}, {"rotulo": "Estágio", "n": 11}, {"rotulo": "CLT", "n": 5}, {"rotulo": "Informal / freelance", "n": 2}, {"rotulo": "PJ ou MEI", "n": 1}]},
+    {"id": "salario", "titulo": "Expectativa salarial mensal (R$)", "base": 35, "ordinal": true,
+     "nota": "Mediana R$ 2.500; faixa típica R$ 1.550–3.850 (p25–p75). 1 resposta inválida (R$ 5) e 1 outlier (R$ 20.000) fora da faixa típica.",
+     "itens": [{"rotulo": "até 1.499", "n": 4}, {"rotulo": "1.500–1.999", "n": 6}, {"rotulo": "2.000–2.999", "n": 9}, {"rotulo": "3.000–3.999", "n": 7}, {"rotulo": "4.000–4.999", "n": 2}, {"rotulo": "5.000+", "n": 7}]},
+    {"id": "experiencia", "titulo": "Experiência em TI (meses)", "base": 35, "ordinal": true,
+     "nota": "Mediana de 2 meses; 14 respostas sem nenhuma experiência.",
+     "itens": [{"rotulo": "0 (nenhuma)", "n": 14}, {"rotulo": "1–5", "n": 7}, {"rotulo": "6–11", "n": 4}, {"rotulo": "12–23", "n": 8}, {"rotulo": "24+", "n": 2}]},
+    {"id": "dificuldade", "titulo": "Maior dificuldade", "base": 35,
+     "itens": [{"rotulo": "Requisitos confusos", "n": 12}, {"rotulo": "Outro", "n": 8}, {"rotulo": "Fontes dispersas", "n": 4}, {"rotulo": "Não saber o que vem depois", "n": 4}, {"rotulo": "Salário não divulgado", "n": 4}, {"rotulo": "Linguagem técnica", "n": 2}, {"rotulo": "Falta de recorte regional", "n": 1}]},
+    {"id": "infos_painel", "titulo": "O que querem ver primeiro num painel", "base": 35, "multi": true,
+     "nota": "Múltipla escolha (até 3): a soma passa de 35.",
+     "itens": [{"rotulo": "Faixas salariais por nível", "n": 25}, {"rotulo": "Requisitos técnicos exigidos", "n": 25}, {"rotulo": "Áreas/techs com mais vagas", "n": 23}, {"rotulo": "Avaliações de empresas", "n": 14}, {"rotulo": "CLT vs PJ/MEI", "n": 7}, {"rotulo": "Comparativo regional", "n": 5}, {"rotulo": "Fontes oficiais traduzidas", "n": 2}]},
+    {"id": "facilidade", "titulo": "Facilidade de achar info confiável (1–5)", "base": 35, "ordinal": true,
+     "itens": [{"rotulo": "1 muito difícil", "n": 2}, {"rotulo": "2", "n": 4}, {"rotulo": "3", "n": 15}, {"rotulo": "4", "n": 11}, {"rotulo": "5 muito fácil", "n": 3}]}
+  ]
+}
