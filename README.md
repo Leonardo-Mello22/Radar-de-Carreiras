@@ -1,75 +1,10 @@
-# 🧭 Radar de Carreira em TI
+# Radar de Carreiras
 
-Projeto de análise e visualização de dados para apoiar a compreensão do mercado
-de trabalho e das trajetórias em tecnologia, com foco inicial em **Pernambuco e
-Nordeste**. Combina dados oficiais de emprego formal, pesquisa sobre carreiras
-em dados e pesquisa própria do Grupo 12, mantendo cada fonte em seu contexto.
+Painel de inteligência de mercado para explorar **salários de entrada, admissões e desligamentos em TI** no Brasil, com recortes para Pernambuco e Nordeste. Reúne dados de emprego formal e pesquisas sobre carreiras em dados, sem combinar populações diferentes.
 
-> **Projeto 5 · CESAR School · 2026.2 · Grupo 12** — Trilha de Análise e Visualização de Dados.
-> O repositório preserva a aplicação do **Ciclo 1** e reúne, separadamente, as
-> **oito etapas de inteligência de carreiras**, com dashboard AVD ampliado em 2025–2026.
+## Executar o dashboard AVD
 
-## Mapa do Repositório
-
-| Área | Ponto de entrada | Escopo |
-| --- | --- | --- |
-| Aplicação existente do Ciclo 1 | [app/dashboard.py](app/dashboard.py) | Implementação original, com pipeline em `src/` e dados em `data/processed`; preservada |
-| Inteligência de carreiras / AVD | [README da área](inteligencia_de_carreiras/README.md) | Dados, análise exploratória, modelos, dashboard e documentação das oito etapas |
-| Documentação geral | [Índice de documentação](docs/README.md) | Navegação pela documentação atual e pelos registros originais do Ciclo 1 |
-
-As aplicações têm entradas distintas. O dashboard AVD **não substitui nem altera**
-o aplicativo existente, seu pipeline ou suas fontes. Ele reutiliza a identidade
-visual existente, sem modificar sua implementação.
-
-## Entregas de AVD
-
-**Atualização 2025–2026:** o dashboard de AVD agora usa **842.731 movimentações**
-do CAGED (jan/2025 a set/2026), duas edições do State of Data e modelos
-reavaliados. Veja o [registro completo das oito etapas da atualização](inteligencia_de_carreiras/08_documentacao_final/atualizacao_2025_2026.md).
-As tabelas e entregas do ciclo original continuam disponíveis para reprodução.
-
-| Etapa | Conteúdo principal |
-| --- | --- |
-| [01. Plano de análise](inteligencia_de_carreiras/01_plano_de_analise/README.md) | 12 perguntas, métricas e justificativa das visualizações |
-| [02. Preparação dos dados](inteligencia_de_carreiras/02_preparacao_dados/README.md) | Filtros, categorias, valores ausentes, normalização e pipeline reproduzível |
-| [03. Análise exploratória](inteligencia_de_carreiras/03_analise_exploratoria/README.md) | Notebook executado, distribuições, relações, agrupamentos e interpretação |
-| [04. Regressão](inteligencia_de_carreiras/04_regressao/README.md) | Salários do CAGED, referência de mediana, teste temporal e resíduos |
-| [05. Classificação](inteligencia_de_carreiras/05_classificacao/README.md) | Busca ativa declarada no State of Data, treino/teste e avaliação dos classificadores |
-| [06. Dashboard e publicação](inteligencia_de_carreiras/06_dashboard_e_publicacao/README.md) | Dashboard inicial, filtros e proposta de integração/publicação web |
-| [07. Consolidação e validação](inteligencia_de_carreiras/07_consolidacao_e_validacao/README.md) | Dashboard v1.1, auditoria numérica e testes funcionais desktop/mobile |
-| [08. Documentação final](inteligencia_de_carreiras/08_documentacao_final/README.md) | Decisões, histórico, insights, capturas, limitações e guia de entrega |
-
-As oito etapas organizam os dez entregáveis de CC: a etapa 06 reúne dashboard
-inicial e proposta de integração; a 07 reúne consolidação e versão quase final.
-Consulte a [matriz de critérios](inteligencia_de_carreiras/00_referencias/matriz_criterios.csv),
-a [documentação final em PDF](inteligencia_de_carreiras/08_documentacao_final/documentacao_final.pdf)
-e o [guia de entrega](inteligencia_de_carreiras/08_documentacao_final/guia_entrega.md).
-
-## Dados da Área de Inteligência
-
-| Fonte | Recorte preparado | Unidade e cuidado principal |
-| --- | --- | --- |
-| Novo CAGED / MTE | Janeiro de 2025 a setembro de 2026; 842.731 movimentações de TI no Brasil, sendo 19.200 em PE | Eventos de emprego formal, não pessoas; salários corrigidos pelo IPCA para março de 2025 |
-| State of Data Brazil | 2024/2025: 5.215 tratadas, 5.076 Brasil; 2025/2026: 3.494 tratadas, 3.372 Brasil | Edições separadas; pesquisa voluntária com salários em faixas |
-| Questionário do Grupo 12 | 35 respostas a 12 perguntas, coletadas em 2026 | Pesquisa exploratória própria; respostas individuais e resultados restritos fora do Git |
-| Matriz de pesquisa G12 | 21 registros de pesquisa documental | Referências e hipóteses, não uma amostra de participantes |
-
-As bases são reais e ficam **separadas por fonte e unidade de observação**. Não
-há união de indivíduos entre CAGED e pesquisas. RAIS, PNAD, INEP, Brasscom e Exame
-aparecem como referências da matriz, não como datasets importados nesta entrega.
-
-O [guia de dados](inteligencia_de_carreiras/datasets/LEIA-ME.md), o
-[catálogo](inteligencia_de_carreiras/datasets/catalogo.md) e as
-[regras de integração e privacidade](inteligencia_de_carreiras/datasets/organizacao_e_integracao.md)
-detalham procedência e preparação. Os originais e dados tratados completos ficam
-locais e são ignorados pelo Git. O dashboard AVD lê o
-[pacote ampliado de agregados](inteligencia_de_carreiras/06_dashboard_e_publicacao/dados_ampliados/manifesto.json)
-e os resultados agregados da turma, sem depender dos XLSX privados ou microdados.
-
-## Executar o Dashboard AVD
-
-Na raiz do repositório, com **Python 3.12**, crie um ambiente próprio para a área
-de dados. Isso mantém separadas as dependências da aplicação existente.
+Com Python 3.12, na raiz do repositório (PowerShell):
 
 ```powershell
 python -m venv inteligencia_de_carreiras/.venv
@@ -78,35 +13,34 @@ $python = ".\inteligencia_de_carreiras\.venv\Scripts\python.exe"
 & $python -m streamlit run inteligencia_de_carreiras/06_dashboard_e_publicacao/dashboard.py --server.port 8502
 ```
 
-Abra o endereço local mostrado no terminal, normalmente
-[http://localhost:8502](http://localhost:8502). Se a porta estiver ocupada, escolha
-outra em `--server.port`. Esse endereço não é uma publicação pública.
+Acesse [localhost:8502](http://localhost:8502). O painel carrega agregados do repositório: não precisa baixar microdados nem treinar modelos. As instruções da aplicação original estão no registro do Ciclo 1, abaixo.
 
-O dashboard oferece **Salários e vagas**, **Quem trabalha na área**, **Previsões**,
-**CESAR School** e **Sobre os dados**. Não é necessário baixar os
-datasets completos ou treinar modelos para consultá-lo. Para reproduzir análises
-e regenerar o pacote, siga as instruções de cada etapa; a pesquisa própria exige
-acesso autorizado aos originais.
+## Cobertura dos dados
 
-## Estado e Limites
+| Fonte | Período | Registros analisados |
+| --- | --- | ---: |
+| Novo CAGED (MTE) | Jan/2025 a set/2026 | 842.731 movimentações de TI, das quais 19.200 em PE |
+| State of Data Brazil | Edição 2024/2025 | 5.215 respostas tratadas; 5.076 de residentes no Brasil |
+| State of Data Brazil | Edição 2025/2026 | 3.494 respostas tratadas; 3.372 de residentes no Brasil |
+| Pesquisa própria (CESAR School) | 2026 | 35 respostas, exibidas em agregado |
 
-- As oito etapas estão implementadas/documentadas; a entrega inicial foi versionada
-  no commit `c789019`. Versionar no Git não significa hospedar o dashboard.
-- A consolidação original registrou **111 testes**, **22 verificações no navegador** e
-  **65.761 comparações numéricas sem divergências**, conforme o
-  [registro da etapa 07](inteligencia_de_carreiras/07_consolidacao_e_validacao/registro_execucao.json).
-- **Ainda pendentes:** revisão estruturada pelo grupo, incorporação de feedback
-  real e hospedagem externa seguida de teste remoto. A avaliação técnica não
-  substitui validação com usuários nem aprovação acadêmica.
-- O CAGED inclui 2025 inteiro, mas só jan–set/2026, e usa
-  somente CAGEDMOV, sem os ajustes CAGEDFOR/CAGEDEXC. A pesquisa State of Data não
-  representa toda a população de TI.
-- Regressão e classificação são análises experimentais com erros e limitações
-  documentados; não devem ser usadas para decisões individuais de salário ou contratação.
+O CAGED registra **movimentações**, não pessoas únicas nem vagas em aberto. Os salários estão em reais de março de 2025, corrigidos pelo IPCA. As diferenças entre admissões e desligamentos usam apenas os arquivos MOV e não equivalem ao saldo oficial ajustado. As edições do State of Data são amostras voluntárias separadas.
 
-Os relatórios e PDFs de execução preservam o estado do momento em que foram
-gerados, inclusive menções a commit/push então pendentes. Para o estado posterior
-ao versionamento, consulte este README e o [índice geral](docs/README.md).
+## Resultados e limites
+
+- **Emprego formal:** o painel permite filtrar por período, local e ocupação. As comparações entre 2025 e 2026 usam janeiro a setembro de ambos os anos.
+- **Regressão salarial:** o erro médio absoluto foi de **R$ 2.778** no teste de 2026, contra **R$ 3.911** da referência baseada na mediana do treino.
+- **Busca ativa de emprego:** ao testar na edição mais recente, o classificador identificou **7,5%** das pessoas que declararam estar buscando emprego. O desempenho não sustenta uso individual.
+
+## Documentação
+
+- [Relatório técnico da atualização](inteligencia_de_carreiras/08_documentacao_final/atualizacao_2025_2026.md): metodologia, resultados e validação.
+- [Notebook executado](inteligencia_de_carreiras/03_analise_exploratoria/analise_ampliada.ipynb): análises, gráficos e métricas.
+- [Fontes e preparação dos dados](inteligencia_de_carreiras/datasets/ATUALIZACAO_2025_2026.md): procedência, tratamento e reprodução.
+- [Guia do dashboard](inteligencia_de_carreiras/06_dashboard_e_publicacao/README.md): execução, testes e publicação.
+- [Índice geral](docs/README.md): etapas do projeto e documentação do Ciclo 1.
+
+Projeto desenvolvido pelo Grupo 12 na CESAR School, na trilha de Análise e Visualização de Dados.
 
 ## Registro Original do Ciclo 1
 
