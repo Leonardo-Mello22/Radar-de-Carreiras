@@ -1,5 +1,13 @@
 # Consolidação e Validação
 
+**Validação da ampliação:** 28 testes de dados e interface passaram, incluindo
+totais e percentis recalculados, troca de edição e testes reservados dos modelos.
+O [roteiro de navegador](verificar_ampliacao.py) passou em desktop e celular,
+com filtros, persistência, CSV e diagnósticos. Evidências:
+[CAGED desktop](evidencias_ampliacao/01_caged_desktop.png) e
+[perfis mobile](evidencias_ampliacao/02_perfis_mobile.png).
+Os registros abaixo são da consolidação original.
+
 Etapa 07, CC08 e CC09. Versão 1.1 do Radar de carreiras, consolidada para revisão
 do grupo. **Validação técnica local concluída; teste estruturado com participantes
 e validação da hospedagem externa ainda pendentes.** Não equivale à aprovação docente.

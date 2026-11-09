@@ -1,5 +1,8 @@
 # Documentação do Radar de Carreiras
 
+Para o recorte atual, veja a [documentação final da ampliação 2025–2026](../inteligencia_de_carreiras/08_documentacao_final/atualizacao_2025_2026.md).
+O material do ciclo original continua preservado neste índice.
+
 Índice geral do repositório. A documentação de inteligência de carreiras descreve
 as oito etapas de AVD; os documentos originais deste diretório registram o Ciclo 1
 e foram preservados, sem alterações na aplicação existente.
@@ -28,8 +31,8 @@ e foram preservados, sem alterações na aplicação existente.
 | 07. Consolidação e validação | [Relatório de validação técnica](../inteligencia_de_carreiras/07_consolidacao_e_validacao/relatorio_validacao.md) | [Registro de execução](../inteligencia_de_carreiras/07_consolidacao_e_validacao/registro_execucao.json) e [roteiro de revisão do grupo](../inteligencia_de_carreiras/07_consolidacao_e_validacao/roteiro_revisao.md) |
 | 08. Documentação final | [Síntese em PDF](../inteligencia_de_carreiras/08_documentacao_final/documentacao_final.pdf) | [Manifesto e validação documental](../inteligencia_de_carreiras/08_documentacao_final/README.md) |
 
-O pacote atual reúne CAGED de janeiro a março de 2025, State of Data Brazil
-2024-2025 e pesquisa própria de 2026. A matriz G12 é uma referência documental,
+O pacote atual reúne CAGED de janeiro de 2025 a setembro de 2026, as duas
+edições do State of Data Brazil e pesquisa própria de 2026. A matriz G12 é uma referência documental,
 não um conjunto de respostas individuais. As bases não foram unidas como se
 representassem as mesmas pessoas. Originais, microdados tratados e saídas
 restritas permanecem locais; o dashboard AVD usa agregados públicos versionados.
@@ -37,8 +40,8 @@ restritas permanecem locais; o dashboard AVD usa agregados públicos versionados
 ## Estado da Entrega
 
 A entrega inicial das oito etapas está versionada no commit `c789019`. O dashboard
-AVD está consolidado na versão 1.1 e foi validado tecnicamente de forma local.
-O registro da etapa 07 documenta 111 testes, 22 verificações de navegador e 65.761
+AVD foi ampliado e passou por nova validação técnica local. O registro original
+da etapa 07 documenta 111 testes, 22 verificações de navegador e 65.761
 comparações numéricas sem divergências.
 
 Permanecem pendentes a revisão estruturada pelos colegas/usuários, a incorporação

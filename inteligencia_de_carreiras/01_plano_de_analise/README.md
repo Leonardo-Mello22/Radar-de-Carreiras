@@ -1,5 +1,10 @@
 # Plano de análise
 
+**Adendo 2025–2026:** P1–P4 cobrem os 21 meses do Novo CAGED, com P2 comparando
+jan–set entre anos; P5–P8 mantêm as duas edições da pesquisa separadas. P9–P12
+continuam com a amostra original do Grupo 12. Veja o
+[roteiro atualizado](../08_documentacao_final/atualizacao_2025_2026.md).
+
 O plano define escopo, fontes, perguntas, métricas, visualizações, princípios de
 comunicação e protocolos previstos para regressão e classificação.
 

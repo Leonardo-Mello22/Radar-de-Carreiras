@@ -15,9 +15,9 @@ ROOT = AREA.parents[1]
 sys.path.insert(0, str(AREA))
 sys.path.insert(1, str(ROOT))
 from app import theme
-from dados import MIN_N, PERIODS, PackageError, caged_groups, caged_query, export_csv, geography, load_package, occupation, profile_query
+from dados import MIN_N, PackageError, caged_groups, caged_query, export_csv, geography, load_expansion, occupation, profile_query
 
-PUBLIC = AREA / "dados_publicos"
+PUBLIC = AREA / "dados_ampliados"
 st.set_page_config(page_title="Radar de carreiras", page_icon=":material/radar:", layout="wide")
 st.markdown(f"""<style>
  .stApp {{background:{theme.BRANCO}; color:{theme.TEXTO};}}
@@ -197,7 +197,7 @@ st.markdown(f'''<div class="hero-fig">
 
 @st.cache_data(show_spinner=False)
 def cached_package(signature):
-    return load_package(PUBLIC)
+    return load_expansion(PUBLIC)
 
 
 def money(value):
@@ -222,8 +222,8 @@ def chart(value):
 
 
 def reset(prefix):
-    defaults = {"c_regiao": "Pernambuco", "c_uf": "PE", "c_periodo": "2025T1", "c_area": "Todas", "c_cargo": "Todos",
-                "p_regiao": "Brasil", "p_uf": "Todas", "p_senior": "Todos", "p_modelo": "Todos"}
+    defaults = {"c_regiao": "Pernambuco", "c_uf": "PE", "c_periodo": "todos", "c_area": "Todas", "c_cargo": "Todos",
+                "p_regiao": "Brasil", "p_uf": "Todas", "p_senior": "Todos", "p_modelo": "Todos", "p_edicao": "2025/2026"}
     for key, value in defaults.items():
         if key.startswith(prefix):
             st.session_state[key] = value
@@ -254,10 +254,12 @@ def download(label, table, filename):
 def employment(package):
     st.markdown('<div class="pintro"><span class="eyebrow">salários e oportunidades</span>'
                 '<h2>Quanto pagam, e onde tem vaga?</h2>'
-                '<p>Escolha um cargo e um lugar. O restante se atualiza na hora. Valores de contratações com carteira assinada (Novo CAGED), já corrigidos pela inflação.</p></div>',
+                '<p>Admissões e desligamentos formais em TI de janeiro de 2025 a setembro de 2026. Salários em valores de março de 2025, corrigidos pelo IPCA.</p></div>',
                 unsafe_allow_html=True)
 
     catalog = package["metadata"]["catalogo"]
+    periods = package["metadata"]["periodos"]
+    labels = {key: value["rotulo"] for key, value in periods.items()}
     area_atual = st.session_state.get("c_area", "Todas")
     occupations = {v["categoria"]: v["rotulo"] for v in catalog if v["tipo"] == "cargo" and (area_atual == "Todas" or v["area"] == area_atual)}
 
@@ -273,7 +275,7 @@ def employment(package):
             region = st.selectbox("onde?", regions, key="c_regiao", on_change=clear_uf, args=("c_",), persist_state="session")
         st.divider()
         m1, m2, m3 = st.columns(3)
-        period = m1.selectbox("período", list(PERIODS), format_func=PERIODS.get, key="c_periodo", persist_state="session")
+        period = m1.selectbox("período", list(periods), format_func=labels.get, key="c_periodo", persist_state="session")
         areas = ["Todas", *[v["categoria"] for v in catalog if v["tipo"] == "area"]]
         area = m2.selectbox("área", areas, key="c_area", persist_state="session")
         ufs = [p["sigla"] for p in package["metadata"]["ufs"] if region != "Nordeste" or p["nordeste"]]
@@ -281,16 +283,18 @@ def employment(package):
         if st.session_state.get("c_uf") not in uf_options:
             st.session_state["c_uf"] = uf_options[0]
         uf = m3.selectbox("estado", uf_options, key="c_uf", disabled=region == "Pernambuco", persist_state="session")
+        st.button("Limpar filtros", icon=":material/restart_alt:", key="reset_caged", on_click=reset, args=("c_",))
 
     geo = geography(region, uf)
     location = "Pernambuco" if region == "Pernambuco" else (uf if uf != "Todas" else region)
     kind, category = occupation(area, cargo)
     rows = caged_query(package, geo, period, kind, category)
     if rows.empty or rows.iloc[0].n_eventos == 0:
-        st.info("Não encontramos contratações para essa combinação. Experimente 'Todos os cargos' ou uma região maior, como o Brasil.")
+        st.info("Não encontramos movimentações para essa combinação de filtros.")
         return
     row = rows.iloc[0]
     cargo_label = occupations[cargo] if cargo != "Todos" else "TI em geral"
+    st.caption(f"{labels[period]} · {location} · {cargo_label}")
 
     if row.admissoes_validos < MIN_N:
         st.markdown(f"**Salário típico de entrada · {cargo_label} · {location}**")
@@ -301,7 +305,7 @@ def employment(package):
   <div>
     <div class="lbl">Salário típico de entrada · {cargo_label} · {location}</div>
     <div class="big">{money(row.admissoes_p50)}<small> /mês</small></div>
-    <div class="faixa">A maioria entra ganhando entre <b>{money(row.admissoes_p10)}</b> e <b>{money(row.admissoes_p90)}</b> por mês.</div>
+    <div class="faixa">Os 80% centrais dos salários válidos vão de <b>{money(row.admissoes_p10)}</b> a <b>{money(row.admissoes_p90)}</b> por mês.</div>
   </div>
   <div class="track-wrap">
     <div class="tlabels"><span>menor<br><b>{money(row.admissoes_p10)}</b></span><span>típico<br><b>{money(row.admissoes_p50)}</b></span><span>maior<br><b>{money(row.admissoes_p90)}</b></span></div>
@@ -311,9 +315,9 @@ def employment(package):
 </div>''', unsafe_allow_html=True)
 
     k1, k2, k3 = st.columns(3)
-    k1.metric("Contratações", count(row.admissoes), help="Pessoas contratadas no período.")
-    k2.metric("Saídas", count(row.desligamentos), help="Pessoas que saíram (demissão, fim de contrato, etc.) no período.")
-    k3.metric("Saldo de vagas", count(row.diferenca_mov), help="Contratações menos saídas. Positivo = o mercado abriu mais vagas do que fechou.")
+    k1.metric("Contratações", count(row.admissoes), help="Eventos de admissão, não pessoas únicas nem vagas abertas.")
+    k2.metric("Saídas", count(row.desligamentos), help="Eventos de desligamento no período.")
+    k3.metric("Diferença de movimentos", count(row.diferenca_mov), help="Admissões menos desligamentos nos arquivos MOV, sem os ajustes do saldo oficial.")
 
     st.subheader("Quanto pagam, por cargo")
     groups = caged_groups(package, geo, period, area, cargo)
@@ -325,25 +329,32 @@ def employment(package):
         rule = base.mark_rule(strokeWidth=7, color=theme.FAIXA_PREENCHIMENTO).encode(x=alt.X("admissoes_p10:Q", title="Salário mensal (R$)", scale=alt.Scale(zero=True)), x2="admissoes_p90:Q")
         points = base.mark_point(filled=True, color=theme.LARANJA, size=65).encode(x="admissoes_p50:Q")
         chart((rule + points).properties(height=max(230, len(eligible) * 27)))
-    st.caption("Cada barra vai do salário de entrada mais baixo ao mais alto que a maioria recebe. O ponto laranja é o valor típico.")
+    st.caption("A barra cobre os percentis 10 a 90 dos salários válidos. O ponto laranja é a mediana.")
 
     table = package["emprego"]
-    monthly = table[table.geo.eq(geo) & table.tipo.eq(kind) & table.categoria.eq(category) & table.periodo.ne("2025T1")].copy()
-    if period != "2025T1":
-        monthly = monthly[monthly.periodo.eq(period)]
-    monthly["mes"] = monthly.periodo.map(PERIODS)
+    months = periods[period]["meses"]
+    month_labels = [labels[month] for month in months]
+    monthly = table[table.geo.eq(geo) & table.tipo.eq(kind) & table.categoria.eq(category) & table.periodo.isin(months)].copy()
+    monthly["mes"] = monthly.periodo.map(labels)
     left, right = st.columns(2)
     with left:
         st.subheader("Contratações e saídas, mês a mês")
         movement = monthly.melt(id_vars=["mes", "periodo"], value_vars=["admissoes", "desligamentos"], var_name="movimento", value_name="n")
         movement["movimento"] = movement.movimento.map({"admissoes": "Contratações", "desligamentos": "Saídas"})
-        chart(alt.Chart(movement).mark_bar().encode(x=alt.X("mes:N", title=None, sort=list(PERIODS.values())[1:]), xOffset="movimento:N", y=alt.Y("n:Q", title="Pessoas", scale=alt.Scale(zero=True)), color=alt.Color("movimento:N", title=None, scale=alt.Scale(domain=["Contratações", "Saídas"], range=[theme.LARANJA, theme.NEUTRO_GRAFICO]), legend=alt.Legend(orient="top")), tooltip=["mes:N", "movimento:N", alt.Tooltip("n:Q", title="Pessoas")]).properties(height=260))
+        chart(alt.Chart(movement).mark_bar().encode(x=alt.X("mes:N", title=None, sort=month_labels), xOffset="movimento:N", y=alt.Y("n:Q", title="Movimentações", scale=alt.Scale(zero=True)), color=alt.Color("movimento:N", title=None, scale=alt.Scale(domain=["Contratações", "Saídas"], range=[theme.LARANJA, theme.NEUTRO_GRAFICO]), legend=alt.Legend(orient="top")), tooltip=["mes:N", "movimento:N", alt.Tooltip("n:Q", title="Movimentações")]).properties(height=260))
     with right:
         st.subheader("Salário de entrada ao longo dos meses")
-        chart(alt.Chart(monthly).mark_line(point=True, color=theme.LARANJA).encode(x=alt.X("mes:N", sort=list(PERIODS.values())[1:], title=None), y=alt.Y("admissoes_p50:Q", title="Salário mensal (R$)", scale=alt.Scale(zero=True)), tooltip=["mes:N", alt.Tooltip("admissoes_p50:Q", title="Salário típico", format=",.0f")]).properties(height=260))
+        chart(alt.Chart(monthly).mark_line(point=True, color=theme.LARANJA).encode(x=alt.X("mes:N", sort=month_labels, title=None), y=alt.Y("admissoes_p50:Q", title="Salário mensal (R$)", scale=alt.Scale(zero=True)), tooltip=["mes:N", alt.Tooltip("admissoes_p50:Q", title="Salário típico", format=",.0f")]).properties(height=260))
     if row.admissoes_validos >= MIN_N and row.desligamentos_validos >= MIN_N:
         st.subheader("Quem entra e quem sai")
-        st.write(f"Quem é contratado entra ganhando por volta de {money_text(row.admissoes_p50)}. Quem sai recebia por volta de {money_text(row.desligamentos_p50)}. São pessoas diferentes — essa diferença **não** significa aumento de salário de quem fica.")
+        st.write(f"A mediana de entrada é {money_text(row.admissoes_p50)}. A mediana dos desligamentos é {money_text(row.desligamentos_p50)}. São grupos de eventos: não acompanhamos o salário da mesma pessoa.")
+    with st.expander("Comparar janeiro a setembro de 2025 e 2026"):
+        comparable = pd.concat([caged_query(package, geo, key, kind, category) for key in ("2025YTD", "2026YTD")])
+        comparable["periodo"] = comparable.periodo.map(labels)
+        st.dataframe(comparable[["periodo", "admissoes", "desligamentos", "admissoes_p50"]].rename(columns={
+            "periodo": "Período", "admissoes": "Contratações", "desligamentos": "Saídas", "admissoes_p50": "Mediana de entrada (R$)",
+        }), hide_index=True)
+        st.caption("Mesmo cargo e local, com nove meses em cada ano.")
     download("Baixar dados desta tela (CSV)", rows, "salarios_e_vagas.csv")
 
 
@@ -361,16 +372,23 @@ def distribution_chart(frame, field, title):
 
 def profiles(package):
     st.markdown('<div class="pintro"><span class="eyebrow">retrato da área</span>'
-                '<h2>Como é quem já trabalha em tecnologia?</h2>'
-                '<p>Salários, experiência e ferramentas de profissionais da área, pela pesquisa State of Data Brazil (2024-2025). As pessoas informam seus próprios dados.</p></div>',
+                '<h2>Como é o perfil de quem responde à pesquisa?</h2>'
+                '<p>Salários, experiência e ferramentas no State of Data Brazil. As edições são amostras voluntárias diferentes.</p></div>',
                 unsafe_allow_html=True)
     with st.container(key="filtros_perfil"):
+        editions = package["metadata"]["edicoes"]
+        edition = st.selectbox("edição da pesquisa", list(editions), key="p_edicao", persist_state="session")
         pf1, pf2 = st.columns(2)
         with pf1:
             regions = ["Brasil", "Nordeste", "Pernambuco"]
             region = st.selectbox("onde?", regions, key="p_regiao", on_change=clear_uf, args=("p_",), persist_state="session")
         with pf2:
-            senior = st.selectbox("nível de experiência", ["Todos", "Junior", "Pleno", "Senior", "Nao informado"], format_func=lambda v: {"Junior": "Júnior", "Senior": "Sênior", "Nao informado": "Não informado"}.get(v, v), key="p_senior", persist_state="session")
+            levels = ["Todos", "Junior", "Pleno", "Senior", "Nao informado"]
+            if edition == "2025/2026":
+                levels.insert(4, "Especialista/Staff+")
+            if st.session_state.get("p_senior") not in levels:
+                st.session_state["p_senior"] = "Todos"
+            senior = st.selectbox("nível de experiência", levels, format_func=lambda v: {"Junior": "Júnior", "Senior": "Sênior", "Nao informado": "Não informado"}.get(v, v), key="p_senior", persist_state="session")
         st.divider()
         mm1, mm2 = st.columns(2)
         ufs = [p["sigla"] for p in package["metadata"]["ufs"] if region != "Nordeste" or p["nordeste"]]
@@ -379,13 +397,14 @@ def profiles(package):
             st.session_state["p_uf"] = uf_options[0]
         uf = mm1.selectbox("estado", uf_options, key="p_uf", disabled=region == "Pernambuco", persist_state="session")
         work = mm2.selectbox("modelo de trabalho", ["Todos", "Remoto", "Hibrido", "Presencial", "Nao informado"], format_func=lambda v: {"Hibrido": "Híbrido", "Nao informado": "Não informado"}.get(v, v), key="p_modelo", persist_state="session")
+        st.button("Limpar filtros", icon=":material/restart_alt:", key="reset_perfis", on_click=reset, args=("p_",))
     geo = geography(region, uf)
     location = "Pernambuco" if region == "Pernambuco" else (uf if uf != "Todas" else region)
-    result = profile_query(package, geo, senior, work)
+    result = profile_query(package, geo, senior, work, edition)
     st.subheader(location)
     senior_label = {"Junior": "Júnior", "Senior": "Sênior", "Nao informado": "Não informado"}.get(senior, senior)
     work_label = {"Hibrido": "Híbrido", "Nao informado": "Não informado"}.get(work, work)
-    st.caption(f"Senioridade: {senior_label} · Trabalho: {work_label}")
+    st.caption(f"Edição {edition} · Coleta: {editions[edition]['coleta']} · Senioridade: {senior_label} · Trabalho: {work_label}")
     if result["perfis"].empty:
         st.info("Nenhuma resposta neste recorte.")
         return
@@ -408,7 +427,7 @@ def profiles(package):
             st.info("Ainda não há respostas suficientes sobre tecnologias neste recorte.")
         else:
             chart(alt.Chart(tech).mark_bar(color=theme.LARANJA).encode(y=alt.Y("tecnologia:N", sort="-x", title=None), x=alt.X("proporcao:Q", title="% das pessoas", scale=alt.Scale(domain=[0, 1]), axis=alt.Axis(format="%")), tooltip=["tecnologia:N", alt.Tooltip("n:Q", title="Pessoas"), alt.Tooltip("proporcao:Q", title="% das pessoas", format=".1%")]).properties(height=300))
-        st.caption("Cada pessoa pode usar várias tecnologias, então a soma passa de 100%.")
+        st.caption("Múltiplas escolhas; a base de respostas válidas varia por tecnologia.")
     left, right = st.columns(2)
     with left:
         distribution_chart(result["distribuicoes"], "formacao", "Formação")
@@ -427,33 +446,78 @@ def models(package):
                 unsafe_allow_html=True)
     view = st.segmented_control("Análise", ["Estimar salário", "Quem procura emprego"], default="Estimar salário", required=True, key="modelo_visao", persist_state="session")
     if view == "Estimar salário":
-        table = package["R1_teste_marco"]
+        table = package["regressao"]
         meta = package["metadata"]["modelos"]["regressao"]
-        chosen = table[table.modelo.eq(meta["modelo_selecionado"])].iloc[0]
+        chosen = table[table.modelo.eq(meta["selecionado"])].iloc[0]
         st.markdown(f'''<div class="prediction">
   <span class="eyebrow">diferença comum entre estimativa e realidade</span>
   <div class="val">{money(chosen.mae)}</div>
   <h3>Erro médio da estimativa</h3>
   <p>Na prática, a estimativa erra, em média, cerca desse valor por mês. Por isso o Radar mostra <b>faixas</b> de salário, e não um número exato. O modelo capta cerca de {max(chosen.r2, 0)*100:.0f}% da variação.</p>
 </div>''', unsafe_allow_html=True)
-        st.caption("Como chegamos nisso: comparamos estimativas com dados reais de grupos parecidos (cargo, idade e região) em um período de teste separado. Quanto menor o erro, mais perto a estimativa ficou — e o modelo olha grupos, nunca uma pessoa específica.")
+        st.caption(f"Treino: {meta['treino']} ({count(meta['n_treino'])} admissões). Teste reservado: {meta['teste']} ({count(meta['n_teste'])} admissões). Valores a preços de março de 2025.")
+        if chosen.previsoes_negativas:
+            st.warning(f"{count(chosen.previsoes_negativas)} estimativas negativas foram mantidas nas métricas. Não use o modelo para estimativas individuais.")
+        with st.expander("Ver métricas e diagnóstico da regressão"):
+            st.dataframe(table[["modelo", "mae", "rmse", "r2", "previsoes_negativas"]], hide_index=True)
+            scatter = package["regressao_dispersao"]
+            chart(alt.Chart(scatter).mark_circle(color=theme.LARANJA, opacity=.6).encode(
+                x=alt.X("observado:Q", title="Salário observado (R$)"), y=alt.Y("previsto:Q", title="Salário estimado (R$)"),
+                size=alt.Size("n:Q", title="Admissões"), tooltip=["observado", "previsto", "n"]).properties(height=245))
+            st.caption("Dispersão agregada em faixas de R$ 1 mil, de R$ 0 a R$ 30 mil, com pelo menos 30 eventos por ponto. As métricas incluem todo o teste.")
+            series = package["regressao_mensal"].melt(id_vars="competencia", value_vars=["observado", "previsto"], var_name="serie", value_name="mediana")
+            chart(alt.Chart(series).mark_line(point=True).encode(
+                x=alt.X("competencia:O", title="Mês de teste"), y=alt.Y("mediana:Q", title="Salário mediano (R$)"),
+                color=alt.Color("serie:N", title=None), tooltip=["competencia", "serie", "mediana"]).properties(height=245))
+            residuals = package["regressao_residuos"]
+            chart(alt.Chart(residuals).mark_bar(color=theme.LARANJA).encode(
+                y=alt.Y("faixa:N", sort=list(residuals.faixa), title="Faixa do resíduo (R$)"),
+                x=alt.X("n:Q", title="Admissões"), tooltip=["faixa", "n"]).properties(height=255))
+            st.caption("Resíduo = salário observado menos estimativa. Faixas com menos de 30 eventos não são exibidas.")
         download("Baixar dados desta tela (CSV)", table, "estimativa_salario.csv")
         return
-    best = package["C1_metricas_teste"].set_index("modelo").loc["logistica"]
+    meta = package["metadata"]["modelos"]["classificacao"]
+    table = package["classificacao"]
+    best = table.set_index("modelo").loc[meta["selecionado"]]
     st.markdown(f'''<div class="prediction">
-  <span class="eyebrow">acerto do melhor modelo</span>
+  <span class="eyebrow">acurácia do modelo selecionado</span>
   <div class="val">{percent(best.acuracia)}</div>
-  <h3>Quem está querendo trocar de emprego</h3>
+  <h3>Quem declarou buscar emprego</h3>
   <p>Testamos adivinhar, pelo perfil da pessoa, quem busca uma nova vaga. Mesmo o melhor modelo deixa passar {int(best.fn)} de {int(best.n_ativos)} pessoas que realmente procuravam — serve para enxergar grupos, não para prever uma pessoa.</p>
 </div>''', unsafe_allow_html=True)
-    st.caption("Mede intenção de troca hoje, não o que a pessoa fará no futuro. Pesquisa voluntária (State of Data), que pode não representar todo mundo.")
-    download("Baixar dados desta tela (CSV)", package["C1_metricas_teste"], "quem_procura_emprego.csv")
+    st.caption(f"Treino: edição {meta['treino']} ({count(meta['n_treino'])} respostas válidas). Teste reservado: edição {meta['teste']} ({count(meta['n_teste'])} respostas válidas). Mede busca ativa declarada, não o que a pessoa fará depois.")
+    first, second = st.columns(2)
+    first.metric("Recall de busca ativa", percent(best.recall), help="Parcela de quem declarou busca ativa que o modelo identificou.")
+    second.metric("Acurácia da referência", percent(table.set_index("modelo").loc["majoritaria", "acuracia"]), help="Referência que prevê apenas a classe mais comum do treino.")
+    with st.expander("Ver métricas e diagnóstico da classificação"):
+        st.dataframe(table[["modelo", "acuracia", "precisao", "recall", "f1", "roc_auc", "average_precision"]], hide_index=True)
+        matrix = pd.DataFrame({"observado": ["Não", "Não", "Sim", "Sim"], "estimado": ["Não", "Sim", "Não", "Sim"],
+                               "n": [best.tn, best.fp, best.fn, best.tp]})
+        st.markdown("**Matriz de confusão do modelo selecionado**")
+        base = alt.Chart(matrix).encode(x="estimado:N", y="observado:N", tooltip=["observado", "estimado", "n"])
+        chart((base.mark_rect().encode(color=alt.Color("n:Q", scale=alt.Scale(scheme="oranges"))) +
+               base.mark_text(color=theme.GRAFITE).encode(text="n:Q")).properties(height=170))
+        curves = package["classificacao_curvas"]
+        left, right = st.columns(2)
+        for column, x, y, title, x_title, y_title in (
+            (left, "fpr", "recall", "ROC", "Taxa de falsos positivos", "Recall"),
+            (right, "recall", "precisao", "Precisão × recall", "Recall", "Precisão"),
+        ):
+            with column:
+                st.markdown(f"**{title}**")
+                chart(alt.Chart(curves).mark_line().encode(
+                    x=alt.X(f"{x}:Q", title=x_title, scale=alt.Scale(domain=[0, 1])),
+                    y=alt.Y(f"{y}:Q", title=y_title, scale=alt.Scale(domain=[0, 1])),
+                    color=alt.Color("modelo:N", title=None), order="limiar:Q", tooltip=["modelo", "limiar", x, y]).properties(height=225))
+        st.caption("Curvas visualizadas em 101 limiares; AUC e AP da tabela foram calculados diretamente no teste.")
+    download("Baixar dados desta tela (CSV)", table, "quem_procura_emprego.csv")
 
 
 def sources(package):
     meta = package["metadata"]
     caged_n = count(meta["fontes"]["caged_ti"]["n"])
-    sod_n = count(meta["fontes"]["state_of_data_brasil"]["n"])
+    sod_new = count(meta["edicoes"]["2025/2026"]["n"])
+    sod_old = count(meta["edicoes"]["2024/2025"]["n"])
     st.markdown('<div class="pintro"><span class="eyebrow">transparência</span>'
                 '<h2>De onde vêm os números?</h2>'
                 '<p>Usamos fontes oficiais e pesquisas conhecidas. Aqui está o que cada uma mostra — e o que fica de fora.</p></div>',
@@ -464,7 +528,7 @@ def sources(package):
     <div>
       <span class="source-tag">fonte oficial</span>
       <h3>Novo CAGED</h3>
-      <p>Contratações e saídas de empregos com carteira assinada no Brasil (jan–mar/2025). {caged_n} registros preparados.</p>
+      <p>Admissões e desligamentos em TI no Brasil, de jan/2025 a set/2026. {caged_n} movimentações em 21 meses. Arquivos MOV, sem os ajustes do saldo oficial.</p>
       <div class="doesnt-cover"><strong>O que não cobre</strong>Trabalho por conta própria, estágio sem carteira e trabalho informal. Também não identifica senioridade nem acompanha a mesma pessoa no tempo.</div>
       <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/microdados-rais-e-caged" target="_blank" rel="noreferrer">Conhecer a fonte ↗</a>
     </div>
@@ -474,9 +538,9 @@ def sources(package):
     <div>
       <span class="source-tag">pesquisa nacional</span>
       <h3>State of Data Brazil</h3>
-      <p>Respostas de profissionais de dados sobre trabalho, salário e ferramentas (2024–2025). {sod_n} respostas preparadas.</p>
+      <p>Residentes no Brasil: {sod_old} respostas da edição 2024/2025 (coleta out–dez/2024) e {sod_new} da edição 2025/2026 (coleta out–dez/2025). As amostras ficam separadas.</p>
       <div class="doesnt-cover"><strong>O que não cobre</strong>Pesquisa voluntária e autodeclarada; não representa igualmente todas as carreiras de TI nem todas as cidades.</div>
-      <a href="https://www.kaggle.com/datasets/datahackers/state-of-data-brazil-20242025" target="_blank" rel="noreferrer">Conhecer a fonte ↗</a>
+      <a href="https://github.com/data-hackers-br/state-of-data-brazil" target="_blank" rel="noreferrer">Conhecer as duas edições ↗</a>
     </div>
   </article>
   <article class="source-card">
@@ -493,7 +557,7 @@ def sources(package):
     st.markdown(f'''<div class="privacy-panel">{theme.aro_svg(48)}
   <div><span class="eyebrow">privacidade total</span>
     <h3>Nunca mostramos dados de uma pessoa</h3>
-    <p>Todos os números são agrupados por cargo, local e período. Se um grupo tiver menos de 30 registros, o valor fica oculto. Versão dos dados: {meta["preparado_em"][:10]}.</p>
+    <p>O painel não carrega microdados. Comparações salariais do CAGED e distribuições de perfis exigem pelo menos 30 observações válidas. A aba CESAR School mostra somente os resultados agregados da turma. Versão dos dados: {meta["preparado_em"][:10]}.</p>
   </div>
 </div>''', unsafe_allow_html=True)
     st.download_button("Baixar manifesto público", json.dumps(meta, ensure_ascii=False, indent=2).encode("utf-8"), file_name="manifesto_publico.json", mime="application/json", icon=":material/download:")

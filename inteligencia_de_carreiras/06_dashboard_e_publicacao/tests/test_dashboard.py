@@ -16,7 +16,7 @@ from streamlit.testing.v1 import AppTest
 
 AREA = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(AREA))
-from dados import FORBIDDEN, MIN_N, PackageError, caged_query, export_csv, geography, load_package, occupation, profile_query
+from dados import FORBIDDEN, MIN_N, PackageError, caged_query, export_csv, geography, load_expansion, load_package, occupation, profile_query
 from preparar_pacote import NE, TECH, summarize_caged
 
 logging.disable(logging.CRITICAL)
@@ -131,6 +131,62 @@ class DataTests(unittest.TestCase):
                 load_package(target)
 
 
+class ExpansionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.package = load_expansion(AREA / "dados_ampliados")
+
+    def test_all_months_and_exact_comparable_totals(self):
+        expected = {"todos": 842731, "2025": 483006, "2025YTD": 370147, "2026YTD": 359725}
+        months = self.package["metadata"]["periodos"]["todos"]["meses"]
+        self.assertEqual(len(months), 21)
+        for period, total in expected.items():
+            self.assertEqual(caged_query(self.package, "BR", period).iloc[0].n_eventos, total)
+        self.assertEqual(sum(caged_query(self.package, "BR", month).iloc[0].n_eventos for month in months), expected["todos"])
+
+    def test_expanded_period_quantiles_are_computed_from_events(self):
+        root = AREA.parent / "datasets/tratados/atualizacao_2025_2026/caged_ti"
+        if not root.is_dir():
+            self.skipTest("Local prepared CAGED is unavailable")
+        cols = ["saldo", "salario_valido", "salario_real", "uf_sigla", "cbo_codigo"]
+        months = self.package["metadata"]["periodos"]["2026YTD"]["meses"]
+        sample = pd.concat([pd.read_parquet(root / f"{m}.parquet", columns=cols) for m in months])
+        mask = (sample.uf_sigla.eq("PE").fillna(False).to_numpy(dtype=bool)
+                & sample.cbo_codigo.eq("212405").fillna(False).to_numpy(dtype=bool))
+        expected = summarize_caged(sample.loc[mask])
+        actual = caged_query(self.package, "UF_PE", "2026YTD", "cargo", "212405").iloc[0]
+        for field in ("n_eventos", "admissoes_p10", "admissoes_p50", "admissoes_p90"):
+            self.assertAlmostEqual(actual[field], expected[field], places=8)
+
+    def test_editions_have_separate_denominators(self):
+        for edition, n, targets in (("2025/2026", 3372, 3123), ("2024/2025", 5076, 4734)):
+            result = profile_query(self.package, "BR", "Todos", "Todos", edition)
+            self.assertEqual(result["perfis"].iloc[0].n_respostas, n)
+            self.assertEqual(result["perfis"].iloc[0].n_alvo, targets)
+            self.assertTrue(result["tecnologias"].edicao.eq(edition).all())
+            self.assertTrue(result["tecnologias"].denominador.between(30, n).all())
+
+    def test_package_is_compact_and_contains_only_aggregates(self):
+        size = sum(item["bytes"] for item in self.package["metadata"]["arquivos"].values())
+        self.assertLess(size, 2_000_000)
+        for frame in self.package.values():
+            if isinstance(frame, pd.DataFrame):
+                self.assertFalse(FORBIDDEN.intersection(frame.columns))
+        for prefix in ("admissoes", "desligamentos"):
+            frame = self.package["emprego"]
+            self.assertTrue(frame.loc[frame[prefix+"_validos"].lt(MIN_N), prefix+"_p50"].isna().all())
+
+    def test_model_diagnostics_match_reserved_test_sizes(self):
+        meta = self.package["metadata"]["modelos"]
+        for name, n in (("regressao", 182057), ("classificacao", 3123)):
+            table = self.package[name]
+            self.assertTrue(table.n.eq(n).all())
+            self.assertEqual(meta[name]["n_teste"], n)
+            self.assertIn(meta[name]["selecionado"], set(table.modelo))
+        cls = self.package["classificacao"]
+        self.assertTrue((cls[["tn", "fp", "fn", "tp"]].sum(axis=1) == cls.n).all())
+
+
 class InterfaceTests(unittest.TestCase):
     def setUp(self):
         self.app = AppTest.from_file(str(AREA / "dashboard.py"), default_timeout=30).run()
@@ -140,14 +196,18 @@ class InterfaceTests(unittest.TestCase):
 
     def test_default_page_is_usable_and_matches_pernambuco(self):
         self.assertFalse(self.app.exception)
-        self.assertEqual(self.metric("Mediana de admissão"), "R$ 3.165")
-        self.assertEqual(self.metric("Admissões"), "1.284")
+        self.assertEqual(self.app.selectbox(key="c_periodo").value, "todos")
+        self.assertGreater(int(self.metric("Contratações").replace(".", "")), 1284)
         self.assertTrue(self.app.selectbox(key="c_uf").disabled)
 
     def test_country_filter_updates_metrics(self):
         self.app.selectbox(key="c_regiao").select("Brasil").run()
         self.assertFalse(self.app.exception)
-        self.assertEqual(self.metric("Admissões"), "61.047")
+        self.app.selectbox(key="c_periodo").select("2025T1").run()
+        self.assertEqual(self.metric("Contratações"), "61.047")
+        self.app.selectbox(key="c_periodo").select("202609").run()
+        self.assertFalse(self.app.exception)
+        self.assertGreater(int(self.metric("Contratações").replace(".", "")), 0)
 
     def test_region_change_resets_invalid_uf(self):
         self.app.selectbox(key="c_regiao").select("Brasil").run()
@@ -169,36 +229,36 @@ class InterfaceTests(unittest.TestCase):
         self.assertEqual(self.app.selectbox(key="c_regiao").value, "Pernambuco")
 
     def test_profiles_page_and_small_sample_warning(self):
-        self.app.session_state["visao"] = "Perfis em dados"
-        self.app.run()
+        self.app.button(key="navtab_1").click().run()
         self.assertFalse(self.app.exception)
-        self.assertEqual(self.metric("Respostas no recorte"), "5.076")
+        self.assertEqual(self.metric("Pessoas que responderam"), "3.372")
+        self.app.selectbox(key="p_edicao").select("2024/2025").run()
+        self.assertEqual(self.metric("Pessoas que responderam"), "5.076")
         table = load_package(AREA / "dados_publicos")["perfis"]
         candidate = table[table.geo.str.startswith("UF_") & table.senioridade.eq("Todos") & table.modelo.eq("Todos") & table.n_respostas.between(1, 29)].iloc[0]
         self.app.selectbox(key="p_uf").select(candidate.geo[3:]).run()
-        self.assertTrue(any("Dados insuficientes" in w.value for w in self.app.warning))
+        self.assertTrue(any("Há poucas respostas" in w.value for w in self.app.warning))
 
     def test_regression_page_preserves_negative_prediction_warning(self):
-        self.app.session_state["visao"] = "Modelos"
-        self.app.run()
+        self.app.button(key="navtab_2").click().run()
         self.assertFalse(self.app.exception)
-        self.assertTrue(any("255 previsões negativas" in w.value for w in self.app.warning))
+        self.assertTrue(any("estimativas negativas" in w.value for w in self.app.warning))
+        self.assertTrue(any("Teste reservado: Jan a Set/2026" in c.value for c in self.app.caption))
 
-    def test_majority_model_switch_keeps_zero_recall_visible(self):
-        self.app.session_state["visao"] = "Modelos"
-        self.app.session_state["modelo_visao"] = "Busca ativa"
+    def test_classification_keeps_recall_and_reference_visible(self):
+        self.app.session_state["visao"] = "Previsões"
+        self.app.session_state["modelo_visao"] = "Quem procura emprego"
         self.app.run()
-        self.app.selectbox(key="classificador").select("majoritaria").run()
         self.assertFalse(self.app.exception)
-        self.assertEqual(self.metric("Recall da classe 1"), "0,0%")
-        self.assertEqual(self.metric("F1 da classe 1"), "0.000")
+        self.assertLess(float(self.metric("Recall de busca ativa").rstrip("%").replace(",", ".")), 20.)
+        self.assertEqual(self.metric("Acurácia da referência"), "65,6%")
 
     def test_sources_page_discloses_restriction_without_private_results(self):
-        self.app.session_state["visao"] = "Fontes"
-        self.app.run()
+        self.app.button(key="navtab_4").click().run()
         self.assertFalse(self.app.exception)
         text = " ".join(m.value for m in self.app.markdown)
-        self.assertIn("G12 não está publicada", text)
+        self.assertIn("842.731 movimentações", text)
+        self.assertIn("somente os resultados agregados da turma", text)
         self.assertNotIn("respondente_id", text)
 
 

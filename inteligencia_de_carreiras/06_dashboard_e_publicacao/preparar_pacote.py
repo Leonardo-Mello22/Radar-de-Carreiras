@@ -60,11 +60,14 @@ def summarize_caged(frame):
     return row
 
 
-def caged_cube(source, catalog):
+def caged_cube(source, catalog, periods=None):
+    if periods is None:
+        months = ["202501", "202502", "202503"]
+        periods = {"2025T1": months, **{month: [month] for month in months}}
     records = []
     for geo, region in geographies(source):
-        for period in ["2025T1", "202501", "202502", "202503"]:
-            frame = region if period == "2025T1" else region[region.competencia.eq(period)]
+        for period, months in periods.items():
+            frame = region[region.competencia.isin(months)]
             area_groups = dict(tuple(frame.groupby("area_ti", observed=True)))
             occupation_groups = dict(tuple(frame.groupby("cbo_codigo", observed=True)))
             empty = frame.iloc[:0]
@@ -74,11 +77,11 @@ def caged_cube(source, catalog):
     return pd.DataFrame(records)
 
 
-def sod_cube(source):
+def sod_cube(source, seniorities=("Todos", "Junior", "Pleno", "Senior", "Nao informado")):
     summaries, distributions, technologies = [], [], []
     for geo, region in geographies(source):
         seniority = region.senioridade_declarada.fillna("Nao informado")
-        for senior in ["Todos", "Junior", "Pleno", "Senior", "Nao informado"]:
+        for senior in seniorities:
             by_senior = region if senior == "Todos" else region[seniority.eq(senior)]
             for work in ["Todos", "Remoto", "Hibrido", "Presencial", "Nao informado"]:
                 frame = by_senior if work == "Todos" else by_senior[by_senior.modelo_trabalho.eq(work)]

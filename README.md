@@ -7,7 +7,7 @@ em dados e pesquisa própria do Grupo 12, mantendo cada fonte em seu contexto.
 
 > **Projeto 5 · CESAR School · 2026.2 · Grupo 12** — Trilha de Análise e Visualização de Dados.
 > O repositório preserva a aplicação do **Ciclo 1** e reúne, separadamente, as
-> **oito etapas de inteligência de carreiras**, com dashboard AVD consolidado v1.1.
+> **oito etapas de inteligência de carreiras**, com dashboard AVD ampliado em 2025–2026.
 
 ## Mapa do Repositório
 
@@ -22,6 +22,11 @@ o aplicativo existente, seu pipeline ou suas fontes. Ele reutiliza a identidade
 visual existente, sem modificar sua implementação.
 
 ## Entregas de AVD
+
+**Atualização 2025–2026:** o dashboard de AVD agora usa **842.731 movimentações**
+do CAGED (jan/2025 a set/2026), duas edições do State of Data e modelos
+reavaliados. Veja o [registro completo das oito etapas da atualização](inteligencia_de_carreiras/08_documentacao_final/atualizacao_2025_2026.md).
+As tabelas e entregas do ciclo original continuam disponíveis para reprodução.
 
 | Etapa | Conteúdo principal |
 | --- | --- |
@@ -44,8 +49,8 @@ e o [guia de entrega](inteligencia_de_carreiras/08_documentacao_final/guia_entre
 
 | Fonte | Recorte preparado | Unidade e cuidado principal |
 | --- | --- | --- |
-| Novo CAGED / MTE | Janeiro a março de 2025; 118.564 movimentações de TI no Brasil, sendo 2.305 em PE | Eventos de emprego formal, não pessoas; salários corrigidos pelo IPCA para março de 2025 |
-| State of Data Brazil | Edição 2024-2025; 5.215 respostas tratadas, sendo 5.076 de residentes no Brasil | Pesquisa voluntária sobre carreiras em dados; salários em faixas |
+| Novo CAGED / MTE | Janeiro de 2025 a setembro de 2026; 842.731 movimentações de TI no Brasil, sendo 19.200 em PE | Eventos de emprego formal, não pessoas; salários corrigidos pelo IPCA para março de 2025 |
+| State of Data Brazil | 2024/2025: 5.215 tratadas, 5.076 Brasil; 2025/2026: 3.494 tratadas, 3.372 Brasil | Edições separadas; pesquisa voluntária com salários em faixas |
 | Questionário do Grupo 12 | 35 respostas a 12 perguntas, coletadas em 2026 | Pesquisa exploratória própria; respostas individuais e resultados restritos fora do Git |
 | Matriz de pesquisa G12 | 21 registros de pesquisa documental | Referências e hipóteses, não uma amostra de participantes |
 
@@ -57,9 +62,9 @@ O [guia de dados](inteligencia_de_carreiras/datasets/LEIA-ME.md), o
 [catálogo](inteligencia_de_carreiras/datasets/catalogo.md) e as
 [regras de integração e privacidade](inteligencia_de_carreiras/datasets/organizacao_e_integracao.md)
 detalham procedência e preparação. Os originais e dados tratados completos ficam
-locais e são ignorados pelo Git. O dashboard AVD usa somente o
-[pacote versionado de agregados públicos](inteligencia_de_carreiras/06_dashboard_e_publicacao/dados_publicos/manifesto.json),
-sem depender dos XLSX privados ou dos microdados completos para abrir.
+locais e são ignorados pelo Git. O dashboard AVD lê o
+[pacote ampliado de agregados](inteligencia_de_carreiras/06_dashboard_e_publicacao/dados_ampliados/manifesto.json)
+e os resultados agregados da turma, sem depender dos XLSX privados ou microdados.
 
 ## Executar o Dashboard AVD
 
@@ -77,8 +82,8 @@ Abra o endereço local mostrado no terminal, normalmente
 [http://localhost:8502](http://localhost:8502). Se a porta estiver ocupada, escolha
 outra em `--server.port`. Esse endereço não é uma publicação pública.
 
-O dashboard oferece as visões **Emprego formal**, **Perfis em dados**, **Modelos**
-e **Fontes**, com filtros e exportação de agregados. Não é necessário baixar os
+O dashboard oferece **Salários e vagas**, **Quem trabalha na área**, **Previsões**,
+**CESAR School** e **Sobre os dados**. Não é necessário baixar os
 datasets completos ou treinar modelos para consultá-lo. Para reproduzir análises
 e regenerar o pacote, siga as instruções de cada etapa; a pesquisa própria exige
 acesso autorizado aos originais.
@@ -87,13 +92,13 @@ acesso autorizado aos originais.
 
 - As oito etapas estão implementadas/documentadas; a entrega inicial foi versionada
   no commit `c789019`. Versionar no Git não significa hospedar o dashboard.
-- A consolidação registrou **111 testes**, **22 verificações no navegador** e
+- A consolidação original registrou **111 testes**, **22 verificações no navegador** e
   **65.761 comparações numéricas sem divergências**, conforme o
   [registro da etapa 07](inteligencia_de_carreiras/07_consolidacao_e_validacao/registro_execucao.json).
 - **Ainda pendentes:** revisão estruturada pelo grupo, incorporação de feedback
   real e hospedagem externa seguida de teste remoto. A avaliação técnica não
   substitui validação com usuários nem aprovação acadêmica.
-- O recorte CAGED não representa o ano inteiro nem o mercado atual de 2026 e usa
+- O CAGED inclui 2025 inteiro, mas só jan–set/2026, e usa
   somente CAGEDMOV, sem os ajustes CAGEDFOR/CAGEDEXC. A pesquisa State of Data não
   representa toda a população de TI.
 - Regressão e classificação são análises experimentais com erros e limitações

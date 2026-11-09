@@ -1,5 +1,14 @@
 # Datasets preparados para o Radar de Carreiras
 
+## Atualizacao 2025-2026
+
+O [lote ampliado](ATUALIZACAO_2025_2026.md) cobre o Novo CAGED MOV de janeiro de
+2025 a setembro de 2026 e acrescenta o State of Data Brazil 2025/2026. A pesquisa
+2024/2025 e o recorte inicial do CAGED continuam preservados. A
+[entrega ampliada](../08_documentacao_final/atualizacao_2025_2026.md) integra
+o lote nas analises, nos modelos e no dashboard de AVD. O guia abaixo
+continua descrevendo o pacote original.
+
 Pacote de dados da area `inteligencia_de_carreiras`, integrado ao repositorio.
 O aplicativo original em `app/dashboard.py` continua usando suas fontes anteriores.
 O [dashboard AVD](../06_dashboard_e_publicacao/README.md), implementado na etapa 06

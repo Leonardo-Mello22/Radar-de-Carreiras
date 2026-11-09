@@ -1,5 +1,10 @@
 # Regressão Salarial
 
+A [avaliação ampliada](../08_documentacao_final/atualizacao_2025_2026.md) usa
+2025 no treino e jan–set/2026 no teste. Métricas e gráficos atualizados estão
+no [notebook](../03_analise_exploratoria/analise_ampliada.ipynb) e no dashboard.
+O material abaixo preserva o experimento original.
+
 Etapa 04 do Radar de Carreira em TI: representar tendências e limites do salário
 real de admissão usando modelos lineares simples, com avaliação temporal.
 Somente Novo CAGED MOV de janeiro a março de 2025; sem pesquisa G12 ou State of Data.

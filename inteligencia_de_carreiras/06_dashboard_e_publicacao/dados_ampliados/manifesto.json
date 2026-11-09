@@ -1,0 +1,738 @@
+{
+  "versao": 2,
+  "preparado_em": "2026-11-09T21:43:28.883713+00:00",
+  "minimo_estatistico": 30,
+  "catalogo": [
+    {
+      "tipo": "total",
+      "categoria": "Todos",
+      "rotulo": "Todas as ocupacoes",
+      "area": "Todas"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Arquitetura de solucoes",
+      "rotulo": "Arquitetura de solucoes",
+      "area": "Arquitetura de solucoes"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Automacao industrial",
+      "rotulo": "Automacao industrial",
+      "area": "Automacao industrial"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Dados e bancos de dados",
+      "rotulo": "Dados e bancos de dados",
+      "area": "Dados e bancos de dados"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Desenvolvimento de software",
+      "rotulo": "Desenvolvimento de software",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Gestao de TI",
+      "rotulo": "Gestao de TI",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Hardware e sistemas",
+      "rotulo": "Hardware e sistemas",
+      "area": "Hardware e sistemas"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Qualidade e testes",
+      "rotulo": "Qualidade e testes",
+      "area": "Qualidade e testes"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Redes e infraestrutura",
+      "rotulo": "Redes e infraestrutura",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Seguranca da informacao",
+      "rotulo": "Seguranca da informacao",
+      "area": "Seguranca da informacao"
+    },
+    {
+      "tipo": "area",
+      "categoria": "Suporte e operacoes",
+      "rotulo": "Suporte e operacoes",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "123605",
+      "rotulo": "Diretor de Servicos de Informatica",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142505",
+      "rotulo": "Gerente de Rede",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142510",
+      "rotulo": "Gerente de Desenvolvimento de Sistemas",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142515",
+      "rotulo": "Gerente de Producao de Tecnologia da Informacao",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142520",
+      "rotulo": "Gerente de Projetos de Tecnologia da Informacao",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142525",
+      "rotulo": "Gerente de Seguranca de Tecnologia da Informacao",
+      "area": "Seguranca da informacao"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142530",
+      "rotulo": "Gerente de Suporte Tecnico de Tecnologia da Informacao",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "142535",
+      "rotulo": "Tecnólogo em Gestão da Tecnologia da Informação",
+      "area": "Gestao de TI"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212205",
+      "rotulo": "Engenheiro de Aplicativos em Computacao",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212210",
+      "rotulo": "Engenheiro de Equipamentos em Computacao",
+      "area": "Hardware e sistemas"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212215",
+      "rotulo": "Engenheiros de Sistemas Operacionais em Computacao",
+      "area": "Hardware e sistemas"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212305",
+      "rotulo": "Administrador de Banco de Dados",
+      "area": "Dados e bancos de dados"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212310",
+      "rotulo": "Administrador de Redes",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212315",
+      "rotulo": "Administrador de Sistemas Operacionais",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212320",
+      "rotulo": "Administrador em Segurança da Informação",
+      "area": "Seguranca da informacao"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212405",
+      "rotulo": "Analista de Desenvolvimento de Sistemas",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212410",
+      "rotulo": "Analista de Redes e de Comunicacao de Dados",
+      "area": "Redes e infraestrutura"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212415",
+      "rotulo": "Analista de Sistemas de Automacao",
+      "area": "Automacao industrial"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212420",
+      "rotulo": "Analista de Suporte Computacional",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212425",
+      "rotulo": "Arquiteto De Soluções De Tecnologia Da Informação",
+      "area": "Arquitetura de solucoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "212430",
+      "rotulo": "Analista De Testes De Tecnologia Da Informação",
+      "area": "Qualidade e testes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317105",
+      "rotulo": "Programador de Internet",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317110",
+      "rotulo": "Programador de Sistemas de Informacao",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317115",
+      "rotulo": "Programador de Maquinas - Ferramenta com Comando Numerico",
+      "area": "Automacao industrial"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317120",
+      "rotulo": "Programador de Multimidia",
+      "area": "Desenvolvimento de software"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317205",
+      "rotulo": "Operador de Computador (Inclusive Microcomputador)",
+      "area": "Suporte e operacoes"
+    },
+    {
+      "tipo": "cargo",
+      "categoria": "317210",
+      "rotulo": "Tecnico de Apoio ao Usuario de Informatica (Helpdesk)",
+      "area": "Suporte e operacoes"
+    }
+  ],
+  "ufs": [
+    {
+      "sigla": "AC",
+      "nome": "Acre",
+      "nordeste": false
+    },
+    {
+      "sigla": "AL",
+      "nome": "Alagoas",
+      "nordeste": true
+    },
+    {
+      "sigla": "AM",
+      "nome": "Amazonas",
+      "nordeste": false
+    },
+    {
+      "sigla": "AP",
+      "nome": "Amapá",
+      "nordeste": false
+    },
+    {
+      "sigla": "BA",
+      "nome": "Bahia",
+      "nordeste": true
+    },
+    {
+      "sigla": "CE",
+      "nome": "Ceará",
+      "nordeste": true
+    },
+    {
+      "sigla": "DF",
+      "nome": "Distrito Federal",
+      "nordeste": false
+    },
+    {
+      "sigla": "ES",
+      "nome": "Espírito Santo",
+      "nordeste": false
+    },
+    {
+      "sigla": "GO",
+      "nome": "Goiás",
+      "nordeste": false
+    },
+    {
+      "sigla": "MA",
+      "nome": "Maranhão",
+      "nordeste": true
+    },
+    {
+      "sigla": "MG",
+      "nome": "Minas gerais",
+      "nordeste": false
+    },
+    {
+      "sigla": "MS",
+      "nome": "Mato Grosso do Sul",
+      "nordeste": false
+    },
+    {
+      "sigla": "MT",
+      "nome": "Mato Grosso",
+      "nordeste": false
+    },
+    {
+      "sigla": "PA",
+      "nome": "Pará",
+      "nordeste": false
+    },
+    {
+      "sigla": "PB",
+      "nome": "Paraíba",
+      "nordeste": true
+    },
+    {
+      "sigla": "PE",
+      "nome": "Pernambuco",
+      "nordeste": true
+    },
+    {
+      "sigla": "PI",
+      "nome": "Piauí",
+      "nordeste": true
+    },
+    {
+      "sigla": "PR",
+      "nome": "Paraná",
+      "nordeste": false
+    },
+    {
+      "sigla": "RJ",
+      "nome": "Rio de Janeiro",
+      "nordeste": false
+    },
+    {
+      "sigla": "RN",
+      "nome": "Rio Grande do Norte",
+      "nordeste": true
+    },
+    {
+      "sigla": "RO",
+      "nome": "Rondônia",
+      "nordeste": false
+    },
+    {
+      "sigla": "RR",
+      "nome": "Roraima",
+      "nordeste": false
+    },
+    {
+      "sigla": "RS",
+      "nome": "Rio Grande do Sul",
+      "nordeste": false
+    },
+    {
+      "sigla": "SC",
+      "nome": "Santa Catarina",
+      "nordeste": false
+    },
+    {
+      "sigla": "SE",
+      "nome": "Sergipe",
+      "nordeste": true
+    },
+    {
+      "sigla": "SP",
+      "nome": "São Paulo",
+      "nordeste": false
+    },
+    {
+      "sigla": "TO",
+      "nome": "Tocantins",
+      "nordeste": false
+    }
+  ],
+  "modelos": {
+    "regressao": {
+      "selecionado": "multipla",
+      "ajuste_interno": "Jan a Set/2025",
+      "validacao": "Out a Dez/2025",
+      "treino": "2025 inteiro",
+      "teste": "Jan a Set/2026",
+      "n_treino": 249346,
+      "n_teste": 182057,
+      "entradas": [
+        "idade",
+        "horas_contratuais",
+        "cbo_codigo",
+        "uf_sigla",
+        "grau_instrucao"
+      ]
+    },
+    "classificacao": {
+      "selecionado": "logistica",
+      "treino": "2024/2025",
+      "teste": "2025/2026",
+      "n_treino": 4734,
+      "n_teste": 3123,
+      "entradas": [
+        "senioridade_declarada",
+        "nivel_ensino",
+        "modelo_trabalho",
+        "experiencia_dados_faixa"
+      ],
+      "limiar": 0.5
+    }
+  },
+  "periodos": {
+    "todos": {
+      "rotulo": "Jan/2025 a Set/2026",
+      "meses": [
+        "202501",
+        "202502",
+        "202503",
+        "202504",
+        "202505",
+        "202506",
+        "202507",
+        "202508",
+        "202509",
+        "202510",
+        "202511",
+        "202512",
+        "202601",
+        "202602",
+        "202603",
+        "202604",
+        "202605",
+        "202606",
+        "202607",
+        "202608",
+        "202609"
+      ]
+    },
+    "2025": {
+      "rotulo": "2025 inteiro",
+      "meses": [
+        "202501",
+        "202502",
+        "202503",
+        "202504",
+        "202505",
+        "202506",
+        "202507",
+        "202508",
+        "202509",
+        "202510",
+        "202511",
+        "202512"
+      ]
+    },
+    "2025YTD": {
+      "rotulo": "Jan a Set/2025",
+      "meses": [
+        "202501",
+        "202502",
+        "202503",
+        "202504",
+        "202505",
+        "202506",
+        "202507",
+        "202508",
+        "202509"
+      ]
+    },
+    "2026YTD": {
+      "rotulo": "Jan a Set/2026",
+      "meses": [
+        "202601",
+        "202602",
+        "202603",
+        "202604",
+        "202605",
+        "202606",
+        "202607",
+        "202608",
+        "202609"
+      ]
+    },
+    "2025T1": {
+      "rotulo": "Jan a Mar/2025",
+      "meses": [
+        "202501",
+        "202502",
+        "202503"
+      ]
+    },
+    "202501": {
+      "rotulo": "Jan/2025",
+      "meses": [
+        "202501"
+      ]
+    },
+    "202502": {
+      "rotulo": "Fev/2025",
+      "meses": [
+        "202502"
+      ]
+    },
+    "202503": {
+      "rotulo": "Mar/2025",
+      "meses": [
+        "202503"
+      ]
+    },
+    "202504": {
+      "rotulo": "Abr/2025",
+      "meses": [
+        "202504"
+      ]
+    },
+    "202505": {
+      "rotulo": "Mai/2025",
+      "meses": [
+        "202505"
+      ]
+    },
+    "202506": {
+      "rotulo": "Jun/2025",
+      "meses": [
+        "202506"
+      ]
+    },
+    "202507": {
+      "rotulo": "Jul/2025",
+      "meses": [
+        "202507"
+      ]
+    },
+    "202508": {
+      "rotulo": "Ago/2025",
+      "meses": [
+        "202508"
+      ]
+    },
+    "202509": {
+      "rotulo": "Set/2025",
+      "meses": [
+        "202509"
+      ]
+    },
+    "202510": {
+      "rotulo": "Out/2025",
+      "meses": [
+        "202510"
+      ]
+    },
+    "202511": {
+      "rotulo": "Nov/2025",
+      "meses": [
+        "202511"
+      ]
+    },
+    "202512": {
+      "rotulo": "Dez/2025",
+      "meses": [
+        "202512"
+      ]
+    },
+    "202601": {
+      "rotulo": "Jan/2026",
+      "meses": [
+        "202601"
+      ]
+    },
+    "202602": {
+      "rotulo": "Fev/2026",
+      "meses": [
+        "202602"
+      ]
+    },
+    "202603": {
+      "rotulo": "Mar/2026",
+      "meses": [
+        "202603"
+      ]
+    },
+    "202604": {
+      "rotulo": "Abr/2026",
+      "meses": [
+        "202604"
+      ]
+    },
+    "202605": {
+      "rotulo": "Mai/2026",
+      "meses": [
+        "202605"
+      ]
+    },
+    "202606": {
+      "rotulo": "Jun/2026",
+      "meses": [
+        "202606"
+      ]
+    },
+    "202607": {
+      "rotulo": "Jul/2026",
+      "meses": [
+        "202607"
+      ]
+    },
+    "202608": {
+      "rotulo": "Ago/2026",
+      "meses": [
+        "202608"
+      ]
+    },
+    "202609": {
+      "rotulo": "Set/2026",
+      "meses": [
+        "202609"
+      ]
+    }
+  },
+  "edicoes": {
+    "2025/2026": {
+      "n": 3372,
+      "coleta": "out-dez/2025"
+    },
+    "2024/2025": {
+      "n": 5076,
+      "coleta": "out-dez/2024"
+    }
+  },
+  "fontes": {
+    "caged_ti": {
+      "n": 842731,
+      "periodo": "Jan/2025 a Set/2026",
+      "ipca_referencia": "202503",
+      "manifesto_sha256": "a4d4d9addbe75e24966a010ca23434888d8d6d98cd87f60a81e2162bb8864417",
+      "particoes_sha256": {
+        "202501.parquet": "58eaace237fd89f6a59347158d44bb8ed5250af74cf25b35734444375899ce3a",
+        "202502.parquet": "a38e829ce967d8b20e5ba436ae0bcbc88179296d0e09eef3b4f6c370d543166f",
+        "202503.parquet": "1fa989886ed13de075d9b8d4510a2cd0e47076f1ffee2a872e136bff96c35950",
+        "202504.parquet": "6772429703ee9c287f6d0e1cbccbc50b3759fc6a0e1b0a438061efc7f3fa82b6",
+        "202505.parquet": "d4dc039e57b9e9113d0077ab61cfc3e045bbc7de4e6fc34f5697f22862f4a35c",
+        "202506.parquet": "2d157907a9258a4ae443d83bca2081b5663f4e2836ebd8ede0d410277ed8bf3e",
+        "202507.parquet": "d1cc564e56281ff9980d6535014fa4269277f0a0d52b8d7c69e087cf17d064e0",
+        "202508.parquet": "24505cdaece346c0131582923a9356514f516a623d69eafeb2012048ec14a432",
+        "202509.parquet": "12a33dfd0c79e72c07cbbbfb6c29a7637a004c634e5f288e6e53b04f754587f6",
+        "202510.parquet": "346734151c226daffa0848a502874f29eda80b8c4e7a27bc69a1658dfeed33ae",
+        "202511.parquet": "830fff2e28f411885481faeaf4acc436d634099725041ebb562b27528e4acf61",
+        "202512.parquet": "1022d34f8e240cf51b741a9e4e33edfd645ffeb7605f48c74f08df1c6be5b3fe",
+        "202601.parquet": "8a02653cbe2882199fb1de1b5e7baab1749acf28d0ebeb3414e4cffa5c64b218",
+        "202602.parquet": "ecd7b61d97d224424958d30d612f7759eb5855d1782617666872523b558cb223",
+        "202603.parquet": "62a18baee29ebebbd49f802a6f759abee1bb8097bbeb133010275653d978103f",
+        "202604.parquet": "29b7470fc46df550c992b34ef666874f0cfe9b52060bde952786748f1577b927",
+        "202605.parquet": "64611263815737cf7c9f4d8ed927c65cc0bd844d6fe628c8651fa28cb7cdf88c",
+        "202606.parquet": "67d0ae1ee983d80b1b760e43e4a635679b4346b9a19bfea40c0466c5b295c9da",
+        "202607.parquet": "f794582a7774015aa6623764173a0e612903b660ac1fdca9e467cae46e634f1b",
+        "202608.parquet": "26cdd7b44db5de1854ae3df76d115028631878b19fdb77c956b6602d0a432897",
+        "202609.parquet": "579b21309437ec5d4d7f95b96e955c2af8a021d5b060e66a55a80e556a909e64"
+      }
+    },
+    "state_of_data_2024_2025": {
+      "n": 5076,
+      "sha256": "be7c02ca2ffc193ebffba9f188530351ba4c1ec92bdb530b4fe96acb5c916c22"
+    },
+    "state_of_data_2025_2026": {
+      "n": 3372,
+      "sha256": "83c86a8deb7be3bf31de8b4cb6d09692f70c9670d5cf06f2c243da5eae5d80f8"
+    }
+  },
+  "arquivos": {
+    "classificacao.parquet": {
+      "sha256": "6b27e588a582c90c19bb6febbad74f78a2ff710dfe52c697703fe1c8384775e0",
+      "bytes": 9639
+    },
+    "classificacao_curvas.parquet": {
+      "sha256": "e554dcce3a3be9b32ea7df7004ac6a5c0c0011ef93a3abab0527aef58d14ba03",
+      "bytes": 5801
+    },
+    "classificacao_validacao.parquet": {
+      "sha256": "0dc2e8367aede097fbb05094a2ef45999fb50413c1ac57fd799a80e76d70f3f9",
+      "bytes": 2346
+    },
+    "distribuicoes.parquet": {
+      "sha256": "9596a033462de550c69639479788b91b8a7afa3ec71a875aa77499aae9cf7ebd",
+      "bytes": 44705
+    },
+    "eda_associacoes_salariais.parquet": {
+      "sha256": "bc818f882c629d9b98e72e9d2fe556a4d105556a49fd2d23be9b553fb21d407f",
+      "bytes": 5589
+    },
+    "eda_busca_por_perfil.parquet": {
+      "sha256": "93cc4df6164413c159ec85e01949ce7bea3dafeb981a12ea24bd1d6e909fab62",
+      "bytes": 4408
+    },
+    "eda_comparacao_anos.parquet": {
+      "sha256": "a52d24eab9bb936849406b7f8dfdd459cb406f1a51d96e7fea7bf56da787eac4",
+      "bytes": 4291
+    },
+    "eda_comparacao_pesquisas.parquet": {
+      "sha256": "1f19279c7d0b9ca5c0fc4bd96735fcd1a4a9d1cc4c646f28bb47d7a9566ca3b2",
+      "bytes": 3607
+    },
+    "eda_faixas_por_perfil.parquet": {
+      "sha256": "82350b97c6981c0f70b8be3286ec3403c72faa60bc622648575c2dd52a68163d",
+      "bytes": 5971
+    },
+    "eda_iniciantes.parquet": {
+      "sha256": "c9902e7d4d7902b542f6e97b96d1c96ec8273d50b9e5d0ce9aca0149e7d9fa43",
+      "bytes": 3889
+    },
+    "eda_movimentacoes.parquet": {
+      "sha256": "0e5bb516ea901ddd05551d1323a5aa05acb5a5f78ae9311234f17d78a382b396",
+      "bytes": 3433
+    },
+    "emprego.parquet": {
+      "sha256": "3b14f4b895233a631f8a76c54c91b9673ed644956fb6acf2632ed8c7da2b4d84",
+      "bytes": 660833
+    },
+    "perfis.parquet": {
+      "sha256": "b9615a5c6b4d3347a5cb0a90cc6491d04cd04b15812e7bda2348fd4f40aed107",
+      "bytes": 15736
+    },
+    "regressao.parquet": {
+      "sha256": "4970a38f890963a930941a79ee22dec9416443ca945c9b2a92050ae476a8f7cd",
+      "bytes": 5293
+    },
+    "regressao_dispersao.parquet": {
+      "sha256": "b144ac69d706851a0084f93df36562599a2532da7bd2a47181d966ecb40a743c",
+      "bytes": 4069
+    },
+    "regressao_mensal.parquet": {
+      "sha256": "8bb6a4d9434ba835fdfb5fd3218d5cf5ec15aa891140010b0891f8da0d04bcc2",
+      "bytes": 3738
+    },
+    "regressao_residuos.parquet": {
+      "sha256": "bd2d5dad1200113574e069a328196d07054fee30352d5efa04919c49d1d18e70",
+      "bytes": 1884
+    },
+    "regressao_validacao.parquet": {
+      "sha256": "cc5927b409fa73554270932c9960e9edddb2def23042983c80bb09cb8b3b8443",
+      "bytes": 5844
+    },
+    "tecnologias.parquet": {
+      "sha256": "6e62f4d71e4e782a60e2205514552340f31aac04edf2e7286b1825e480e6b0d4",
+      "bytes": 20683
+    }
+  }
+}

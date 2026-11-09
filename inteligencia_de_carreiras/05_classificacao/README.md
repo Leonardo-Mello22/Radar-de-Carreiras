@@ -1,5 +1,10 @@
 # Classificação de Busca Ativa
 
+A [avaliação ampliada](../08_documentacao_final/atualizacao_2025_2026.md) treina
+na edição 2024/2025 e avalia na edição 2025/2026. Os diagnósticos novos estão
+no [notebook](../03_analise_exploratoria/analise_ampliada.ipynb) e no dashboard.
+O material abaixo preserva o experimento original.
+
 Etapa 05: avaliação visual de classificadores simples de busca ativa **declarada**
 por emprego no State of Data Brazil 2024-2025. Não é previsão de saída futura,
 ferramenta para avaliar candidatos ou sistema de monitoramento de empregados.

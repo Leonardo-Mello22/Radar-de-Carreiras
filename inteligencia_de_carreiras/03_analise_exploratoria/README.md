@@ -1,5 +1,9 @@
 # Análise exploratória
 
+Consulte o [notebook ampliado executado](analise_ampliada.ipynb), que atualiza
+P1–P8 e inclui os diagnósticos das etapas 04–05. P9–P12 permanecem no recorte
+original da pesquisa do Grupo 12.
+
 Etapa 03: notebook com distribuições, associações, análise multivariada e
 interpretação para P1-P12. Novo CAGED, State of Data e pesquisa G12 permanecem
 separados por população, período e unidade de observação.

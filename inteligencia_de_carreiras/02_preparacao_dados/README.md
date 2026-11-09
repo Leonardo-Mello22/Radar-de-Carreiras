@@ -1,5 +1,9 @@
 # Preparação dos dados
 
+O [lote ampliado 2025–2026](../datasets/ATUALIZACAO_2025_2026.md) tem downloads,
+manifesto, validação mensal e preparação separada por edição. O restante desta
+página documenta a preparação original.
+
 Etapa 02: plano documental e pipeline executável para preparar as fontes das
 perguntas P1-P12. As bases permanecem separadas, com filtros, tipos, categorias,
 ausências e transformações justificados.

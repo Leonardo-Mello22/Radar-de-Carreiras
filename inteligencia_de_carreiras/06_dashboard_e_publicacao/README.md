@@ -6,12 +6,15 @@ que concentra a auditoria integral e a validação funcional ampliada.
 Cobre CC06 e CC07. O aplicativo histórico em `app/dashboard.py` permanece preservado;
 o novo ponto de entrada desta área é `dashboard.py`.
 
+**Versão atual:** [ampliação 2025–2026](../08_documentacao_final/atualizacao_2025_2026.md),
+com pacote `dados_ampliados/`. Os registros da v1.1 e `dados_publicos/` são históricos.
+
 ## Entregas
 
 - [Proposta de integração e publicação](proposta_integracao_web.md).
 - [Conferência dos critérios e evidências](verificacao_fase06.md).
-- [Aplicativo v1](dashboard.py).
-- [Manifesto dos agregados públicos](dados_publicos/manifesto.json).
+- [Aplicativo ampliado](dashboard.py).
+- [Manifesto atual](dados_ampliados/manifesto.json) e [manifesto original](dados_publicos/manifesto.json).
 - [Evidências visuais e teste no navegador](evidencias/).
 
 ## Executar
@@ -35,12 +38,14 @@ arquivos, não treina modelos e não envia respostas a serviços externos.
 
 | Visão | Conteúdo e filtros |
 | --- | --- |
-| Emprego formal | Região, UF, período, área e ocupação; mediana/p10/p90, volumes e evolução mensal |
-| Perfis em dados | Região, UF, senioridade e modelo de trabalho; faixas salariais, tecnologias, formação e vínculo |
-| Modelos | Evidências congeladas das etapas 04/05; regressão e classificação com limites e erros visíveis |
-| Fontes | Procedência, unidades, períodos, privacidade e download do manifesto |
+| Salários e vagas | 21 meses e recortes anuais; região, UF, área e cargo; mediana/p10/p90 e comparação jan–set entre anos |
+| Quem trabalha na área | Edições 2024/2025 e 2025/2026, separadas; região, senioridade, trabalho, faixas, tecnologias e formação |
+| Previsões | Regressão e classificação reavaliadas, com métricas, períodos e diagnósticos agregados |
+| CESAR School | Resultados agregados das 35 respostas do grupo |
+| Sobre os dados | Procedência, períodos, limitações, privacidade e download do manifesto |
 
-O padrão inicial é Pernambuco para CAGED e Brasil para State of Data. Filtros de
+O padrão inicial é Pernambuco com os 21 meses do CAGED e Brasil na edição
+2025/2026 do State of Data. Filtros de
 uma fonte não alteram as métricas reservadas dos modelos. Ausências de pesquisa
 não viram respostas negativas. Estatísticas salariais e comparações exigem n>=30;
 contagens continuam disponíveis. Há estados específicos para recorte vazio e insuficiente.
@@ -51,12 +56,14 @@ contagens continuam disponíveis. Há estados específicos para recorte vazio e 
 06_dashboard_e_publicacao/
   dashboard.py                  interface Streamlit
   dados.py                      leitura validada, filtros e exportação segura
-  preparar_pacote.py             geração reproduzível dos agregados públicos
+  preparar_ampliacao.py          geração dos agregados e avaliações atuais
+  preparar_pacote.py             geração dos agregados do ciclo inicial
   requirements.txt              dependências de execução
   requirements_testes.txt        dependências adicionais de QA
   proposta_integracao_web.md     páginas, decisões visuais e plano de hospedagem
   verificacao_fase06.md          critérios, testes e limites
-  dados_publicos/                pacote compacto versionável; sem microdados
+  dados_ampliados/               pacote atual, agregado e sem microdados
+  dados_publicos/                pacote histórico, sem microdados
   tests/                        regras e interface com AppTest
   verificar_navegador.py         QA desktop/mobile com Playwright
   validar_entrega.py             validação conjunta e registro das suites
@@ -66,15 +73,17 @@ contagens continuam disponíveis. Há estados específicos para recorte vazio e 
 
 ## Regerar e Testar
 
-Com os datasets preparados e as etapas 04/05 executadas, na raiz, use o mesmo
-interpretador `$python` definido na seção Executar:
+Com os [datasets ampliados preparados](../datasets/ATUALIZACAO_2025_2026.md),
+na raiz, use o mesmo interpretador `$python` definido na seção Executar:
 
 ```powershell
-& $python inteligencia_de_carreiras/06_dashboard_e_publicacao/preparar_pacote.py
+& $python -m pip install -r inteligencia_de_carreiras/02_preparacao_dados/requirements_reproducao.txt
+& $python -m pip install -r inteligencia_de_carreiras/04_regressao/requirements.txt
+& $python inteligencia_de_carreiras/06_dashboard_e_publicacao/preparar_ampliacao.py
 & $python -m pip install -r inteligencia_de_carreiras/06_dashboard_e_publicacao/requirements_testes.txt
 & $python -m unittest discover -s inteligencia_de_carreiras/06_dashboard_e_publicacao/tests -v
 & $python -m playwright install chromium
-& $python inteligencia_de_carreiras/06_dashboard_e_publicacao/verificar_navegador.py --url http://localhost:8502
+& $python inteligencia_de_carreiras/07_consolidacao_e_validacao/verificar_ampliacao.py --url http://localhost:8502
 ```
 
 O último comando exige o servidor já iniciado; ajuste a URL se usar outra porta.
@@ -96,7 +105,7 @@ automaticamente o dashboard. Vincular a conta de hospedagem e realizar o teste
 remoto continuam pendentes e dependem de acesso do grupo. Os registros de execução
 preservam a situação anterior ao versionamento, sem reescrever as evidências.
 
-Somente `dados_publicos/` é usado para servir dados. Pesquisa G12, originais,
-respostas individuais e escores por participante não entram nesta versão. A etapa 07
-concluiu a consolidação técnica; incorporar feedback estruturado de colegas/usuários
-continua pendente até a revisão real do grupo.
+Para publicação, use o arquivo `dashboard.py` desta pasta e inclua
+`dados_ampliados/` e `cesar_pesquisa_agregada.json`. Não publique microdados,
+respostas individuais ou escores por participante. A validação técnica local
+não substitui revisão de colegas/usuários nem teste após hospedagem.

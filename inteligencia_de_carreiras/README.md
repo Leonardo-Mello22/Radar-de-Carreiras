@@ -1,5 +1,10 @@
 # Inteligência de carreiras
 
+**Atualização 2025–2026:** [entrega ampliada e roteiro das oito etapas](08_documentacao_final/atualizacao_2025_2026.md).
+O dashboard atual cobre 21 meses de CAGED, oferece duas edições do State of
+Data e apresenta as novas avaliações dos modelos. As descrições e evidências
+do recorte original abaixo permanecem como histórico.
+
 Área de dados, análise, modelagem e comunicação visual do Radar de Carreira em TI.
 O trabalho usa o Novo CAGED para emprego formal, o State of Data Brazil para
 carreiras em dados e a pesquisa própria do Grupo 12 para necessidades e intenções.
