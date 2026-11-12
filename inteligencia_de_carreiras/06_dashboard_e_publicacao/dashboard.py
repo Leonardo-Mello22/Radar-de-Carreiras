@@ -221,6 +221,10 @@ def chart(value):
     st.altair_chart(value, width="stretch")
 
 
+def category_axis(field, order):
+    return alt.Y(f"{field}:N", title=None, sort=order, axis=alt.Axis(labelOverlap=False))
+
+
 def reset(prefix):
     defaults = {"c_regiao": "Pernambuco", "c_uf": "PE", "c_periodo": "todos", "c_area": "Todas", "c_cargo": "Todos",
                 "p_regiao": "Brasil", "p_uf": "Todas", "p_senior": "Todos", "p_modelo": "Todos", "p_edicao": "2025/2026"}
@@ -325,10 +329,10 @@ def employment(package):
     if eligible.empty:
         st.info("Ainda não há dados suficientes para mostrar o salário por cargo aqui.")
     else:
-        base = alt.Chart(eligible).encode(y=alt.Y("rotulo:N", title=None, sort=alt.SortField("admissoes_p50", order="descending")), tooltip=[alt.Tooltip("rotulo:N", title="Cargo"), alt.Tooltip("admissoes_validos:Q", title="Contratações"), alt.Tooltip("admissoes_p10:Q", title="Mais baixo (R$)", format=",.0f"), alt.Tooltip("admissoes_p50:Q", title="Típico (R$)", format=",.0f"), alt.Tooltip("admissoes_p90:Q", title="Mais alto (R$)", format=",.0f")])
+        base = alt.Chart(eligible).encode(y=category_axis("rotulo", alt.SortField("admissoes_p50", order="descending")), tooltip=[alt.Tooltip("rotulo:N", title="Cargo ou área"), alt.Tooltip("admissoes_validos:Q", title="Contratações"), alt.Tooltip("admissoes_p10:Q", title="Mais baixo (R$)", format=",.0f"), alt.Tooltip("admissoes_p50:Q", title="Típico (R$)", format=",.0f"), alt.Tooltip("admissoes_p90:Q", title="Mais alto (R$)", format=",.0f")])
         rule = base.mark_rule(strokeWidth=7, color=theme.FAIXA_PREENCHIMENTO).encode(x=alt.X("admissoes_p10:Q", title="Salário mensal (R$)", scale=alt.Scale(zero=True)), x2="admissoes_p90:Q")
         points = base.mark_point(filled=True, color=theme.LARANJA, size=65).encode(x="admissoes_p50:Q")
-        chart((rule + points).properties(height=max(230, len(eligible) * 27)))
+        chart((rule + points).properties(height=alt.Step(34)))
     st.caption("A barra cobre os percentis 10 a 90 dos salários válidos. O ponto laranja é a mediana.")
 
     table = package["emprego"]
@@ -336,15 +340,37 @@ def employment(package):
     month_labels = [labels[month] for month in months]
     monthly = table[table.geo.eq(geo) & table.tipo.eq(kind) & table.categoria.eq(category) & table.periodo.isin(months)].copy()
     monthly["mes"] = monthly.periodo.map(labels)
-    left, right = st.columns(2)
-    with left:
-        st.subheader("Contratações e saídas, mês a mês")
-        movement = monthly.melt(id_vars=["mes", "periodo"], value_vars=["admissoes", "desligamentos"], var_name="movimento", value_name="n")
-        movement["movimento"] = movement.movimento.map({"admissoes": "Contratações", "desligamentos": "Saídas"})
-        chart(alt.Chart(movement).mark_bar().encode(x=alt.X("mes:N", title=None, sort=month_labels), xOffset="movimento:N", y=alt.Y("n:Q", title="Movimentações", scale=alt.Scale(zero=True)), color=alt.Color("movimento:N", title=None, scale=alt.Scale(domain=["Contratações", "Saídas"], range=[theme.LARANJA, theme.NEUTRO_GRAFICO]), legend=alt.Legend(orient="top")), tooltip=["mes:N", "movimento:N", alt.Tooltip("n:Q", title="Movimentações")]).properties(height=260))
-    with right:
-        st.subheader("Salário de entrada ao longo dos meses")
-        chart(alt.Chart(monthly).mark_line(point=True, color=theme.LARANJA).encode(x=alt.X("mes:N", sort=month_labels, title=None), y=alt.Y("admissoes_p50:Q", title="Salário mensal (R$)", scale=alt.Scale(zero=True)), tooltip=["mes:N", alt.Tooltip("admissoes_p50:Q", title="Salário típico", format=",.0f")]).properties(height=260))
+    st.subheader("Contratações e saídas, mês a mês")
+    movement = monthly.melt(id_vars=["mes"], value_vars=["admissoes", "desligamentos"], var_name="movimento", value_name="n")
+    movement["movimento"] = movement.movimento.map({"admissoes": "Contratações", "desligamentos": "Saídas"})
+    movement_order = ["Contratações", "Saídas"]
+    chart(alt.Chart(movement).mark_bar().encode(
+        x=alt.X("n:Q", title="Movimentações", scale=alt.Scale(zero=True), axis=alt.Axis(tickCount=8)),
+        y=category_axis("mes", month_labels),
+        yOffset=alt.YOffset("movimento:N", sort=movement_order),
+        color=alt.Color("movimento:N", title=None,
+                        scale=alt.Scale(domain=movement_order, range=[theme.LARANJA, theme.NEUTRO_GRAFICO]),
+                        legend=alt.Legend(orient="top")),
+        tooltip=[alt.Tooltip("mes:N", title="Mês"), alt.Tooltip("movimento:N", title="Movimento"),
+                 alt.Tooltip("n:Q", title="Movimentações")],
+    ).properties(height=max(84, len(month_labels) * 34)))
+
+    st.subheader("Salário de entrada ao longo dos meses")
+    salary = alt.Chart(monthly).encode(
+        x=alt.X("mes:N", sort=month_labels, title=None, axis=alt.Axis(labelAngle=-45, labelOverlap="greedy")),
+        y=alt.Y("admissoes_p50:Q", title="Salário mensal (R$)", scale=alt.Scale(zero=True),
+                axis=alt.Axis(tickCount=8, labelOverlap=False)),
+        tooltip=[alt.Tooltip("mes:N", title="Mês"), alt.Tooltip("admissoes_p50:Q", title="Salário típico", format=",.0f")],
+    )
+    valid_months = int(monthly.admissoes_p50.notna().sum())
+    if valid_months == 0:
+        st.info("Nenhum mês do recorte tem salários suficientes para calcular a mediana.")
+    else:
+        if valid_months == 1:
+            salary = salary.mark_point(color=theme.LARANJA, filled=True, size=70)
+        else:
+            salary = salary.mark_line(color=theme.LARANJA, point=False)
+        chart(salary.properties(height=330))
     if row.admissoes_validos >= MIN_N and row.desligamentos_validos >= MIN_N:
         st.subheader("Quem entra e quem sai")
         st.write(f"A mediana de entrada é {money_text(row.admissoes_p50)}. A mediana dos desligamentos é {money_text(row.desligamentos_p50)}. São grupos de eventos: não acompanhamos o salário da mesma pessoa.")
@@ -358,15 +384,49 @@ def employment(package):
     download("Baixar dados desta tela (CSV)", rows, "salarios_e_vagas.csv")
 
 
+EDUCATION_LABELS = {
+    "Não tenho graduação formal": "Sem graduação",
+    "Estudante de Graduação": "Graduando",
+    "Graduação/Bacharelado": "Graduação",
+    "Pós-graduação": "Especialização",
+    "Mestrado": "Mestrado",
+    "Doutorado ou Phd": "Doutorado",
+    "Prefiro não informar": "Não informado",
+}
+EMPLOYMENT_LABELS = {
+    "Estagio": "Estágio", "Servidor publico": "Servidor público",
+    "Academico ou pesquisador": "Acadêmico / pesquisa", "Nao informado": "Não informado",
+}
+
+
 def distribution_chart(frame, field, title):
     selected = frame[frame.variavel.eq(field)].copy()
     st.subheader(title)
     if selected.empty:
         st.info("Base respondida insuficiente para esta distribuição.")
         return
-    selected["rotulo"] = selected.categoria.str.replace("de R$ ", "", regex=False).str.replace("/mês", "", regex=False)
-    order = list(selected.sort_values("ordem").rotulo) if field == "salario" else alt.SortField("n", order="descending")
-    chart(alt.Chart(selected).mark_bar(color=theme.LARANJA).encode(y=alt.Y("rotulo:N", sort=order, title=None), x=alt.X("proporcao:Q", title="% das pessoas", axis=alt.Axis(format="%"), scale=alt.Scale(zero=True)), tooltip=[alt.Tooltip("categoria:N", title="Resposta"), alt.Tooltip("n:Q", title="Pessoas"), alt.Tooltip("proporcao:Q", format=".1%", title="% das pessoas")]).properties(height=max(260, len(selected)*25)))
+    order = alt.SortField("n", order="descending")
+    if field == "salario":
+        selected["rotulo"] = selected.categoria.str.replace("de R$ ", "", regex=False).str.replace("/mês", "", regex=False)
+        order = list(selected.sort_values("ordem").rotulo)
+    else:
+        aliases = EDUCATION_LABELS if field == "formacao" else EMPLOYMENT_LABELS
+        selected["rotulo"] = selected.categoria.replace(aliases)
+        if field == "formacao":
+            education_order = list(EDUCATION_LABELS.values())
+            present = selected.rotulo.unique()
+            order = [label for label in education_order if label in present]
+            order.extend(label for label in present if label not in education_order)
+    bars = alt.Chart(selected).mark_bar(color=theme.LARANJA).encode(
+        y=category_axis("rotulo", order),
+        x=alt.X("proporcao:Q", title="% das pessoas", axis=alt.Axis(format="%"), scale=alt.Scale(zero=True)),
+        tooltip=[alt.Tooltip("rotulo:N", title="Categoria"), alt.Tooltip("categoria:N", title="Resposta original"),
+                 alt.Tooltip("n:Q", title="Pessoas"), alt.Tooltip("proporcao:Q", format=".1%", title="% das pessoas")],
+    )
+    if field == "formacao":
+        bars = bars.encode(color=alt.condition(alt.datum.rotulo == "Especialização",
+                                              alt.value(theme.LARANJA), alt.value(theme.NEUTRO_GRAFICO)))
+    chart(bars.properties(height=alt.Step(31)))
     st.caption(f"Com base em {count(selected.denominador.iloc[0])} respostas.")
 
 
@@ -416,30 +476,34 @@ def profiles(package):
     if row.n_respostas < MIN_N:
         st.warning(f"Há poucas respostas neste recorte (menos de {MIN_N}), então não mostramos os gráficos para não enganar. Tente um recorte mais amplo.")
         return
-    left, right = st.columns(2)
-    with left:
-        distribution_chart(result["distribuicoes"], "salario", "Faixas de salário")
-        st.caption("São faixas informadas pelas pessoas, não um salário exato.")
-    with right:
-        st.subheader("Tecnologias mais usadas")
-        tech = result["tecnologias"].dropna(subset=["proporcao"])
-        if tech.empty:
-            st.info("Ainda não há respostas suficientes sobre tecnologias neste recorte.")
-        else:
-            chart(alt.Chart(tech).mark_bar(color=theme.LARANJA).encode(y=alt.Y("tecnologia:N", sort="-x", title=None), x=alt.X("proporcao:Q", title="% das pessoas", scale=alt.Scale(domain=[0, 1]), axis=alt.Axis(format="%")), tooltip=["tecnologia:N", alt.Tooltip("n:Q", title="Pessoas"), alt.Tooltip("proporcao:Q", title="% das pessoas", format=".1%")]).properties(height=300))
-        st.caption("Múltiplas escolhas; a base de respostas válidas varia por tecnologia.")
-    left, right = st.columns(2)
-    with left:
-        distribution_chart(result["distribuicoes"], "formacao", "Formação")
-    with right:
-        distribution_chart(result["distribuicoes"], "vinculo", "Tipo de vínculo")
+    distribution_chart(result["distribuicoes"], "salario", "Faixas de salário")
+    st.caption("São faixas informadas pelas pessoas, não um salário exato.")
+    st.subheader("Tecnologias mais usadas")
+    tech = result["tecnologias"].dropna(subset=["proporcao"])
+    if tech.empty:
+        st.info("Ainda não há respostas suficientes sobre tecnologias neste recorte.")
+    else:
+        chart(alt.Chart(tech).mark_bar(color=theme.LARANJA).encode(
+            y=category_axis("tecnologia", "-x"),
+            x=alt.X("proporcao:Q", title="% das pessoas", scale=alt.Scale(domain=[0, 1]), axis=alt.Axis(format="%")),
+            tooltip=["tecnologia:N", alt.Tooltip("n:Q", title="Pessoas"), alt.Tooltip("proporcao:Q", title="% das pessoas", format=".1%")],
+        ).properties(height=alt.Step(31)))
+    st.caption("Múltiplas escolhas; a base de respostas válidas varia por tecnologia.")
+    distribution_chart(result["distribuicoes"], "formacao", "Formação")
+    distribution_chart(result["distribuicoes"], "vinculo", "Tipo de vínculo")
     download("Baixar distribuições agregadas", result["distribuicoes"], "perfis_distribuicoes.csv")
+
+
+MODEL_LABELS = {
+    "mediana": "Mediana do treino", "idade": "Regressão simples", "multipla": "Regressão múltipla",
+    "majoritaria": "Classe majoritária", "logistica": "Regressão logística", "arvore": "Árvore de decisão",
+}
 
 
 def models(package):
     st.markdown('<div class="pintro"><span class="eyebrow">visão experimental</span>'
                 '<h2>O que dá para estimar?</h2>'
-                '<p>Uma leitura do mercado como um todo, sem tentar prever o salário de uma pessoa específica.</p></div>',
+                '<p>Resultados dos modelos de salário de admissão e busca ativa de emprego, avaliados em dados reservados para teste.</p></div>',
                 unsafe_allow_html=True)
     st.markdown('<div class="experiment"><strong>Esta seção é experimental</strong>'
                 '<p>Mostra tendências de grupos. Não é uma calculadora pessoal nem uma promessa de salário.</p></div>',
@@ -449,30 +513,39 @@ def models(package):
         table = package["regressao"]
         meta = package["metadata"]["modelos"]["regressao"]
         chosen = table[table.modelo.eq(meta["selecionado"])].iloc[0]
+        baseline = table.set_index("modelo").loc["mediana"]
         st.markdown(f'''<div class="prediction">
   <span class="eyebrow">diferença comum entre estimativa e realidade</span>
   <div class="val">{money(chosen.mae)}</div>
   <h3>Erro médio da estimativa</h3>
-  <p>Na prática, a estimativa erra, em média, cerca desse valor por mês. Por isso o Radar mostra <b>faixas</b> de salário, e não um número exato. O modelo capta cerca de {max(chosen.r2, 0)*100:.0f}% da variação.</p>
+  <p>Em média, o salário estimado ficou a essa distância do salário observado no teste.</p>
 </div>''', unsafe_allow_html=True)
+        first, second = st.columns(2)
+        first.metric("Erro da referência", money(baseline.mae), help="A referência estima sempre a mediana dos salários do treino.")
+        second.metric("Variação explicada (R²)", percent(chosen.r2))
         st.caption(f"Treino: {meta['treino']} ({count(meta['n_treino'])} admissões). Teste reservado: {meta['teste']} ({count(meta['n_teste'])} admissões). Valores a preços de março de 2025.")
         if chosen.previsoes_negativas:
             st.warning(f"{count(chosen.previsoes_negativas)} estimativas negativas foram mantidas nas métricas. Não use o modelo para estimativas individuais.")
-        with st.expander("Ver métricas e diagnóstico da regressão"):
-            st.dataframe(table[["modelo", "mae", "rmse", "r2", "previsoes_negativas"]], hide_index=True)
+        with st.expander("Ver métricas e diagnóstico da regressão", expanded=True):
+            display = table[["modelo", "mae", "rmse", "r2", "previsoes_negativas"]].assign(modelo=table.modelo.replace(MODEL_LABELS))
+            st.dataframe(display.rename(columns={"modelo": "Modelo", "mae": "MAE (R$)", "rmse": "RMSE (R$)",
+                                                 "r2": "R²", "previsoes_negativas": "Estimativas negativas"}), hide_index=True)
+            st.markdown("**Salários observados e estimados**")
             scatter = package["regressao_dispersao"]
             chart(alt.Chart(scatter).mark_circle(color=theme.LARANJA, opacity=.6).encode(
                 x=alt.X("observado:Q", title="Salário observado (R$)"), y=alt.Y("previsto:Q", title="Salário estimado (R$)"),
                 size=alt.Size("n:Q", title="Admissões"), tooltip=["observado", "previsto", "n"]).properties(height=245))
             st.caption("Dispersão agregada em faixas de R$ 1 mil, de R$ 0 a R$ 30 mil, com pelo menos 30 eventos por ponto. As métricas incluem todo o teste.")
+            st.markdown("**Medianas por mês de teste**")
             series = package["regressao_mensal"].melt(id_vars="competencia", value_vars=["observado", "previsto"], var_name="serie", value_name="mediana")
             chart(alt.Chart(series).mark_line(point=True).encode(
                 x=alt.X("competencia:O", title="Mês de teste"), y=alt.Y("mediana:Q", title="Salário mediano (R$)"),
                 color=alt.Color("serie:N", title=None), tooltip=["competencia", "serie", "mediana"]).properties(height=245))
             residuals = package["regressao_residuos"]
+            st.markdown("**Distribuição dos erros**")
             chart(alt.Chart(residuals).mark_bar(color=theme.LARANJA).encode(
-                y=alt.Y("faixa:N", sort=list(residuals.faixa), title="Faixa do resíduo (R$)"),
-                x=alt.X("n:Q", title="Admissões"), tooltip=["faixa", "n"]).properties(height=255))
+                y=category_axis("faixa", list(residuals.faixa)),
+                x=alt.X("n:Q", title="Admissões"), tooltip=[alt.Tooltip("faixa:N", title="Faixa do resíduo (R$)"), "n"]).properties(height=alt.Step(30)))
             st.caption("Resíduo = salário observado menos estimativa. Faixas com menos de 30 eventos não são exibidas.")
         download("Baixar dados desta tela (CSV)", table, "estimativa_salario.csv")
         return
@@ -483,14 +556,17 @@ def models(package):
   <span class="eyebrow">acurácia do modelo selecionado</span>
   <div class="val">{percent(best.acuracia)}</div>
   <h3>Quem declarou buscar emprego</h3>
-  <p>Testamos adivinhar, pelo perfil da pessoa, quem busca uma nova vaga. Mesmo o melhor modelo deixa passar {int(best.fn)} de {int(best.n_ativos)} pessoas que realmente procuravam — serve para enxergar grupos, não para prever uma pessoa.</p>
+  <p>O modelo identificou <b>{count(best.tp)} de {count(best.n_ativos)}</b> pessoas que declararam busca ativa. A acurácia geral não reflete essa dificuldade.</p>
 </div>''', unsafe_allow_html=True)
     st.caption(f"Treino: edição {meta['treino']} ({count(meta['n_treino'])} respostas válidas). Teste reservado: edição {meta['teste']} ({count(meta['n_teste'])} respostas válidas). Mede busca ativa declarada, não o que a pessoa fará depois.")
     first, second = st.columns(2)
     first.metric("Recall de busca ativa", percent(best.recall), help="Parcela de quem declarou busca ativa que o modelo identificou.")
     second.metric("Acurácia da referência", percent(table.set_index("modelo").loc["majoritaria", "acuracia"]), help="Referência que prevê apenas a classe mais comum do treino.")
-    with st.expander("Ver métricas e diagnóstico da classificação"):
-        st.dataframe(table[["modelo", "acuracia", "precisao", "recall", "f1", "roc_auc", "average_precision"]], hide_index=True)
+    with st.expander("Ver métricas e diagnóstico da classificação", expanded=True):
+        display = table[["modelo", "acuracia", "precisao", "recall", "f1", "roc_auc", "average_precision"]].assign(modelo=table.modelo.replace(MODEL_LABELS))
+        st.dataframe(display.rename(columns={"modelo": "Modelo", "acuracia": "Acurácia", "precisao": "Precisão",
+                                             "recall": "Recall", "f1": "F1", "roc_auc": "ROC-AUC",
+                                             "average_precision": "Precisão média"}), hide_index=True)
         matrix = pd.DataFrame({"observado": ["Não", "Não", "Sim", "Sim"], "estimado": ["Não", "Sim", "Não", "Sim"],
                                "n": [best.tn, best.fp, best.fn, best.tp]})
         st.markdown("**Matriz de confusão do modelo selecionado**")

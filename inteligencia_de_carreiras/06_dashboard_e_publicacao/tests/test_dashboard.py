@@ -1,6 +1,7 @@
 """Aggregate correctness, publication safety and Streamlit UI smoke tests."""
 from __future__ import annotations
 
+import json
 import logging
 import os
 from pathlib import Path
@@ -193,6 +194,34 @@ class InterfaceTests(unittest.TestCase):
 
     def metric(self, label):
         return next(m.value for m in self.app.metric if m.label == label)
+
+    def chart_specs(self):
+        return [json.loads(item.proto.spec) for item in self.app.get("vega_lite_chart")]
+
+    def test_monthly_charts_show_all_groups_without_blue_points(self):
+        ranges, movements, salary = self.chart_specs()
+        self.assertFalse(ranges["layer"][0]["encoding"]["y"]["axis"]["labelOverlap"])
+        self.assertEqual(len(movements["encoding"]["y"]["sort"]), 21)
+        self.assertEqual(movements["encoding"]["yOffset"]["field"], "movimento")
+        self.assertGreaterEqual(movements["height"], 21 * 30)
+        self.assertEqual(salary["mark"]["type"], "line")
+        self.assertFalse(salary["mark"]["point"])
+        self.app.selectbox(key="c_periodo").select("202501").run()
+        self.assertFalse(self.app.exception)
+        self.assertEqual(self.chart_specs()[-1]["mark"]["type"], "point")
+
+    def test_profile_education_uses_short_ordered_labels_in_both_editions(self):
+        self.app.button(key="navtab_1").click().run()
+        expected = ["Sem graduação", "Graduando", "Graduação", "Especialização",
+                    "Mestrado", "Doutorado", "Não informado"]
+        for edition in ("2025/2026", "2024/2025"):
+            with self.subTest(edition=edition):
+                self.app.selectbox(key="p_edicao").select(edition).run()
+                self.assertFalse(self.app.exception)
+                education = self.chart_specs()[2]
+                self.assertEqual(education["encoding"]["y"]["sort"], expected)
+                self.assertFalse(education["encoding"]["y"]["axis"]["labelOverlap"])
+                self.assertIn("Especialização", education["encoding"]["color"]["condition"]["test"])
 
     def test_default_page_is_usable_and_matches_pernambuco(self):
         self.assertFalse(self.app.exception)
