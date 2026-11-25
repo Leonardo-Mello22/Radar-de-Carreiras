@@ -353,7 +353,7 @@ def employment(package):
                         legend=alt.Legend(orient="top")),
         tooltip=[alt.Tooltip("mes:N", title="Mês"), alt.Tooltip("movimento:N", title="Movimento"),
                  alt.Tooltip("n:Q", title="Movimentações")],
-    ).properties(height=max(84, len(month_labels) * 34)))
+    ).properties(height=max(170, len(month_labels) * 74)))
 
     st.subheader("Salário de entrada ao longo dos meses")
     salary = alt.Chart(monthly).encode(
