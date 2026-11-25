@@ -1,5 +1,9 @@
 # Radar de Carreiras
 
+[![Aberto no Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://radar-de-carreiras-3rdrmmdbajwwyrtmgnjx8m.streamlit.app)
+
+🔗 **App publicado (Streamlit Community Cloud):** https://radar-de-carreiras-3rdrmmdbajwwyrtmgnjx8m.streamlit.app
+
 Painel de inteligência de mercado para explorar **salários de entrada, admissões e desligamentos em TI** no Brasil, com recortes para Pernambuco e Nordeste. Reúne dados de emprego formal e pesquisas sobre carreiras em dados, sem combinar populações diferentes.
 
 ## Executar o dashboard AVD
